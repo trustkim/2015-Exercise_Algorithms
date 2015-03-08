@@ -1,12 +1,19 @@
 import java.util.Scanner;
 
 public class Exercise01 {
+	public static double[] fibonacci;
 	public static void main(String[] args) {
 		try {
+
 		int	n=(new Scanner(System.in)).nextInt();
 		
 		long start = System.currentTimeMillis();
 		System.out.println(iterative_fibonacci(n));
+		System.out.println("Elapsed: "+(((long)System.currentTimeMillis())-start)/1000.0);
+		
+		fibonacci = new double[n+1];
+		start = System.currentTimeMillis();
+		System.out.println(memorize_recursive_fibonacci(n));
 		System.out.println("Elapsed: "+(((long)System.currentTimeMillis())-start)/1000.0);
 		
 		start = System.currentTimeMillis();
@@ -29,5 +36,15 @@ public class Exercise01 {
 		if(n<2) return n;
 		else
 			return recursive_fibonacci(n-1) + recursive_fibonacci(n-2);
+	}
+	public static double memorize_recursive_fibonacci(int n) {
+		if(n<2) {
+			fibonacci[n] = n;
+			return n;
+		}
+		else {
+			fibonacci[n] = (fibonacci[n-1]==0?memorize_recursive_fibonacci(n-1):fibonacci[n-1]) + (fibonacci[n-2]==0?memorize_recursive_fibonacci(n-2):fibonacci[n-2]);
+			return fibonacci[n];
+		}
 	}
 }
