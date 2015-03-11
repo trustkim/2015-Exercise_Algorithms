@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Exercise01 {
+public class Exercise01_1 {
 	public static double[] fibonacci;
 	public static void main(String[] args) {
 		try {

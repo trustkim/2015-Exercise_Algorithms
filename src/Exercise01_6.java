@@ -3,7 +3,7 @@ import java.util.Scanner;
 /*
  * 아래 그림과 같이 공을 이용하여 밑면의 한쪽 변의 길이가 n인 정사면체를 만들 때 사용된 공의 개수를 계산 하는 프로그램을 리커전으로 작성하라?
  */
-public class Exercise06 {
+public class Exercise01_6 {
 	public static int N;
 	public static void main(String [] args) {
 		try {

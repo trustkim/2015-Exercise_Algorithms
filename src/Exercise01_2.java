@@ -4,7 +4,7 @@ import java.util.Scanner;
  * 1에서 N까지의 정수들 중 홀수들만의 합을 구하는 프로그램을 recursion으로 작성하라. N은 입력으로 받는다.
  */
 
-public class Exercise02 {
+public class Exercise01_2 {
 	public static int n;
 	
 	public static void main(String [] args) {

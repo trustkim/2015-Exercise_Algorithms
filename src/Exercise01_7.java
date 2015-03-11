@@ -1,7 +1,7 @@
 /*
  * 두 문자열 str1과 str2가 동일한 검사하는 함수를 리커전으로 작성하라.
  */
-public class Exercise07 {
+public class Exercise01_7 {
 	public static void main(String [] args){
 		String str1="i was born to love you";
 		String str2="i was born to love U";

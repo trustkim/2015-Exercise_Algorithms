@@ -3,7 +3,7 @@ import java.util.Scanner;
 /*
  *  n자리 2진수 중에서 0이 연속해서 나오지 않는 것의 개수는? 적절한 순환식으로 세운 후 recursion으로 개수를 계산하는 프로그램을 작성하라.
  */
-public class Exercise05 {
+public class Exercise01_5 {
 	public static void main(String [] args){
 		try {
 			//int N = (new Scanner(System.in)).nextInt();

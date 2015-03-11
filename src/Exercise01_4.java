@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 
-public class Exercise04 {
+public class Exercise01_4 {
 	public static double[][] combinations;
 	public static void main(String [] args){
 		try {
