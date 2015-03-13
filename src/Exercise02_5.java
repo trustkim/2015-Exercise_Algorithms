@@ -43,7 +43,7 @@ public class Exercise02_5 {
 		}else if(maze[x0][y0] != PATHWAY)
 			return false;	// 갈수 없어도 안됨. 다른 말이 있거나 갈 수 없는 길로 판명난 길이거나
 		else if (x0==x1 && y0==y1) {
-			maze[x0][y0] = PATH;
+			maze[x0][y0] = PATH;	// 이건 안해줘도 되지 않나?
 			return true;
 		}
 		else {
