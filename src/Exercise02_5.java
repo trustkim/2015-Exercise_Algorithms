@@ -43,7 +43,7 @@ public class Exercise02_5 {
 		}else if(maze[x0][y0] != PATHWAY)
 			return false;	// 갈수 없어도 안됨. 다른 말이 있거나 갈 수 없는 길로 판명난 길이거나
 		else if (x0==x1 && y0==y1) {
-			maze[x0][y0] = PATH;	// 이건 안해줘도 되지 않나?
+			maze[x0][y0] = PATH;	// 이건 안해줘도 되지 않나? 최종 경로를 표시하기 위해 필요함
 			return true;
 		}
 		else {
@@ -57,7 +57,7 @@ public class Exercise02_5 {
 			if(x0>=0&&y0-1>=0&&x0<N&&y0-1<N&&maze[x0][y0-1]!=WALL)
 				if(findHorsePath(x0+1,y0-2,x1,y1) || findHorsePath(x0-1,y0-2,x1,y1)) return true;
 
-			maze[x0][y0] = BLOCKED;
+			maze[x0][y0] = BLOCKED;	// findHorsePath 수행 후 maze에 가능한 경로만 표시하기 위해 필요함
 			return false;
 		}
 	}
