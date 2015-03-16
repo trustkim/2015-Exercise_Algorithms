@@ -22,9 +22,7 @@ public class Exercise03_2 {
 			cnt++;
 			return ;
 		}
-		int index;
-		//if(level==0) index = N/2;
-		//else index = N;
+		//if(level==0) index = N/2;	// if(level==0) cols[level+1]=1~N/2 만 할 방법이 없을까? N이 짝수이면 1~N/2만 검사하고 해의 개수의 두 배를 해준게 답.
 		for(int i=1;i<=N;i++) {
 			cols[level+1] = i; // 현재 레벨에서 다음에 검사할 cols 인덱스를 지정함
 			nqueens(level+1);
