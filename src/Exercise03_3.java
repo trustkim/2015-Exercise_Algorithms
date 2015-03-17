@@ -44,11 +44,9 @@ public class Exercise03_3 {
 				return false;
 			if(level-i==Math.abs(cols[level]-cols[i]))	// 대각선 상에 있나?
 				return false;
-			if(level-1>0&&(cols[level]-2>0||cols[level]+2<=N))	// KNGIHT는 8가지 셀로 이동 가능 하지만 cols를 사용하는 본 접근에선 위쪽으로만 검사하면 된다.
-				if(cols[level-1]==cols[level]-2 || cols[level-1]==cols[level]+2)
+			if(level-i==1&&Math.abs(cols[level-1]-cols[level])==2)	// KNGIHT는 8가지 셀로 이동 가능 하지만 cols를 사용하는 본 접근에선 위쪽으로만 검사하면 된다.
 					return false;
-			if(level-2>0&&(cols[level]-1>0||cols[level]+1<=N))
-				if(cols[level-2]==cols[level]-1 || cols[level-2]==cols[level]+1)
+			if(level-i==2&&Math.abs(cols[level-2]-cols[level])==1)
 					return false;
 		}
 		return true;
