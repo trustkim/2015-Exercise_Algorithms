@@ -33,21 +33,21 @@ public class Exercise04_2 {
 				begin = System.currentTimeMillis();
 				selectionSort(Arrays.copyOf(data, N));
 				end = System.currentTimeMillis();
-				selectionSum+=end-begin;
+				selectionSum+=(end-begin)/1000.0;
 				
 				begin = System.currentTimeMillis();
 				bubbleSort(Arrays.copyOf(data, N));
 				end = System.currentTimeMillis();
-				bubbleSum+=end-begin;
+				bubbleSum+=(end-begin)/1000.0;
 				
 				begin = System.currentTimeMillis();
 				insertionSort(Arrays.copyOf(data, N));
 				end = System.currentTimeMillis();
-				insertionSum+=end-begin;
+				insertionSum+=(end-begin)/1000.0;
 			}
-			table[t][0]=selectionSum/1000.0/N;
-			table[t][1]=bubbleSum/1000.0/N;
-			table[t][2]=insertionSum/1000.0/N;
+			table[t][0]=selectionSum/N;
+			table[t][1]=bubbleSum/N;
+			table[t][2]=insertionSum/N;
 		}
 
 		for(int i=0;i<cases.length;i++){
