@@ -17,6 +17,8 @@ public class Exercise04_2 {
 		long bubbleSum;
 		long insertionSum;
 		double table[][] = new double[4][3];
+
+		System.out.println("N\tSelection sort\tBubble sort\tInsertion sort");
 		
 		for(int t=0;t<cases.length;t++){
 			N = cases[t];
@@ -48,7 +50,6 @@ public class Exercise04_2 {
 			table[t][2]=insertionSum/1000.0/N;
 		}
 
-		System.out.println("N\tSelection sort\tBubble sort\tInsertion sort");
 		for(int i=0;i<cases.length;i++){
 			System.out.print(cases[i]+"\t");
 			for(int j=0;j<3;j++)
@@ -59,21 +60,44 @@ public class Exercise04_2 {
 	}
 	
 	private static void selectionSort(int[] data) {
-		
+		int max; int tempIndex;
+		for(int last=data.length-1;last>0;last--) {
+			tempIndex=0;
+			for(int i=1;i<=last;i++) {
+				if(data[tempIndex]<data[i]) {
+					tempIndex=i;
+				}
+				max = data[tempIndex];
+				data[tempIndex] = data[last];
+				data[last] = max;
+			}
+			
+		}
 		
 	}
 	
 	private static void bubbleSort(int[] data) {
-		
+		int temp;
+		for(int last=data.length-1;last>0;last--) {
+			for(int i=0;i<last;i++) {
+				if(data[i]>data[i+1]) {
+					temp = data[i];
+					data[i] = data[i+1];
+					data[i+1] = temp;
+				}
+			}
+		}
 		
 	}
 	
 	private static void insertionSort(int[] data) {
-		
-		
+		for(int i=1;i<data.length;i++) {
+			int j=i-1;
+			while(j>=0&&data[i]<data[j]) {
+				data[j+1]=data[j];
+				j--;
+			}
+			data[j+1]=data[i];
+		}
 	}
-
-
-
-
 }

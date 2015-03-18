@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
 
@@ -23,6 +24,7 @@ public class Exercise04_1 {
 			for(int i=0;i<N;i++)
 				data[i] = rd.nextInt(N);
 			
+			
 			begin = System.currentTimeMillis();
 			selectionSort(Arrays.copyOf(data, N));
 			end = System.currentTimeMillis();
@@ -41,21 +43,44 @@ public class Exercise04_1 {
 	}
 	
 	private static void selectionSort(int[] data) {
-		
+		int max; int tempIndex;
+		for(int last=data.length-1;last>0;last--) {
+			tempIndex=0;
+			for(int i=1;i<=last;i++) {
+				if(data[tempIndex]<data[i]) {
+					tempIndex=i;
+				}
+				max = data[tempIndex];
+				data[tempIndex] = data[last];
+				data[last] = max;
+			}
+			
+		}
 		
 	}
 	
 	private static void bubbleSort(int[] data) {
-		
+		int temp;
+		for(int last=data.length-1;last>0;last--) {
+			for(int i=0;i<last;i++) {
+				if(data[i]>data[i+1]) {
+					temp = data[i];
+					data[i] = data[i+1];
+					data[i+1] = temp;
+				}
+			}
+		}
 		
 	}
 	
 	private static void insertionSort(int[] data) {
-		
-		
+		for(int i=1;i<data.length;i++) {
+			int j=i-1;
+			while(j>=0&&data[i]<data[j]) {
+				data[j+1]=data[j];
+				j--;
+			}
+			data[j+1]=data[i];
+		}
 	}
-
-
-
-
 }
