@@ -38,12 +38,12 @@ public class Exercise04_1 {
 			begin = System.currentTimeMillis();
 			insertionSort(Arrays.copyOf(data, N));
 			end = System.currentTimeMillis();
-			System.out.println("insertion Sort: "+(end-begin)/1000.0);
+			System.out.println("Insertion Sort: "+(end-begin)/1000.0);
 			
 			begin = System.currentTimeMillis();
 			mergeSort(Arrays.copyOf(data, N),0,N-1);
 			end = System.currentTimeMillis();
-			System.out.println("insertion Sort: "+(end-begin)/1000.0);
+			System.out.println("Merge Sort: "+(end-begin)/1000.0);
 		}
 	}
 	
