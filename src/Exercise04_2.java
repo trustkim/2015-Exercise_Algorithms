@@ -16,7 +16,8 @@ public class Exercise04_2 {
 		long selectionSum;
 		long bubbleSum;
 		long insertionSum;
-		double table[][] = new double[4][3];
+		long mergeSum;
+		double table[][] = new double[4][4];
 
 		System.out.println("N\tSelection sort\tBubble sort\tInsertion sort");
 		
@@ -26,6 +27,7 @@ public class Exercise04_2 {
 			selectionSum = 0;
 			bubbleSum = 0;
 			insertionSum = 0;
+			mergeSum=0;
 			for(int i=0;i<100;i++) {
 				for(int j=0;j<N;j++)
 					data[j] = rd.nextInt(N);
@@ -44,10 +46,16 @@ public class Exercise04_2 {
 				insertionSort(Arrays.copyOf(data, N));
 				end = System.currentTimeMillis();
 				insertionSum+=(end-begin)/1000.0;
+				
+				begin = System.currentTimeMillis();
+				mergeSort(Arrays.copyOf(data, N),0,N-1);
+				end = System.currentTimeMillis();
+				mergeSum+=(end-begin)/1000.0;
 			}
 			table[t][0]=selectionSum/N;
 			table[t][1]=bubbleSum/N;
 			table[t][2]=insertionSum/N;
+			table[t][3]=mergeSum/N;
 		}
 
 		for(int i=0;i<cases.length;i++){
@@ -99,5 +107,30 @@ public class Exercise04_2 {
 			}
 			data[j+1]=data[i];
 		}
+	}
+	
+	private static void mergeSort(int[] data, int p, int r) {
+		if(p<r) {
+			int q = (p+r)/2;
+			mergeSort(data, p, q);
+			mergeSort(data, q+1, r);
+			merge(data, p, q, r);
+		}
+	}
+	private static void merge(int[] data, int p, int q, int r) {
+		int i=p, j=q+1, k=p;
+		int[] tmp = new int[data.length];
+		while(i<=q&&j<=r) {
+			if(data[i]<=data[j])
+				tmp[k++]=data[i++];
+			else
+				tmp[k++]=data[j++];
+		}
+		while(i<=q)
+			tmp[k++]=data[i++];
+		while(j<=r)
+			tmp[k++]=data[j++];
+		for(i=p;i<=r;i++)
+			data[i]=tmp[i];
 	}
 }

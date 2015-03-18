@@ -39,6 +39,11 @@ public class Exercise04_1 {
 			insertionSort(Arrays.copyOf(data, N));
 			end = System.currentTimeMillis();
 			System.out.println("insertion Sort: "+(end-begin)/1000.0);
+			
+			begin = System.currentTimeMillis();
+			mergeSort(Arrays.copyOf(data, N),0,N-1);
+			end = System.currentTimeMillis();
+			System.out.println("insertion Sort: "+(end-begin)/1000.0);
 		}
 	}
 	
@@ -82,5 +87,30 @@ public class Exercise04_1 {
 			}
 			data[j+1]=data[i];
 		}
+	}
+	
+	private static void mergeSort(int[] data, int p, int r) {
+		if(p<r) {
+			int q = (p+r)/2;
+			mergeSort(data, p, q);
+			mergeSort(data, q+1, r);
+			merge(data, p, q, r);
+		}
+	}
+	private static void merge(int[] data, int p, int q, int r) {
+		int i=p, j=q+1, k=p;
+		int[] tmp = new int[data.length];
+		while(i<=q&&j<=r) {
+			if(data[i]<=data[j])
+				tmp[k++]=data[i++];
+			else
+				tmp[k++]=data[j++];
+		}
+		while(i<=q)
+			tmp[k++]=data[i++];
+		while(j<=r)
+			tmp[k++]=data[j++];
+		for(i=p;i<=r;i++)
+			data[i]=tmp[i];
 	}
 }
