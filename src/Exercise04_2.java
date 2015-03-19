@@ -13,13 +13,13 @@ public class Exercise04_2 {
 		int N;
 		int [] data;
 		long begin; long end;
-		long selectionSum;
-		long bubbleSum;
-		long insertionSum;
-		long mergeSum;
+		double selectionSum;
+		double bubbleSum;
+		double insertionSum;
+		double mergeSum;
 		double table[][] = new double[4][4];
 
-		System.out.println("N\tSelection sort\tBubble sort\tInsertion sort");
+		System.out.println("N\tSelection sort\tBubble sort\tInsertion sort\tMerge sort");
 		
 		for(int t=0;t<cases.length;t++){
 			N = cases[t];
@@ -56,15 +56,12 @@ public class Exercise04_2 {
 			table[t][1]=bubbleSum/N;
 			table[t][2]=insertionSum/N;
 			table[t][3]=mergeSum/N;
-		}
-
-		for(int i=0;i<cases.length;i++){
-			System.out.print(cases[i]+"\t");
-			for(int j=0;j<3;j++)
-				System.out.print(table[i][j]+"\t\t");
+			
+			System.out.print(cases[t]+"\t");
+			for(int j=0;j<4;j++)
+				System.out.print(table[t][j]+"\t\t");
 			System.out.println();
 		}
-
 	}
 	
 	private static void selectionSort(int[] data) {
