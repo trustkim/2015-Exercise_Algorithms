@@ -12,6 +12,7 @@ public class Exercise04_2 {
 		int[] cases = {100, 1000, 10000, 100000};
 		int N;
 		int [] data;
+		int [] temp;
 		long begin; long end;
 		double selectionSum;
 		double bubbleSum;
@@ -24,42 +25,47 @@ public class Exercise04_2 {
 		for(int t=0;t<cases.length;t++){
 			N = cases[t];
 			data = new int[N];
+			temp = new int[N];
 			selectionSum = 0;
 			bubbleSum = 0;
 			insertionSum = 0;
 			mergeSum=0;
-			for(int i=0;i<100;i++) {
+			for(int i=0;i<10;i++) {
 				for(int j=0;j<N;j++)
 					data[j] = rd.nextInt(N);
 				
+				temp = Arrays.copyOf(data, N);
 				begin = System.currentTimeMillis();
 				selectionSort(Arrays.copyOf(data, N));
 				end = System.currentTimeMillis();
 				selectionSum+=(end-begin)/1000.0;
 				
+				temp = Arrays.copyOf(data, N);
 				begin = System.currentTimeMillis();
 				bubbleSort(Arrays.copyOf(data, N));
 				end = System.currentTimeMillis();
 				bubbleSum+=(end-begin)/1000.0;
 				
+				temp = Arrays.copyOf(data, N);
 				begin = System.currentTimeMillis();
 				insertionSort(Arrays.copyOf(data, N));
 				end = System.currentTimeMillis();
 				insertionSum+=(end-begin)/1000.0;
 				
+				temp = Arrays.copyOf(data, N);
 				begin = System.currentTimeMillis();
 				mergeSort(Arrays.copyOf(data, N),0,N-1);
 				end = System.currentTimeMillis();
 				mergeSum+=(end-begin)/1000.0;
 			}
-			table[t][0]=selectionSum/N;
-			table[t][1]=bubbleSum/N;
-			table[t][2]=insertionSum/N;
-			table[t][3]=mergeSum/N;
+			table[t][0]=selectionSum/10;
+			table[t][1]=bubbleSum/10;
+			table[t][2]=insertionSum/10;
+			table[t][3]=mergeSum/10;
 			
 			System.out.print(cases[t]+"\t");
 			for(int j=0;j<4;j++)
-				System.out.print(table[t][j]+"\t\t");
+				System.out.print(String.format("%.4f", table[t][j])+"\t\t");
 			System.out.println();
 		}
 	}
@@ -72,13 +78,12 @@ public class Exercise04_2 {
 				if(data[tempIndex]<data[i]) {
 					tempIndex=i;
 				}
-				max = data[tempIndex];
-				data[tempIndex] = data[last];
-				data[last] = max;
 			}
+			max = data[tempIndex];			// swap을 한 번만 함
+			data[tempIndex] = data[last];
+			data[last] = max;
 			
 		}
-		
 	}
 	
 	private static void bubbleSort(int[] data) {
@@ -92,17 +97,18 @@ public class Exercise04_2 {
 				}
 			}
 		}
-		
 	}
-	
+	private static int swp;
 	private static void insertionSort(int[] data) {
-		for(int i=1;i<data.length;i++) {
-			int j=i-1;
-			while(j>=0&&data[i]<data[j]) {
-				data[j+1]=data[j];
+		for(int i=1;i<data.length;i++) {	// i는 오름차순으로 진행
+			int j = i-1; int temp = data[i];
+			while(j>=0&&data[j]>temp) {	// j는 내림차순으로 진행
+				swp = data[j]; // swap(data[j], data[j+1]) not swap(data[j], data[i])!
+				data[j] = data[j+1];
+				data[j+1] = swp;	// 매번 스왑하지 않고 한번씩만 쓰기 할 순 없을까? 스왑을 한 번만 해도 쓰기를 세 번하는게 더 영향이 큰듯?
 				j--;
 			}
-			data[j+1]=data[i];
+			data[j+1] = temp;	// data[j] < temp인 경우 while문 탈출하면서 j-- 되있으므로 j+1에 둬야함.
 		}
 	}
 	
@@ -114,9 +120,9 @@ public class Exercise04_2 {
 			merge(data, p, q, r);
 		}
 	}
+	public static int [] tmp = new int[100000];
 	private static void merge(int[] data, int p, int q, int r) {
 		int i=p, j=q+1, k=p;
-		int[] tmp = new int[data.length];
 		while(i<=q&&j<=r) {
 			if(data[i]<=data[j])
 				tmp[k++]=data[i++];

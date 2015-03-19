@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
 
@@ -8,43 +7,67 @@ import java.util.Random;
  * 반드시 동일한 데이터로 세가지 알고리즘의 실행시간을 측정해야 한다.
  */
 public class Exercise04_1 {
+	private static int N;
 	public static void main(String [] args) {
 		Random rd = new Random();
 		int[] cases = {100,1000,10000,100000};
-		int N;
 		int [] data;
+		int [] temp;
 		long begin;
 		long end;
 		
 		for(int t=0;t<cases.length;t++) {
 			N = cases[t];
 			data = new int[N];
+			temp = new int[N];
 			
 			System.out.println("<"+N+" data case>");
 			for(int i=0;i<N;i++)
 				data[i] = rd.nextInt(N);
 			
-			
+			temp = Arrays.copyOf(data, N);
 			begin = System.currentTimeMillis();
-			selectionSort(Arrays.copyOf(data, N));
+			selectionSort(temp);
 			end = System.currentTimeMillis();
 			System.out.println("Selection Sort: "+(end-begin)/1000.0);
+			if(t==0) Print(temp);
 			
+			temp = Arrays.copyOf(data, N);
 			begin = System.currentTimeMillis();
-			bubbleSort(Arrays.copyOf(data, N));
+			//bubbleSort(temp);
+			int bbtemp;
+			for(int last=temp.length-1;last>0;last--) {
+				for(int i=0;i<last;i++) {
+					if(temp[i]>temp[i+1]) {
+						bbtemp = temp[i];
+						temp[i] = temp[i+1];
+						temp[i+1] = bbtemp;
+					}
+				}
+			}
 			end = System.currentTimeMillis();
 			System.out.println("Bubble Sort: "+(end-begin)/1000.0);
+			if(t==0) Print(temp);
 			
+			temp = Arrays.copyOf(data, N);
 			begin = System.currentTimeMillis();
-			insertionSort(Arrays.copyOf(data, N));
+			insertionSort(temp);
 			end = System.currentTimeMillis();
 			System.out.println("Insertion Sort: "+(end-begin)/1000.0);
+			if(t==0) Print(temp);
 			
+			temp = Arrays.copyOf(data, N);
 			begin = System.currentTimeMillis();
-			mergeSort(Arrays.copyOf(data, N),0,N-1);
+			mergeSort(temp,0,N-1);
 			end = System.currentTimeMillis();
 			System.out.println("Merge Sort: "+(end-begin)/1000.0);
+			if(t==0) Print(temp);
 		}
+	}
+	private static void Print(int[] temp) {
+		for(int i=0;i<N;i++) 
+			System.out.print(temp[i]+", ");
+		System.out.println("");
 	}
 	
 	private static void selectionSort(int[] data) {
@@ -55,13 +78,12 @@ public class Exercise04_1 {
 				if(data[tempIndex]<data[i]) {
 					tempIndex=i;
 				}
-				max = data[tempIndex];
-				data[tempIndex] = data[last];
-				data[last] = max;
 			}
+			max = data[tempIndex];			// swap을 한 번만 함
+			data[tempIndex] = data[last];
+			data[last] = max;
 			
 		}
-		
 	}
 	
 	private static void bubbleSort(int[] data) {
@@ -75,17 +97,18 @@ public class Exercise04_1 {
 				}
 			}
 		}
-		
 	}
-	
+	private static int swp;
 	private static void insertionSort(int[] data) {
-		for(int i=1;i<data.length;i++) {
-			int j=i-1;
-			while(j>=0&&data[i]<data[j]) {
-				data[j+1]=data[j];
+		for(int i=1;i<data.length;i++) {	// i는 오름차순으로 진행
+			int j = i-1; int temp = data[i];
+			while(j>=0&&data[j]>temp) {	// j는 내림차순으로 진행
+				swp = data[j]; // swap(data[j], data[j+1]) not swap(data[j], data[i])!
+				data[j] = data[j+1];
+				data[j+1] = swp;	// 매번 스왑하지 않고 한번씩만 쓰기 할 순 없을까? 스왑을 한 번만 해도 쓰기를 세 번하는게 더 영향이 큰듯?
 				j--;
 			}
-			data[j+1]=data[i];
+			data[j+1] = temp;	// data[j] < temp인 경우 while문 탈출하면서 j-- 되있으므로 j+1에 둬야함.
 		}
 	}
 	
@@ -97,9 +120,9 @@ public class Exercise04_1 {
 			merge(data, p, q, r);
 		}
 	}
+	public static int [] tmp = new int[100000];
 	private static void merge(int[] data, int p, int q, int r) {
 		int i=p, j=q+1, k=p;
-		int[] tmp = new int[data.length];
 		while(i<=q&&j<=r) {
 			if(data[i]<=data[j])
 				tmp[k++]=data[i++];
