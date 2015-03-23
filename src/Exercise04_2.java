@@ -36,25 +36,25 @@ public class Exercise04_2 {
 				
 				temp = Arrays.copyOf(data, N);
 				begin = System.currentTimeMillis();
-				selectionSort(Arrays.copyOf(data, N));
+				selectionSort(temp);
 				end = System.currentTimeMillis();
 				selectionSum+=(end-begin)/1000.0;
 				
 				temp = Arrays.copyOf(data, N);
 				begin = System.currentTimeMillis();
-				bubbleSort(Arrays.copyOf(data, N));
+				bubbleSort(temp);
 				end = System.currentTimeMillis();
 				bubbleSum+=(end-begin)/1000.0;
 				
 				temp = Arrays.copyOf(data, N);
 				begin = System.currentTimeMillis();
-				insertionSort(Arrays.copyOf(data, N));
+				insertionSort(temp);
 				end = System.currentTimeMillis();
 				insertionSum+=(end-begin)/1000.0;
 				
 				temp = Arrays.copyOf(data, N);
 				begin = System.currentTimeMillis();
-				mergeSort(Arrays.copyOf(data, N),0,N-1);
+				mergeSort(temp,0,N-1);
 				end = System.currentTimeMillis();
 				mergeSum+=(end-begin)/1000.0;
 			}
