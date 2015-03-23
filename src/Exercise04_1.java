@@ -34,17 +34,17 @@ public class Exercise04_1 {
 			
 			temp = Arrays.copyOf(data, N);
 			begin = System.currentTimeMillis();
-			//bubbleSort(temp);
-			int bbtemp;
-			for(int last=temp.length-1;last>0;last--) {
-				for(int i=0;i<last;i++) {
-					if(temp[i]>temp[i+1]) {
-						bbtemp = temp[i];
-						temp[i] = temp[i+1];
-						temp[i+1] = bbtemp;
-					}
-				}
-			}
+			bubbleSort(temp);
+//			int bbtemp;
+//			for(int last=temp.length-1;last>0;last--) {
+//				for(int i=0;i<last;i++) {
+//					if(temp[i]>temp[i+1]) {
+//						bbtemp = temp[i];
+//						temp[i] = temp[i+1];
+//						temp[i+1] = bbtemp;
+//					}
+//				}
+//			}	// 어떻게 된게 함수 호출 안한게 더 느리지...
 			end = System.currentTimeMillis();
 			System.out.println("Bubble Sort: "+(end-begin)/1000.0);
 			if(t==0) Print(temp);
