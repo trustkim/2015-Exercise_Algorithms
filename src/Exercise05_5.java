@@ -73,7 +73,9 @@ public class Exercise05_5 {
 		
 		int i=p-1;
 		for(int j=p;j<r;j++) {
-			if(data[j] < x) {
+			if(data[j] <
+					
+					x) {
 				i++;
 				temp = data[j];
 				data[j] = data[i];
@@ -87,7 +89,6 @@ public class Exercise05_5 {
 		
 		return i+1;
 	}
-	
 	private static void quickSelection(int[] data, int p, int r) {
 		if(p<r) {
 			int q = partition(data, p, r);
@@ -99,6 +100,7 @@ public class Exercise05_5 {
 				quickSelection(data, p, q-1);
 			}else if(k-1>q)	// 피벗보다 작은 값의 개수가 k보다 큰 경우
 				quickSelection(data, q+1, k-1);
-		}
+		}else
+			System.out.println("k-th data: " + data[k-1]);		// 정렬을 결국 모두 마친 경우
 	}
 }
