@@ -18,28 +18,28 @@ public class Exercise05_5 {
 	private static int k;
 	public static void main(String [] args) {
 		Random rd = new Random();
-		int N = 10;//0000;
+		int N = 100000;
 		int [] data = new int[N];
 		int [] temp = new int[N];
 		for(int i=0;i<N;i++)
 			data[i] = rd.nextInt(N);
 		
-		System.out.println("input data:");
-		for(int i=0;i<N;i++)
-			System.out.print(data[i]+", ");
-		System.out.println();
+//		System.out.println("input data:");
+//		for(int i=0;i<N;i++)
+//			System.out.print(data[i]+", ");
+//		System.out.println();
 		
-		k = 3;								// input k
+		k = 55555;								// input k
 		
 		temp = Arrays.copyOf(data, N);
 		long start = System.currentTimeMillis();
 		quickSort(temp, 0, N-1);				// quickSort -> pick k-th data
 		System.out.println("k-th data: "+temp[k-1]);
 		System.out.println("Elapsed: "+((long) System.currentTimeMillis()-start)/1000.0);
-		System.out.println("sorted data:");
-		for(int i=0;i<N;i++)
-			System.out.print(temp[i]+", ");
-		System.out.println();
+//		System.out.println("sorted data:");
+//		for(int i=0;i<N;i++)
+//			System.out.print(temp[i]+", ");
+//		System.out.println();
 		
 		temp = Arrays.copyOf(data, N);
 		start = System.currentTimeMillis();
@@ -73,9 +73,7 @@ public class Exercise05_5 {
 		
 		int i=p-1;
 		for(int j=p;j<r;j++) {
-			if(data[j] <
-					
-					x) {
+			if(data[j] < x) {
 				i++;
 				temp = data[j];
 				data[j] = data[i];
@@ -99,7 +97,7 @@ public class Exercise05_5 {
 			else if(k-1<q){	// 피벗보다 작은 값의 개수가 k보다 큰 경우
 				quickSelection(data, p, q-1);
 			}else if(k-1>q)	// 피벗보다 작은 값의 개수가 k보다 큰 경우
-				quickSelection(data, q+1, k-1);
+				quickSelection(data, q+1, r);
 		}else
 			System.out.println("k-th data: " + data[k-1]);		// 정렬을 결국 모두 마친 경우
 	}
