@@ -13,16 +13,16 @@ import java.util.Random;
 public class Exercise06_2 {
 	static class PQueue {
 		int [] data;
-		PQueue() { data = new int[100000];}
+		PQueue() { data = new int[1000000];}
 	}
 	private static int heapSize = 0;
 	public static void main(String[] args) {
 		PQueue pqueue = new PQueue();	// 힙을 이용한 우선순위 큐
 		PQueue naive = new PQueue();	// naive한 우선순위 큐
 		
-		test(pqueue, 10000, 10000);
+		test(pqueue, 100000, 10000);
 		heapSize=0;
-		naive_test(naive, 10000, 10000);
+		naive_test(naive, 100000, 10000);
 	}
 
 	private static void naive_test(PQueue queue, int N, int M) {
