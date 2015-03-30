@@ -1,7 +1,8 @@
 import java.util.Random;
 
 /*
- * 두 양의 정수 N과 K를 입력받은
+ * 두 양의 정수 N과 K를 입력받은 후 N개의 K자리 양의 정수를 랜덤하게 생성하여 배열에 저장한다.
+ * Radixsort 알고리즘을 구현한 후 생성한 정수들을 정렬하라.
  */
 public class Exercise07_2 {
 	private static int N;
@@ -16,7 +17,6 @@ public class Exercise07_2 {
 		for(int i=0;i<N;i++) {
 			data[i] = rd.nextInt((int)Math.pow(10, K));
 		}
-		int[] data_B = new int[N]; 
 		
 		System.out.print("sourceData: ");Print(data);
 		radixSort(data,K);
