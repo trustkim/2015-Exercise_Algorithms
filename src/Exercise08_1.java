@@ -7,8 +7,9 @@ import java.util.Queue;
  */
 public class Exercise08_1 {
 	public static void main(String[] args) {
+		String[] samples = {"fox", "bear", "goose", "ant", "dog", "hippo", "cat", "eagle", "iguana"};
 		BinaryTree binaryTree_test = new BinaryTree();
-		binaryTree_test.makeSampleTree();
+		binaryTree_test.makeSampleTree(samples);
 		
 		System.out.print("inorder traversal: ");
 		binaryTree_test.inorderTraversal(binaryTree_test.root);
@@ -64,8 +65,7 @@ class BinaryTree {
 		}
 		return root;
 	}
-	public void makeSampleTree() {
-		String[] samples = {"fox", "bear", "goose", "ant", "dog", "hippo", "cat", "eagle", "iguana"};
+	public void makeSampleTree(String[] samples) {
 		System.out.print("Sample data: ");
 		for(int i=0;i<samples.length;i++) {
 			root = append_branch(root, samples[i]);
