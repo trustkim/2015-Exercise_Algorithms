@@ -48,17 +48,17 @@ class BinaryTree {
 		}else {
 			Node P = root; int sw = 1;
 			while(sw==1) {
-				if(P.data.compareTo(Cur.data)>=0){
-					if(P.left==null) {
-						P.left = Cur; sw=0;
+				if(P.data.compareTo(Cur.data)>=0){	// 현재 노드와 추가할 노드의 순서를 비교
+					if(P.left==null) {				// 왼쪽 자식이 비었으면
+						P.left = Cur; sw=0;			// 왼쪽 자식에 추가할 노드를 추가
 					}else {
-						P = P.left;
+						P = P.left;					// 왼쪽 자식 노드로 가서 검사
 					}
 				}else {
-					if(P.right==null){
-						P.right = Cur; sw=0;
+					if(P.right==null){				// 오른쪽 자식이 비었으면
+						P.right = Cur; sw=0;		// 오른쪽 자식에 추가할 노드를 추가
 					}else {
-						P = P.right;
+						P = P.right;				// 오른쪽 자식 노드로 가서 검사
 					}
 				}
 			}
