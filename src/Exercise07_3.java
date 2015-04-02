@@ -28,6 +28,16 @@ public class Exercise07_3 {
 				return A.address.compareTo(B.address);
 			}
 		};
+		public static Comparator<Person> phoneComparator = new Comparator<Person>() {
+			public int compare(Person A, Person B) {
+				return A.name.compareTo(B.phone);
+			}
+		};
+		public static Comparator<Person> mailComparator = new Comparator<Person>() {
+			public int compare(Person A, Person B) {
+				return A.name.compareTo(B.mail);
+			}
+		};
 	}
 	
 	private static final int MAX = 1000;
@@ -41,17 +51,25 @@ public class Exercise07_3 {
 				i++;
 				size++;
 			}	// file read complete
-			//Print(people, size);
-			
-			// sort by name
-			Arrays.sort(people, 0, size, Person.nameComparator);	// 여유가 있으므로 반드시 범위를 지정해 줘야 함
-			// print
-			Print(people, size);
-			// sort by address
-			Arrays.sort(people, 0, size, Person.addressComparator);
-			// print
-			Print(people, size);
-			// exit
+			sc.close();
+			sc = new Scanner(System.in);
+			boolean isExit = false;
+			while(!isExit) {
+				String cmd = sc.nextLine();
+				if(cmd.equals("sort by name")) {		// sort by name
+					Arrays.sort(people, 0, size, Person.nameComparator);	// 여유가 있으므로 반드시 범위를 지정해 줘야 함
+				}else if(cmd.equals("sort by address")) {
+					Arrays.sort(people, 0, size, Person.addressComparator);	// sort by address
+				}else if(cmd.equals("sort by phone")) {
+					Arrays.sort(people, 0, size, Person.phoneComparator);	// sort by phone
+				}else if(cmd.equals("sort by email")) {
+					Arrays.sort(people, 0, size, Person.mailComparator);	// sort by mail
+				}else if(cmd.equals("print")) {
+					Print(people, size);		// print
+				}else if(cmd.equals("exit")) {
+					isExit = true;//System.exit(0);				// exit
+				}	
+			}
 			sc.close();
 		} catch(FileNotFoundException e) { System.out.println("file not found...");}
 	}
