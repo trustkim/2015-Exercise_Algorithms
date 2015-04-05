@@ -65,9 +65,9 @@ public class Exercise07_3 {
 				}else if(cmd.equals("sort by email")) {
 					Arrays.sort(people, 0, size, Person.mailComparator);	// sort by mail
 				}else if(cmd.equals("print")) {
-					Print(people, size);		// print
+					Print(people, size);									// print
 				}else if(cmd.equals("exit")) {
-					isExit = true;//System.exit(0);				// exit
+					isExit = true;											// exit
 				}	
 			}
 			sc.close();
