@@ -125,15 +125,15 @@ class BinarySearchTree {
 		return y;
 	}
 	public void insert(BinarySearchTree T, Node z) {
-		Node y = null;
+		Node y = null;		// 추가할 노드의 parent 위치를 추적
 		Node x = T.root;
 		while(x!=null) {
-			y = x;
+			y = x;			// 이전 반복문에서의 현재 노드가 이번 반복문에서의 부모 노드
 			if(z.key < x.key)
-				x = x.left;
-			else x = x.right;
-		}
-		z.parent = y;
+				x = x.left;	// 키가 작으면 왼쪽
+			else x = x.right;	// 크면 오른쪽
+		}	// 추가할 노드의 위치 찾기 끝
+		z.parent = y;	// 추가할 노드의 부모 지정
 		if(y==null)
 			T.root = z;	// Tree T was empty
 		else if(z.key < y.key)
