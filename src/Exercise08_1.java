@@ -25,13 +25,13 @@ public class Exercise08_1 {
 	}
 }
 
-class Node {
-	String data;
-	Node left,right,parent;
-	Node() {
-		data = ""; left=null;right=null;parent=null;
-	}
-}
+//class Node {
+//	String data;
+//	Node left,right,parent;
+//	Node() {
+//		data = ""; left=null;right=null;parent=null;
+//	}
+//}
 
 class BinaryTree {
 	public Node root;
