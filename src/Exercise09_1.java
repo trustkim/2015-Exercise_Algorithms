@@ -14,53 +14,24 @@ import java.util.Random;
 public class Exercise09_1 {
 	public static void main(String[] args) {		
 		int N = 10;						// 추가 삭제할 샘플 수
-		//int[] sample = new int[N];			// 추가 삭제할 샘플 배열
-		
-		int[] initKey = {15,6,18,3,7,17,20,2,4};	// 초기 트리에 넣을 키 값, initData는 초기 데이터
-		String[] initData = {"fox", "bear", "goose", "ant", "dog", "hippo", "cat", "eagle", "iguana"};
-		
 		Random rd = new Random();
-		//Scanner sc = new Scanner(System.in);
-		BinarySearchTree bst = new BinarySearchTree();	// BSF
-		bst = makeSampleTree(initKey, initData);		// 초기 키, 데이터로 초기화
-		bst.inorderTraversal(bst.root);
-		System.out.println();
+		BinarySearchTree bst = new BinarySearchTree();
 		
 		// (1) 먼저 이미 이진검색트리에 있는지 검사한다.
 		for(int i=0;i<N;i++) {
 			int sample = rd.nextInt(N);
-			System.out.println("now check the key is "+sample);
+			System.out.print("now check the key is "+sample);
 			if(bst.search(bst.root, sample)==null) {	// 이진검색트리에 없으면,
 				bst.insert(bst, new Node(sample));						// (3) 없으면 그 값을 트리에 insert한다.
-				System.out.println("insert!");
+				System.out.print(" insert!\n");
 			}else {
 				bst.delete(bst, bst.search(bst.root, sample));
-				System.out.println("delete!");
+				System.out.print(" delete!\n");
 			}	// (2) 만약 있으면 그 값을 트리로 부터 삭제한다.
 			bst.inorderTraversal(bst.root);
 			System.out.println();
 			// (4) 마지막으로 트리를 inorder traverse 하면서 방문된 순서대로 정수들을 출력한다.
 		}
-		
-		
-		
-		//sc.close();
-	}
-	private static BinarySearchTree makeSampleTree(int[] samples, String[] data_samples) {
-		BinarySearchTree T = new BinarySearchTree();
-		System.out.print("Sample key: ");
-		for(int i=0;i<samples.length;i++) {
-			Node temp = new Node();
-			temp.key = samples[i];
-			temp.data = String.copyValueOf(data_samples[i].toCharArray());
-			T.insert(T,temp);
-			System.out.print(samples[i]+", ");
-		}
-		System.out.println("\nSample data: ");
-		for(int i=0;i<samples.length;i++)
-			System.out.print(data_samples[i]+", ");
-		System.out.println();
-		return T;
 	}
 }
 
