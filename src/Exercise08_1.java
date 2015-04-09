@@ -25,18 +25,17 @@ public class Exercise08_1 {
 	}
 }
 
-//class Node {
-//	String data;
-//	Node left,right,parent;
-//	Node() {
-//		data = ""; left=null;right=null;parent=null;
-//	}
-//}
-
 class BinaryTree {
 	public Node root;
 	public BinaryTree() {
 		root = null;
+	}
+	private class Node {
+		String data;
+		Node left,right;
+		Node() {
+			data = ""; left=null;right=null;
+		}
 	}
 	public Node append_branch(Node root, String data) {
 		Node Cur = new Node();

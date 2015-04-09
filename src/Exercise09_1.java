@@ -13,7 +13,7 @@ import java.util.Random;
  */
 public class Exercise09_1 {
 	public static void main(String[] args) {		
-		int N = 10;						// 추가 삭제할 샘플 수
+		int N = 15;						// 추가 삭제할 샘플 수
 		Random rd = new Random();
 		BinarySearchTree bst = new BinarySearchTree();
 		
@@ -22,7 +22,7 @@ public class Exercise09_1 {
 			int sample = rd.nextInt(N);
 			System.out.print("now check the key is "+sample);
 			if(bst.search(bst.root, sample)==null) {	// 이진검색트리에 없으면,
-				bst.insert(bst, new Node(sample));						// (3) 없으면 그 값을 트리에 insert한다.
+				bst.insert(sample);						// (3) 없으면 그 값을 트리에 insert한다.
 				System.out.print(" insert!\n");
 			}else {
 				bst.delete(bst, bst.search(bst.root, sample));
@@ -35,19 +35,14 @@ public class Exercise09_1 {
 	}
 }
 
-class Node {
-	int key;
-	String data;
-	Node left,right,parent;
-	Node() {
-		data = ""; left=null;right=null;parent=null;
-	}
-	Node(int key, String data) { this.key=key; this.data=String.copyValueOf(data.toCharArray()); left=right=parent=null; }
-	Node(int key) { this.key = key; this.data=""; left=right=parent=null; }
-	
-}
-
 class BinarySearchTree {
+	private class Node {
+		int key;
+		String data;
+		Node left,right,parent;
+		Node(int key) { this.key = key; this.data=""; left=right=parent=null; }
+		
+	}
 	public Node root;
 	public BinarySearchTree() {
 		root = null;
@@ -95,9 +90,10 @@ class BinarySearchTree {
 		}
 		return y;
 	}
-	public void insert(BinarySearchTree T, Node z) {
+	public void insert(int k) {
+		Node z = new Node(k);
 		Node y = null;		// 추가할 노드의 parent 위치를 추적
-		Node x = T.root;
+		Node x = root;
 		while(x!=null) {
 			y = x;			// 이전 반복문에서의 현재 노드가 이번 반복문에서의 부모 노드
 			if(z.key < x.key)
@@ -106,7 +102,7 @@ class BinarySearchTree {
 		}	// 추가할 노드의 위치 찾기 끝
 		z.parent = y;	// 추가할 노드의 부모 지정
 		if(y==null)
-			T.root = z;	// Tree T was empty
+			root = z;	// Tree T was empty
 		else if(z.key < y.key)
 			y.left = z;
 		else y.right = z;
