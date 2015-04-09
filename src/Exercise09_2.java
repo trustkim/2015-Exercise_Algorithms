@@ -177,7 +177,7 @@ class MyTreeMap<K extends Comparable<K>, V> {
 			z.key = y.key;
 			z.value = y.value;
 		}
-		nbrNodes--;	// 전체 노드 개수 1 감소
+		if(nbrNodes>0) nbrNodes--;	// 전체 노드 개수 1 감소
 		return y;	// 삭제된 노트
 	}
 	private void inorderTraversal(Node x, PrintStream out) {
