@@ -124,14 +124,15 @@ class MyTreeMap<K extends Comparable<K>, V> {
 		else
 			return search(x.right, k);
 	}
-	private Node minimum(Node x) {
+	private Node minimum() {
+		Node x = root;
 		while(x.left != null)
 			x=x.left;
 		return x;
 	}
 	private Node successor(Node x) {
 		if(x.right!=null)
-			return minimum(x.right);
+			return minimum();
 		Node y = x.parent;
 		while(y!=null && x==y.right) {
 			x = y;
@@ -186,7 +187,8 @@ class MyTreeMap<K extends Comparable<K>, V> {
 			inorderTraversal(x.right, out);
 		}
 	}
-//	private Node maximum(Node x) {
+//	private Node maximum() {
+//	Node x = root;
 //	while(x.right != null)
 //		x = x.right;
 //	return x;
