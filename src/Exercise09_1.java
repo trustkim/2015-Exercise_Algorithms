@@ -40,8 +40,7 @@ class BinarySearchTree {
 		int key;
 		String data;
 		Node left,right,parent;
-		Node(int key) { this.key = key; this.data=""; left=right=parent=null; }
-		
+		Node(int key) { this.key = key; this.data=""; left=right=parent=null; }	
 	}
 	public Node root;
 	public BinarySearchTree() {
