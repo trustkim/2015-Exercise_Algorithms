@@ -126,7 +126,7 @@ class BinarySearchTree {
 			z.key = y.key;
 			z.data = String.copyValueOf(y.data.toCharArray());
 		}
-		return y;	// 삭제된 노트
+		return y;	// 삭제된 노드
 	}
 	public void inorderTraversal(Node x) {
 		if(x!=null){
