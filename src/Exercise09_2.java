@@ -36,8 +36,6 @@ public class Exercise09_2 {
 				}
 			}
 			System.out.println("MyTreeMap's size is "+treeMap.size()+" nodes");
-			System.out.println(treeMap.remove("a"));
-			System.out.println(treeMap.containsKey("a"));
 			sc.close();
 			try {
 				PrintStream ps = new PrintStream(new File("output09_2.txt"));
