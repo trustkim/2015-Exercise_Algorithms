@@ -129,10 +129,12 @@ class MyRBTreeMap<K extends Comparable<K>, V> {
 	public void clear() { root = null; }
 
 	/* 레드 블랙 트리에 추가된 private 메소드들  */
-	private void leftRotate(Node x) {
-		Node y = x.right;	// y != null이라고 가정
+	private void leftRotate(Node x) {	// y != null이라고 가정
+		Node y = x.right;
 		x.right = y.left;
-		y.left.parent = x;		// 여기까지 자식 관계 정리
+		if(y.left!=null)		// 베타가 null이 아니면
+			y.left.parent = x;
+		// 여기까지 자식 관계 정리
 		// 부모 관계 정리 시작
 		y.parent = x.parent;	// x의 부모를 y의 부모로 바꿈
 		if(x.parent == null) {
@@ -147,7 +149,8 @@ class MyRBTreeMap<K extends Comparable<K>, V> {
 	private void rightRotate(Node y) {
 		Node x = y.left;
 		y.left = x.right;
-		x.right.parent = y;
+		if(x.right!=null)			// 베타가 null이 아니면
+			x.right.parent = y;
 		x.parent = y.parent;
 		if(y.parent == null) {
 			root = x;
@@ -172,8 +175,10 @@ class MyRBTreeMap<K extends Comparable<K>, V> {
 						leftRotate(z);				// 부모에 대하여 leftRotate 진행
 					}	// 경우2는 항상 경우3으로 진행		// Case3: z가 왼쪽 자식
 					z.parent.color = BLACK;			// 부모를 BLACK으로
-					z.parent.parent.color = RED;	// 할아버지를 RED로
-					rightRotate(z.parent.parent);	// 할아버지에 대하여 rightRotate 진행
+					if(z.parent.parent!=null) {
+						z.parent.parent.color = RED;	// 할아버지를 RED로
+						rightRotate(z.parent.parent);	// 할아버지에 대하여 rightRotate 진행
+					}
 				}
 			}else {									// z의 부모가 할아버지의 오른쪽 자식인 경우
 				Node y = z.parent.parent.left;		// y는 z의 삼촌
@@ -188,8 +193,10 @@ class MyRBTreeMap<K extends Comparable<K>, V> {
 						rightRotate(z);				// 부모에 대하여 rightRotate 진행
 					}
 					z.parent.color = BLACK;			// Case 6
-					z.parent.parent.color = RED;
-					leftRotate(z.parent.parent);	// 할아버지에 대하여 leftRotate 진행
+					if(z.parent.parent!=null) {
+						z.parent.parent.color = RED;
+						leftRotate(z.parent.parent);	// 할아버지에 대하여 leftRotate 진행
+					}
 				}
 			}
 		}
