@@ -92,103 +92,92 @@ class RedBlackTree {
 	} // O(1)
 	private void rbInsertFixup(Node z) {
 		while(z.parent!=null && z.parent.color==RED) {	// z의 부모가 RED인 경우(RED-RED violation). 할아버지는 반드시 BLACK
-			if(z.parent == z.parent.parent.left) {	// z의 부모가 할아버지의 왼쪽 자식인 경우
-				Node y = z.parent.parent.right;		// y는 z의 삼촌
-				if(y!=null && y.color==RED) {					// Case1: 삼촌이 RED
-					z.parent.color = BLACK;			// z의 부모를 BLACK으로
-					y.color = BLACK;				// z의 삼촌도 BLACK으로
-					z.parent.parent.color = RED;	// z의 할아버지를 RED로
-					z = z.parent.parent;			// 다시 z의 할아버지에 대하여 경우1 검사 반복
+			if(z.parent == z.parent.parent.left) {		// z의 부모가 할아버지의 왼쪽 자식인 경우
+				Node y = z.parent.parent.right;			// y는 z의 삼촌
+				if(y!=null && y.color==RED) {			// Case1: 삼촌이 RED (삼촌이 null이면 안된다)
+					z.parent.color = BLACK;				// z의 부모를 BLACK으로
+					y.color = BLACK;					// z의 삼촌도 BLACK으로
+					z.parent.parent.color = RED;		// z의 할아버지를 RED로
+					z = z.parent.parent;				// 다시 z의 할아버지에 대하여 경우1 검사 반복
 				}else {	// 경우2~3은 삼촌이 BLACK인 경우
-					if(z == z.parent.right) {		// Case2: z가 오른쪽 자식
+					if(z == z.parent.right) {			// Case2: z가 오른쪽 자식
 						z = z.parent;
-						leftRotate(z);				// 부모에 대하여 leftRotate 진행
-					}	// 경우2는 항상 경우3으로 진행		// Case3: z가 왼쪽 자식
-					z.parent.color = BLACK;			// 부모를 BLACK으로
-					if(z.parent.parent!=null) {
-						z.parent.parent.color = RED;	// 할아버지를 RED로
-						rightRotate(z.parent.parent);	// 할아버지에 대하여 rightRotate 진행
-					}
+						leftRotate(z);					// 부모에 대하여 leftRotate 진행 (삽입할 노드의 부모는 항상 존재하므로 null여부를 체크 해주지 않아도 됨)
+					}	// 경우2는 항상 경우3으로 진행			// Case3: z가 왼쪽 자식
+					z.parent.color = BLACK;				// 부모를 BLACK으로
+					// 삽입할 노드의 할아버지 노드는 null이면 안됨(즉, 삽입할 노드가 root의 자식으로 추가된는 경우. 그러나 이 경우는 케이스3으로 진행될 수 없어 따로 체크 해주지 않아도 됨)
+					z.parent.parent.color = RED;	// 할아버지를 RED로
+					rightRotate(z.parent.parent);	// 할아버지에 대하여 rightRotate 진행
 				}
-			}else {									// z의 부모가 할아버지의 오른쪽 자식인 경우
-				Node y = z.parent.parent.left;		// y는 z의 삼촌
-				if(y!=null && y.color==RED) {					// Case 4
+			}else {										// z의 부모가 할아버지의 오른쪽 자식인 경우
+				Node y = z.parent.parent.left;			// y는 z의 삼촌
+				if(y!=null && y.color==RED) {			// Case 4
 					z.parent.color = BLACK;
 					y.color = BLACK;
 					z.parent.parent.color = RED;
 					z = z.parent.parent;
 				}else {
-					if(z == z.parent.left) {		// Case 5
+					if(z == z.parent.left) {			// Case 5
 						z = z.parent;
-						rightRotate(z);				// 부모에 대하여 rightRotate 진행
+						rightRotate(z);					// 부모에 대하여 rightRotate 진행
 					}
-					z.parent.color = BLACK;			// Case 6
-					if(z.parent.parent!=null) {
-						z.parent.parent.color = RED;
-						leftRotate(z.parent.parent);	// 할아버지에 대하여 leftRotate 진행
-					}
+					z.parent.color = BLACK;				// Case 6
+					z.parent.parent.color = RED;
+					leftRotate(z.parent.parent);	// 할아버지에 대하여 leftRotate 진행
 				}
 			}
 		}
 		root.color = BLACK;
 	}	// O(logN)
-	private void rbDeleteFixup(Node x) {	// 여기에 x의 부분
-		while(x!=null && x!=root && x.color==BLACK) {
+	private void rbDeleteFixup(Node x) {
+		while(x!=null && x!=root && x.color==BLACK) { 
 			if(x==x.parent.left) {	// 경우 1~4: x가 부모의 왼쪽 자식
-				Node w = x.parent.right;// w는 z의 형제
-				if(w!=null){
-					if(w.color == RED) {								// 경우1: 형제가 RED인 경우
-						w.color = BLACK;
-						x.parent.color = RED;
-						leftRotate(x.parent);
-						w = x.parent.right;
-					}
-					if(w.left!=null && w.left.color==BLACK && w.right!=null && w.right.color==BLACK) {	// 경우2
+				Node w = x.parent.right;	// w는 z의 형제
+				if(w.color == RED) {								// 경우1: 형제가 RED인 경우
+					w.color = BLACK;								// 형제를 BLACK으로
+					x.parent.color = RED;							// 부모를 RED로
+					leftRotate(x.parent);							// 부모를 기준으로 leftRotate					
+					w = x.parent.right;								// leftRotate로 바뀐 형제를 갱신. 즉 원래 형제의 왼쪽 자식(BLACK)이 새로운 형제가 됨.
+				}	// 경우2~4로 진행
+				if(w.left.color==BLACK && w.right.color==BLACK) {	// 경우2: 형제는 BLACK, 형제의 자식들도 BLACK인 경우
 						w.color = RED;
 						x = x.parent;
-					}else {
-						if(w.right!=null&&w.right.color == BLACK) {					// 경우3
-							if(w.left!=null)
-								w.left.color = BLACK;
-							w.color = RED;
-							rightRotate(w);
-							w = x.parent.right;
-						}	// 경우4로 진행
-						w.color = x.parent.color;						// 경우4
-						x.parent.color = BLACK;
-						if(w.right!=null)
-							w.right.color = BLACK;
-						leftRotate(x.parent);
-						x = root;
-					}
+				}else {
+					if(w.right.color == BLACK) {					// 경우3
+						w.left.color = BLACK;
+						w.color = RED;
+						rightRotate(w);
+						w = x.parent.right;
+					}	// 경우4로 진행
+					w.color = x.parent.color;						// 경우4
+					x.parent.color = BLACK;
+					w.right.color = BLACK;
+					leftRotate(x.parent);
+					x = root;
 				}
 			}else {					// 경우 5~8: x가 부모의 오른쪽 자식
 				Node w = x.parent.left;// w는 z의 형제
-				if(w!=null){
-					if(w.color == RED) {								// 경우5: 형제가 RED인 경우
-						w.color = BLACK;
-						x.parent.color = RED;
-						rightRotate(x.parent);
-						w = x.parent.left;
-					}
-					if(w.left!=null && w.left.color==BLACK && w.right!=null && w.right.color==BLACK) {	// 경우6
+				if(w.color == RED) {								// 경우5: 형제가 RED인 경우
+					w.color = BLACK;
+					x.parent.color = RED;
+					rightRotate(x.parent);
+					w = x.parent.left;
+				}
+				if(w.left.color==BLACK && w.right.color==BLACK) {	// 경우6
+					w.color = RED;
+					x = x.parent;
+				}else {
+					if(w.left.color == BLACK) {						// 경우7
+						w.right.color = BLACK;
 						w.color = RED;
-						x = x.parent;
-					}else {
-						if(w.left!=null&&w.left.color == BLACK) {						// 경우7
-							if(w.right!=null)
-								w.right.color = BLACK;
-							w.color = RED;
-							leftRotate(w);
-							w = x.parent.left;
-						}	// 경우8로 진행
-						w.color = x.parent.color;						// 경우8
-						x.parent.color = BLACK;
-						if(w.left!=null)
-							w.left.color = BLACK;
-						rightRotate(x.parent);
-						x = root;
-					}
+						leftRotate(w);
+						w = x.parent.left;
+					}	// 경우8로 진행
+					w.color = x.parent.color;						// 경우8
+					x.parent.color = BLACK;
+					w.left.color = BLACK;
+					rightRotate(x.parent);
+					x = root;
 				}
 			}
 		}
@@ -227,7 +216,7 @@ class RedBlackTree {
 		// z노드의 자식을 NIL로 설정하는 것과 RED 컬러링 하는 것은 Node의 생성자에서 담당
 		rbInsertFixup(z);
 	}	// O(logN)
-	public Node delete(Node z) {
+	public Node delete(Node z) {				// z가 삭제할 노드
 		Node y;
 		if(z.left== null || z.right==null) {
 			y = z;
