@@ -4,25 +4,36 @@ import java.util.Random;
  */
 public class Exercise10_1 {
 	public static void main(String[] args) {		
-		int N = 100000;						// 추가 삭제할 샘플 수
+		int N = 10000;						// 추가 삭제할 샘플 수
 		Random rd = new Random();
 		RedBlackTree rbt = new RedBlackTree();
 
+		long start = System.currentTimeMillis();
 		// (1) 먼저 이미 이진검색트리에 있는지 검사한다.
 		for(int i=0;i<N;i++) {
 			int sample = rd.nextInt(N);
-			System.out.print("now check the key is "+sample);
+			//System.out.print("now check the key is "+sample);
 			if(rbt.search(rbt.root, sample)==null) {	// 이진검색트리에 없으면,
+				//System.out.print(" insert!\n");
 				rbt.insert(sample);						// (3) 없으면 그 값을 트리에 insert한다.
-				System.out.print(" insert!\n");
 			}else {
-				//rbt.delete(rbt.search(rbt.root, sample));
-				System.out.print(" delete!\n");
+				//System.out.print(" delete!\n");
+				try{
+					rbt.delete(rbt.search(rbt.root, sample));
+					System.out.println("done");
+				}catch(NullPointerException e) {
+					e.printStackTrace();
+					//rbt.inorderTraversal(rbt.root);
+					//System.out.println();
+					System.exit(1);
+				}catch(Exception e) {
+					e.printStackTrace();
+				}
 			}	// (2) 만약 있으면 그 값을 트리로 부터 삭제한다.
-			//rbt.inorderTraversal(rbt.root);
-			System.out.println();
 			// (4) 마지막으로 트리를 inorder traverse 하면서 방문된 순서대로 정수들을 출력한다.
 		}
+		rbt.inorderTraversal(rbt.root);
+		System.out.println("\n"+((long)System.currentTimeMillis()-start)/1000.0);
 	}
 }
 
@@ -129,55 +140,77 @@ class RedBlackTree {
 		}
 		root.color = BLACK;
 	}	// O(logN)
-	private void rbDeleteFixup(Node x) {
+	private void rbDeleteFixup(Node x) {	// x는 삭제한 노드를 대신하여 삭제한 노드 자리에 들어가는 노드이다(double black이며 NIL일 수도 있다)
 		while(x!=null && x!=root && x.color==BLACK) { 
-			if(x==x.parent.left) {	// 경우 1~4: x가 부모의 왼쪽 자식
-				Node w = x.parent.right;	// w는 z의 형제
-				if(w.color == RED) {								// 경우1: 형제가 RED인 경우
-					w.color = BLACK;								// 형제를 BLACK으로
-					x.parent.color = RED;							// 부모를 RED로
-					leftRotate(x.parent);							// 부모를 기준으로 leftRotate					
-					w = x.parent.right;								// leftRotate로 바뀐 형제를 갱신. 즉 원래 형제의 왼쪽 자식(BLACK)이 새로운 형제가 됨.
-				}	// 경우2~4로 진행
-				if(w.left.color==BLACK && w.right.color==BLACK) {	// 경우2: 형제는 BLACK, 형제의 자식들도 BLACK인 경우
+			if(x==x.parent.left) {									// 경우 1~4: x가 부모의 왼쪽 자식. x가 double black인 경우
+				Node w = x.parent.right;	// w는 z의 형제(형제가 반드시 존재. 레드블랙 트리에서는 w가 NIL이 아니다. 자식 노드도 NIL이 아니다.)
+				if(w!=null) {
+					if(w.color == RED) {								// 경우1: 형제가 RED인 경우
+						System.out.println("case1");
+						w.color = BLACK;								// 형제를 BLACK으로
+						x.parent.color = RED;							// 부모를 RED로
+						leftRotate(x.parent);							// 부모를 기준으로 leftRotate
+						w = x.parent.right;								// leftRotate로 바뀐 형제를 갱신. 즉 원래 형제의 왼쪽 자식(BLACK)이 새로운 형제가 됨.
+					}	// x가 한 레벨 아래로 내려간 상태로 경우2~3로 진행				// 경우2~4는 형제가 BLACK인 경우, x의 부모는 Unknown.
+					if(w!=null&&((w.left==null&&w.right==null)||
+							(w.left==null&&w.right!=null&&w.right.color==BLACK)||
+							(w.left!=null&&w.left.color==BLACK&&w.right==null)||
+							(w.left!=null&&w.left.color==BLACK&&w.right!=null&&w.right.color==BLACK))) {	// 경우2: 형제의 자식들도 BLACK인 경우
+						System.out.println("case2");
+						w.color = RED;								// 형제 노드를 RED로
+						x = x.parent;								// x의 black 하나를 넘겨 받음. 즉 부모 노드에 대해 double black 인지 검사.
+					}else {
+						if(w!=null&&(w.right==null||(w.right!=null&&w.right.color == BLACK))) {					// 경우3: 형제의 왼쪽자식이 RED인 경우
+							System.out.println("case3");
+							if(w.left!=null)w.left.color = BLACK;						// w의 왼쪽 자식을 BLACK으로
+							w.color = RED;								// w를 RED로
+							rightRotate(w);								// w에 대해서 rightRotate
+							w = x.parent.right;							// x의 새로운 형제 w갱신. 새로운 w의 오른쪽 자식은 항상 RED이다
+						}	// 경우4로 진행									// 경우4: 형제의 왼족자식은 Unknown, 오른쪽자식이 RED인 경우
+						if(w!=null) {
+							System.out.println("case4");
+							w.color = x.parent.color;						// w의 색을 x의 부모의 색으로
+							x.parent.color = BLACK;							// x의 부모를 BLACK으로
+							w.right.color = BLACK;							// w의 오른쪽 자식을 BLACK으로
+							leftRotate(x.parent);							// x의 부모에 대해서 leftRotate
+							x = root;										// x가 root가 되면 while문을 탈출하게 됨
+						}
+					}
+				}
+			}else {													// 경우 5~8: x가 부모의 오른쪽 자식
+				Node w = x.parent.left;		// w는 z의 형제
+				if(w!=null) {
+					if(w.color == RED) {								// 경우5: 형제가 RED인 경우
+						System.out.println("case5");
+						w.color = BLACK;
+						x.parent.color = RED;
+						rightRotate(x.parent);
+						w = x.parent.left;
+					}
+					if(w!=null&&((w.left==null&&w.right==null)||
+							(w.left==null&&w.right!=null&&w.right.color==BLACK)||
+							(w.left!=null&&w.left.color==BLACK&&w.right==null)||
+							(w.left!=null&&w.left.color==BLACK&&w.right!=null&&w.right.color==BLACK))) {	// 경우6
+						System.out.println("case6");
 						w.color = RED;
 						x = x.parent;
-				}else {
-					if(w.right.color == BLACK) {					// 경우3
-						w.left.color = BLACK;
-						w.color = RED;
-						rightRotate(w);
-						w = x.parent.right;
-					}	// 경우4로 진행
-					w.color = x.parent.color;						// 경우4
-					x.parent.color = BLACK;
-					w.right.color = BLACK;
-					leftRotate(x.parent);
-					x = root;
-				}
-			}else {					// 경우 5~8: x가 부모의 오른쪽 자식
-				Node w = x.parent.left;// w는 z의 형제
-				if(w.color == RED) {								// 경우5: 형제가 RED인 경우
-					w.color = BLACK;
-					x.parent.color = RED;
-					rightRotate(x.parent);
-					w = x.parent.left;
-				}
-				if(w.left.color==BLACK && w.right.color==BLACK) {	// 경우6
-					w.color = RED;
-					x = x.parent;
-				}else {
-					if(w.left.color == BLACK) {						// 경우7
-						w.right.color = BLACK;
-						w.color = RED;
-						leftRotate(w);
-						w = x.parent.left;
-					}	// 경우8로 진행
-					w.color = x.parent.color;						// 경우8
-					x.parent.color = BLACK;
-					w.left.color = BLACK;
-					rightRotate(x.parent);
-					x = root;
+					}else {
+						if(w!=null&&(w.left==null||(w.left!=null&&w.left.color == BLACK))) {						// 경우7
+							if(w.right!=null)w.right.color = BLACK;
+							System.out.println("case7");
+							w.color = RED;
+							leftRotate(w);
+							w = x.parent.left;
+						}	// 경우8로 진행
+						if(w!=null){
+							System.out.println("case8");
+							w.color = x.parent.color;						// 경우8
+							x.parent.color = BLACK;
+							w.left.color = BLACK;
+							rightRotate(x.parent);
+							x = root;
+						}
+					}
 				}
 			}
 		}
