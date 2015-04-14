@@ -4,46 +4,47 @@ import java.util.Random;
  */
 public class Exercise10_1 {
 	public static void main(String[] args) {		
-		int N = 10000;						// 추가 삭제할 샘플 수
+		int N = 10000000;						// 추가 삭제할 샘플 수
 		Random rd = new Random();
 		RedBlackTree rbt = new RedBlackTree();
 		/*
 		 * rbDeleteFixup(x)에서 x가 null인 케이스 테스트
 		 */
-		rbt.insert(8);
+		rbt.insert(2);
+		rbt.insert(0);
 		rbt.insert(3);
-		rbt.insert(15);
-		rbt.insert(13);
-		rbt.insert(20);
+		rbt.insert(4);
 		rbt.inorderTraversal(rbt.root);
+		rbt.delete(rbt.search(rbt.root,4));
 		rbt.delete(rbt.search(rbt.root,3));
 		rbt.inorderTraversal(rbt.root);
-//		long start = System.currentTimeMillis();
-//		// (1) 먼저 이미 이진검색트리에 있는지 검사한다.
-//		for(int i=0;i<N;i++) {
-//			int sample = rd.nextInt(N);
-//			//System.out.print("now check the key is "+sample);
-//			if(rbt.search(rbt.root, sample)==null) {	// 이진검색트리에 없으면,
-//				//System.out.print(" insert!\n");
-//				rbt.insert(sample);						// (3) 없으면 그 값을 트리에 insert한다.
-//			}else {
-//				//System.out.print(" delete!\n");
-//				try{
-//					rbt.delete(rbt.search(rbt.root, sample));
-//					System.out.println("done");
-//				}catch(NullPointerException e) {
-//					e.printStackTrace();
-//					//rbt.inorderTraversal(rbt.root);
-//					//System.out.println();
-//					System.exit(1);
-//				}catch(Exception e) {
-//					e.printStackTrace();
-//				}
-//			}	// (2) 만약 있으면 그 값을 트리로 부터 삭제한다.
-//			// (4) 마지막으로 트리를 inorder traverse 하면서 방문된 순서대로 정수들을 출력한다.
-//		}
-//		rbt.inorderTraversal(rbt.root);
-//		System.out.println("\n"+((long)System.currentTimeMillis()-start)/1000.0);
+		long start = System.currentTimeMillis();
+		// (1) 먼저 이미 이진검색트리에 있는지 검사한다.
+		for(int i=0;i<N;i++) {
+			int sample = rd.nextInt(N);
+			//System.out.print("now check the key is "+sample);
+			if(rbt.search(rbt.root, sample)==null) {	// 이진검색트리에 없으면,
+				//System.out.print(" insert!\n");
+				rbt.insert(sample);						// (3) 없으면 그 값을 트리에 insert한다.
+			}else {
+				//System.out.print(" delete!\n");
+				try{
+					rbt.delete(rbt.search(rbt.root, sample));
+					//rbt.inorderTraversal(rbt.root);
+					//System.out.println();
+				}catch(NullPointerException e) {
+					e.printStackTrace();
+					//rbt.inorderTraversal(rbt.root);
+					//System.out.println();
+					System.exit(1);
+				}catch(Exception e) {
+					e.printStackTrace();
+				}
+			}	// (2) 만약 있으면 그 값을 트리로 부터 삭제한다.
+			// (4) 마지막으로 트리를 inorder traverse 하면서 방문된 순서대로 정수들을 출력한다.
+		}
+		//rbt.inorderTraversal(rbt.root);
+		System.out.println("\n"+((long)System.currentTimeMillis()-start)/1000.0);
 	}
 }
 
@@ -64,6 +65,11 @@ class RedBlackTree {
 	 *  - void rightRotate(Node y)
 	 *  - void rbInsertFixup(Node z)
 	 *  - void rbDeleteFixup(Node z)
+	 *  - int colorOf(Node x)
+	 *  - Node parentOf(Node x)
+	 *  - void setColor(Node x, int c)
+	 *	- Node leftOf(Node x)
+	 *  - Node rightOf(Node x) 
 	 */
 	private Node minimum(Node x) {
 		while(x.left != null)
@@ -132,15 +138,18 @@ class RedBlackTree {
 			if(z.parent == z.parent.parent.left) {		// z의 부모가 할아버지의 왼쪽 자식인 경우
 				Node y = z.parent.parent.right;			// y는 z의 삼촌
 				if(y!=null && y.color==RED) {			// Case1: 삼촌이 RED (삼촌이 null이면 안된다)
+					//System.out.println("insert case1");
 					z.parent.color = BLACK;				// z의 부모를 BLACK으로
 					y.color = BLACK;					// z의 삼촌도 BLACK으로
 					z.parent.parent.color = RED;		// z의 할아버지를 RED로
 					z = z.parent.parent;				// 다시 z의 할아버지에 대하여 경우1 검사 반복
 				}else {	// 경우2~3은 삼촌이 BLACK인 경우
 					if(z == z.parent.right) {			// Case2: z가 오른쪽 자식
+						//System.out.println("insert case2");
 						z = z.parent;
 						leftRotate(z);					// 부모에 대하여 leftRotate 진행 (삽입할 노드의 부모는 항상 존재하므로 null여부를 체크 해주지 않아도 됨)
 					}	// 경우2는 항상 경우3으로 진행			// Case3: z가 왼쪽 자식
+					//System.out.println("insert case3");
 					z.parent.color = BLACK;				// 부모를 BLACK으로
 					// 삽입할 노드의 할아버지 노드는 null이면 안됨(즉, 삽입할 노드가 root의 자식으로 추가된는 경우. 그러나 이 경우는 케이스3으로 진행될 수 없어 따로 체크 해주지 않아도 됨)
 					z.parent.parent.color = RED;	// 할아버지를 RED로
@@ -149,15 +158,18 @@ class RedBlackTree {
 			}else {										// z의 부모가 할아버지의 오른쪽 자식인 경우
 				Node y = z.parent.parent.left;			// y는 z의 삼촌
 				if(y!=null && y.color==RED) {			// Case 4
+					//System.out.println("insert case4");
 					z.parent.color = BLACK;
 					y.color = BLACK;
 					z.parent.parent.color = RED;
 					z = z.parent.parent;
 				}else {
 					if(z == z.parent.left) {			// Case 5
+						//System.out.println("insert case5");
 						z = z.parent;
 						rightRotate(z);					// 부모에 대하여 rightRotate 진행
 					}
+					//System.out.println("insert case6");
 					z.parent.color = BLACK;				// Case 6
 					z.parent.parent.color = RED;
 					leftRotate(z.parent.parent);	// 할아버지에 대하여 leftRotate 진행
@@ -169,27 +181,28 @@ class RedBlackTree {
 	private void rbDeleteFixup(Node x, Node p_of_x) {	// x는 삭제한 노드를 대신하여 삭제한 노드 자리에 들어가는 노드이다(double black이며 NIL일 수도 있다)
 		while(x!=root && colorOf(x)==BLACK) {
 			if(x==leftOf(p_of_x)) {									// 경우 1~4: x가 부모의 왼쪽 자식. x가 double black인 경우
-				Node w = rightOf(p_of_x);	// w는 z의 형제(형제가 반드시 존재. 레드블랙 트리에서는 w가 NIL이 아니다. 자식 노드도 NIL이 아니다.)
+				Node w = rightOf(p_of_x);	// w는 z의 형제(형제가 반드시 존재. 레드블랙 트리에서는 w가 NIL이 아니다.)
 				if(colorOf(w) == RED) {								// 경우1: 형제가 RED인 경우
-					System.out.println("case1"); 
+					//System.out.println("case1"); 
 					setColor(w,BLACK);								// 형제를 BLACK으로
 					setColor(p_of_x,RED);						// 부모를 RED로
 					leftRotate(p_of_x);							// 부모를 기준으로 leftRotate
 					w = rightOf(p_of_x);								// leftRotate로 바뀐 형제를 갱신. 즉 원래 형제의 왼쪽 자식(BLACK)이 새로운 형제가 됨.
 				}	// x가 한 레벨 아래로 내려간 상태로 경우2~3로 진행				// 경우2~4는 형제가 BLACK인 경우, x의 부모는 Unknown.
 				if(colorOf(leftOf(w))==BLACK&&colorOf(rightOf(w))==BLACK) {	// 경우2: 형제의 자식들도 BLACK인 경우
-					System.out.println("case2");
+					//System.out.println("case2");
 					setColor(w,RED);								// 형제 노드를 RED로
 					x = p_of_x;								// x의 black 하나를 넘겨 받음. 즉 부모 노드에 대해 double black 인지 검사.
+					p_of_x = parentOf(x);					// 같이 넘겨준 p_of_x도 갱신 해줘야 이 부분에서의 loop를 방지할 수 있다
 				}else {
 					if(colorOf(rightOf(w)) == BLACK) {					// 경우3: 형제의 왼쪽자식이 RED인 경우
-						System.out.println("case3");
+						//System.out.println("case3");
 						setColor(leftOf(w),BLACK);						// w의 왼쪽 자식을 BLACK으로
 						setColor(w,RED);								// w를 RED로
 						rightRotate(w);								// w에 대해서 rightRotate
 						w = rightOf(p_of_x);							// x의 새로운 형제 w갱신. 새로운 w의 오른쪽 자식은 항상 RED이다
 					}	// 경우4로 진행									// 경우4: 형제의 왼족자식은 Unknown, 오른쪽자식이 RED인 경우
-					System.out.println("case4");
+					//System.out.println("case4");
 					setColor(w,colorOf(p_of_x));						// w의 색을 x의 부모의 색으로
 					setColor(parentOf(x),BLACK);							// x의 부모를 BLACK으로
 					setColor(rightOf(w),BLACK);							// w의 오른쪽 자식을 BLACK으로
@@ -199,25 +212,26 @@ class RedBlackTree {
 			}else {													// 경우 5~8: x가 부모의 오른쪽 자식
 				Node w = leftOf(p_of_x);		// w는 z의 형제
 				if(colorOf(w) == RED) {								// 경우5: 형제가 RED인 경우
-					System.out.println("case5");
+					//System.out.println("case5");
 					setColor(w,BLACK);
 					setColor(p_of_x,RED);
 					rightRotate(p_of_x);
 					w = leftOf(p_of_x);
 				}
 				if(colorOf(leftOf(w))==BLACK&&colorOf(rightOf(w))==BLACK) {	// 경우6
-					System.out.println("case6");
+					//System.out.println("case6");
 					setColor(w,RED);
 					x = p_of_x;
+					p_of_x = parentOf(x);
 				}else {
 					if(colorOf(leftOf(w)) == BLACK) {						// 경우7
 						setColor(rightOf(w),BLACK);
-						System.out.println("case7");
+						//System.out.println("case7");
 						setColor(w,RED);
 						leftRotate(w);
 						w = leftOf(p_of_x);
 					}	// 경우8로 진행
-					System.out.println("case8");
+					//System.out.println("case8");
 					setColor(w,colorOf(p_of_x));						// 경우8
 					setColor(p_of_x, BLACK);
 					setColor(leftOf(w),BLACK);
@@ -279,10 +293,10 @@ class RedBlackTree {
 			z.key = y.key;
 		}
 		if(x==null) {
-			System.out.println("IT SHOULD BE ERROR!");
+			//System.out.println("IT SHOULD BE ERROR!");
 		}
-		if(y.color == BLACK)			// 삭제한 노드가 BLACK인경우 문제가 발생
-			rbDeleteFixup(x,parentOf(y));
+		if(y.color == BLACK)				// 삭제한 노드가 BLACK인경우 문제가 발생
+			rbDeleteFixup(x,parentOf(y));	// 실제 삭제되는 노드의 부모를 함께 넘겨 준다.
 		return y;	// 삭제된 노드
 	}	// O(logN)
 	public void inorderTraversal(Node x) {
