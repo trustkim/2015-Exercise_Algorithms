@@ -50,8 +50,8 @@ public class Exercise10_1 {
 
 class RedBlackTree {
 	public Node root;
-	private static final int RED = 1;
 	private static final int BLACK = 0;
+	private static final int RED = 1;
 	private class Node {
 		private int key;
 		private Node left,right,parent;
@@ -63,13 +63,13 @@ class RedBlackTree {
 	 *  - Node successor(Node x)
 	 *  - void leftRotate(Node x)
 	 *  - void rightRotate(Node y)
-	 *  - void rbInsertFixup(Node z)
-	 *  - void rbDeleteFixup(Node z)
 	 *  - int colorOf(Node x)
 	 *  - Node parentOf(Node x)
 	 *  - void setColor(Node x, int c)
 	 *	- Node leftOf(Node x)
-	 *  - Node rightOf(Node x) 
+	 *  - Node rightOf(Node x)
+	 *  - void rbInsertFixup(Node z)
+	 *  - void rbDeleteFixup(Node z)
 	 */
 	private Node minimum(Node x) {
 		while(x.left != null)
