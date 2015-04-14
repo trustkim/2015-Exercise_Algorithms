@@ -3,7 +3,6 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.util.Scanner;
-
 /*
  * 지난 연습문제9의 2번에서 구현한 TreeMap 프로그램을 이진탐색트리 대신 레드블랙트리를 사용하도록 수정하라.
  * 동일한 테스트 데이터로 동일한 작업을 수행한 후 수행시간을 비교하라.
@@ -129,6 +128,22 @@ class MyRBTreeMap<K extends Comparable<K>, V> {
 	public void clear() { root = null; }
 
 	/* 레드 블랙 트리에 추가된 private 메소드들  */
+	private int colorOf(Node x) {
+		return (x==null?BLACK:x.color);
+	}
+	private Node parentOf(Node x) {
+		return (x==null?null:x.parent);
+	}
+	private void setColor(Node x, int c) {
+		if(x!=null)
+			x.color=c;
+	}
+	private Node leftOf(Node x) {
+		return (x==null?null:x.left);
+	}
+	private Node rightOf(Node x) {
+		return (x==null?null:x.right);
+	}
 	private void leftRotate(Node x) {	// y != null이라고 가정
 		Node y = x.right;
 		x.right = y.left;
@@ -202,68 +217,63 @@ class MyRBTreeMap<K extends Comparable<K>, V> {
 		}
 		root.color = BLACK;
 	}	// O(logN)
-	private void rbDeleteFixup(Node x) {
-		while(x!=null && x!=root && x.color==BLACK) {
-			if(x==x.parent.left) {	// 경우 1~4: x가 부모의 왼쪽 자식
-				Node w = x.parent.right;// w는 z의 형제
-				if(w!=null){
-					if(w.color == RED) {								// 경우1: 형제가 RED인 경우
-						w.color = BLACK;
-						x.parent.color = RED;
-						leftRotate(x.parent);
-						w = x.parent.right;
-					}
-					if(w.left!=null && w.left.color==BLACK && w.right!=null && w.right.color==BLACK) {	// 경우2
-						w.color = RED;
-						x = x.parent;
-					}else {
-						if(w.right!=null&&w.right.color == BLACK) {					// 경우3
-							if(w.left!=null)
-								w.left.color = BLACK;
-							w.color = RED;
-							rightRotate(w);
-							w = x.parent.right;
-						}	// 경우4로 진행
-						w.color = x.parent.color;						// 경우4
-						x.parent.color = BLACK;
-						if(w.right!=null)
-							w.right.color = BLACK;
-						leftRotate(x.parent);
-						x = root;
-					}
+	private void rbDeleteFixup(Node x, Node p_of_x) {	// x는 삭제한 노드를 대신하여 삭제한 노드 자리에 들어가는 노드이다(double black이며 NIL일 수도 있다)
+		while(x!=root && colorOf(x)==BLACK) {
+			if(x==leftOf(p_of_x)) {									// 경우 1~4: x가 부모의 왼쪽 자식. x가 double black인 경우
+				Node w = rightOf(p_of_x);	// w는 z의 형제(형제가 반드시 존재. 레드블랙 트리에서는 w가 NIL이 아니다.)
+				if(colorOf(w) == RED) {								// 경우1: 형제가 RED인 경우
+					setColor(w,BLACK);								// 형제를 BLACK으로
+					setColor(p_of_x,RED);							// 부모를 RED로
+					leftRotate(p_of_x);								// 부모를 기준으로 leftRotate
+					w = rightOf(p_of_x);							// leftRotate로 바뀐 형제를 갱신. 즉 원래 형제의 왼쪽 자식(BLACK)이 새로운 형제가 됨.
+				}	// x가 한 레벨 아래로 내려간 상태로 경우2~3로 진행			// 경우2~4는 형제가 BLACK인 경우, x의 부모는 Unknown.
+				if(colorOf(leftOf(w))==BLACK 
+					&& colorOf(rightOf(w))==BLACK) {				// 경우2: 형제의 자식들도 BLACK인 경우
+					setColor(w,RED);								// 형제 노드를 RED로
+					x = p_of_x;										// x의 black 하나를 넘겨 받음. 즉 부모 노드에 대해 double black 인지 검사.
+					p_of_x = parentOf(x);							// 같이 넘겨준 p_of_x도 갱신 해줘야 이 부분에서의 loop를 방지할 수 있다
+				}else {
+					if(colorOf(rightOf(w)) == BLACK) {				// 경우3: 형제의 왼쪽자식이 RED인 경우
+						setColor(leftOf(w),BLACK);					// w의 왼쪽 자식을 BLACK으로
+						setColor(w,RED);							// w를 RED로
+						rightRotate(w);								// w에 대해서 rightRotate
+						w = rightOf(p_of_x);						// x의 새로운 형제 w갱신. 새로운 w의 오른쪽 자식은 항상 RED이다
+					}	// 경우4로 진행									// 경우4: 형제의 왼족자식은 Unknown, 오른쪽자식이 RED인 경우
+					setColor(w,colorOf(p_of_x));					// w의 색을 x의 부모의 색으로
+					setColor(parentOf(x),BLACK);					// x의 부모를 BLACK으로
+					setColor(rightOf(w),BLACK);						// w의 오른쪽 자식을 BLACK으로
+					leftRotate(p_of_x);								// x의 부모에 대해서 leftRotate
+					x = root;										// x가 root가 되면 while문을 탈출하게 됨	
 				}
-			}else {					// 경우 5~8: x가 부모의 오른쪽 자식
-				Node w = x.parent.left;// w는 z의 형제
-				if(w!=null){
-					if(w.color == RED) {								// 경우5: 형제가 RED인 경우
-						w.color = BLACK;
-						x.parent.color = RED;
-						rightRotate(x.parent);
-						w = x.parent.left;
-					}
-					if(w.left!=null && w.left.color==BLACK && w.right!=null && w.right.color==BLACK) {	// 경우6
-						w.color = RED;
-						x = x.parent;
-					}else {
-						if(w.left!=null&&w.left.color == BLACK) {						// 경우7
-							if(w.right!=null)
-								w.right.color = BLACK;
-							w.color = RED;
-							leftRotate(w);
-							w = x.parent.left;
-						}	// 경우8로 진행
-						w.color = x.parent.color;						// 경우8
-						x.parent.color = BLACK;
-						if(w.left!=null)
-							w.left.color = BLACK;
-						rightRotate(x.parent);
-						x = root;
-					}
+			}else {													// 경우 5~8: x가 부모의 오른쪽 자식
+				Node w = leftOf(p_of_x);							// w는 z의 형제
+				if(colorOf(w) == RED) {								// 경우5: 형제가 RED인 경우
+					setColor(w,BLACK);
+					setColor(p_of_x,RED);
+					rightRotate(p_of_x);
+					w = leftOf(p_of_x);
+				}
+				if(colorOf(leftOf(w))==BLACK
+					&& colorOf(rightOf(w))==BLACK) {				// 경우6
+					setColor(w,RED);
+					x = p_of_x;
+					p_of_x = parentOf(x);
+				}else {
+					if(colorOf(leftOf(w)) == BLACK) {				// 경우7
+						setColor(rightOf(w),BLACK);
+						setColor(w,RED);
+						leftRotate(w);
+						w = leftOf(p_of_x);
+					}	// 경우8로 진행
+					setColor(w,colorOf(p_of_x));					// 경우8
+					setColor(p_of_x, BLACK);
+					setColor(leftOf(w),BLACK);
+					rightRotate(p_of_x);
+					x = root;
 				}
 			}
 		}
-		if(x!=null)
-			x.color = BLACK;
+		setColor(x,BLACK);
 	}	// O(logN)
 	/* HashMap과는 상관 없이 Tree 내부적인 처리를 위한 private 메소드들 */
 	private Node search(Node x, K k) {
@@ -330,7 +340,7 @@ class MyRBTreeMap<K extends Comparable<K>, V> {
 			z.value = y.value;
 		}
 		if(y.color == BLACK)	// 삭제한 노드가 BLACK인경우 문제가 발생
-			rbDeleteFixup(x);
+			rbDeleteFixup(x,parentOf(x));
 		if(nbrNodes>0) nbrNodes--;	// 전체 노드 개수 1 감소
 		return y;	// 삭제된 노트
 	}
