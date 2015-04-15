@@ -1,3 +1,5 @@
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Random;
 /*
  * 레드블랙트리에 대해서 insert와 delete 함수를 구현하라.
@@ -10,14 +12,15 @@ public class Exercise10_1 {
 		/*
 		 * rbDeleteFixup(x)에서 x가 null인 케이스 테스트
 		 */
-		rbt.insert(2);
-		rbt.insert(0);
-		rbt.insert(3);
-		rbt.insert(4);
-		rbt.inorderTraversal(rbt.root);
-		rbt.delete(rbt.search(rbt.root,4));
-		rbt.delete(rbt.search(rbt.root,3));
-		rbt.inorderTraversal(rbt.root);
+		//		rbt.insert(2);
+		//		rbt.insert(0);
+		//		rbt.insert(3);
+		//		rbt.insert(4);
+		//		rbt.inorderTraversal(rbt.root);
+		//		rbt.delete(rbt.search(rbt.root,4));
+		//		rbt.delete(rbt.search(rbt.root,3));
+		//		rbt.inorderTraversal(rbt.root);
+		//		System.out.println();
 		long start = System.currentTimeMillis();
 		// (1) 먼저 이미 이진검색트리에 있는지 검사한다.
 		for(int i=0;i<N;i++) {
@@ -30,8 +33,7 @@ public class Exercise10_1 {
 				//System.out.print(" delete!\n");
 				try{
 					rbt.delete(rbt.search(rbt.root, sample));
-					//rbt.inorderTraversal(rbt.root);
-					//System.out.println();
+					//System.out.println("done");
 				}catch(NullPointerException e) {
 					e.printStackTrace();
 					//rbt.inorderTraversal(rbt.root);
@@ -43,12 +45,67 @@ public class Exercise10_1 {
 			}	// (2) 만약 있으면 그 값을 트리로 부터 삭제한다.
 			// (4) 마지막으로 트리를 inorder traverse 하면서 방문된 순서대로 정수들을 출력한다.
 		}
+		if(!rbt.isRedBlack()){
+			System.out.println();
+			rbt.levelorderTraversal();
+			System.exit(0);
+		}else System.out.println("true");
 		//rbt.inorderTraversal(rbt.root);
 		System.out.println("\n"+((long)System.currentTimeMillis()-start)/1000.0);
 	}
 }
 
 class RedBlackTree {
+	public boolean isRedBlack(){
+		Node tmp;
+		Queue<Node> queue = new LinkedList<Node>();
+		queue.offer(root);
+		while(!queue.isEmpty()){
+			tmp = queue.poll();
+			if(tmp!=null) {
+				queue.offer(tmp.left);
+				queue.offer(tmp.right);				
+				if(colorOf(tmp)==RED) {
+					if(colorOf(leftOf(tmp))==RED || colorOf(rightOf(tmp))==RED) {
+						System.out.println("red-red violation!");
+						levelorderTraversal();
+						return false;
+					}
+				}	
+			}
+		}
+		//System.out.println("red-red violation checked TRUE!");
+		if(colorOf(root)==BLACK && BlackHeight(root) != -1)
+			return true;
+
+		return false;
+
+	}
+
+	public int BlackHeight(Node x){
+		boolean bo = true;
+
+		if(x == null)
+			return 0;
+
+		int left = BlackHeight(x.left);
+		int right = BlackHeight(x.right);
+
+		if(left == -1 || right == -1)
+			return -1;
+		else{
+			if(left == right)
+				bo = true;
+			else
+				bo = false;
+		}
+		if(bo == true && colorOf(x)==BLACK)
+			return left+1;
+		else if(bo == true && colorOf(x)==RED)
+			return left;
+		else
+			return -1;
+	}
 	public Node root;
 	private static final int BLACK = 0;
 	private static final int RED = 1;
@@ -142,7 +199,7 @@ class RedBlackTree {
 					z.parent.color = BLACK;				// z의 부모를 BLACK으로
 					y.color = BLACK;					// z의 삼촌도 BLACK으로
 					z.parent.parent.color = RED;		// z의 할아버지를 RED로
-					z = z.parent.parent;				// 다시 z의 할아버지에 대하여 경우1 검사 반복
+					z = z.parent.parent;				// 다시 z의 할아버지에 대하여 검사 반복
 				}else {	// 경우2~3은 삼촌이 BLACK인 경우
 					if(z == z.parent.right) {			// Case2: z가 오른쪽 자식
 						//System.out.println("insert case2");
@@ -204,7 +261,7 @@ class RedBlackTree {
 					}	// 경우4로 진행									// 경우4: 형제의 왼족자식은 Unknown, 오른쪽자식이 RED인 경우
 					//System.out.println("case4");
 					setColor(w,colorOf(p_of_x));						// w의 색을 x의 부모의 색으로
-					setColor(parentOf(x),BLACK);							// x의 부모를 BLACK으로
+					setColor(p_of_x,BLACK);							// x의 부모를 BLACK으로
 					setColor(rightOf(w),BLACK);							// w의 오른쪽 자식을 BLACK으로
 					leftRotate(p_of_x);							// x의 부모에 대해서 leftRotate
 					x = root;										// x가 root가 되면 while문을 탈출하게 됨	
@@ -306,4 +363,16 @@ class RedBlackTree {
 			inorderTraversal(x.right);	
 		}
 	}
+	public void levelorderTraversal(){
+		Queue<Node> queue = new LinkedList<Node>();
+		queue.offer(root);
+		while(!queue.isEmpty()){
+			Node p = queue.poll();
+			if(p!=null) {
+				queue.offer(leftOf(p));
+				queue.offer(rightOf(p));
+				System.out.println(p.key+"("+(colorOf(p)==0?"BLACK":"RED")+"), 부모 :"+(parentOf(p)!=null?parentOf(p).key:"null")+"("+(colorOf(parentOf(p))==0?"BLACK":"RED")+"), 왼쪽 자식 : "+(leftOf(p)!=null?leftOf(p).key:"null")+"("+(colorOf(leftOf(p))==0?"BLACK":"RED")+"), 오른쪽 자식 : "+(rightOf(p)!=null?rightOf(p).key:"null")+"("+(colorOf(rightOf(p))==0?"BLACK":"RED")+")");
+			}			
+		}
+	}   
 }
