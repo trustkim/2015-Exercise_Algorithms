@@ -240,7 +240,7 @@ class MyRBTreeMap<K extends Comparable<K>, V> {
 						w = rightOf(p_of_x);						// x의 새로운 형제 w갱신. 새로운 w의 오른쪽 자식은 항상 RED이다
 					}	// 경우4로 진행									// 경우4: 형제의 왼족자식은 Unknown, 오른쪽자식이 RED인 경우
 					setColor(w,colorOf(p_of_x));					// w의 색을 x의 부모의 색으로
-					setColor(parentOf(x),BLACK);					// x의 부모를 BLACK으로
+					setColor(p_of_x,BLACK);							// x의 부모를 BLACK으로
 					setColor(rightOf(w),BLACK);						// w의 오른쪽 자식을 BLACK으로
 					leftRotate(p_of_x);								// x의 부모에 대해서 leftRotate
 					x = root;										// x가 root가 되면 while문을 탈출하게 됨	
