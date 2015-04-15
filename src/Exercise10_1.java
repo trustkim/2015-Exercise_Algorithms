@@ -50,12 +50,38 @@ public class Exercise10_1 {
 			rbt.levelorderTraversal();
 			System.exit(0);
 		}else System.out.println("true");
+		if(!rbt.isRedBlackTree()){
+			System.out.println();
+			rbt.levelorderTraversal();
+			System.exit(0);
+		}else System.out.println("pf's test also true");
 		//rbt.inorderTraversal(rbt.root);
 		System.out.println("\n"+((long)System.currentTimeMillis()-start)/1000.0);
 	}
 }
 
 class RedBlackTree {
+	public boolean isRedBlackTree() {
+	    if (root==null)
+	        return true;
+	    if (root.color==RED)
+	        return false;
+	    return isRedBlackTree(root)!=-1;
+	}
+
+	private int isRedBlackTree(Node x) {
+	    if (x==null)
+	        return 1;
+	    if (x.color==RED && (x.left!=null && x.left.color==RED || x.right!=null && x.right.color==RED))
+	        return -1;
+	    int result1 = isRedBlackTree(x.left);
+	    if (result1==-1)
+	        return -1;
+	    int result2 = isRedBlackTree(x.right);
+	    if (result2==-1 || result1 != result2)
+	        return -1;
+	    return result1+(x.color==BLACK?1:0);
+	}
 	public boolean isRedBlack(){
 		Node tmp;
 		Queue<Node> queue = new LinkedList<Node>();
@@ -81,7 +107,6 @@ class RedBlackTree {
 		return false;
 
 	}
-
 	public int BlackHeight(Node x){
 		boolean bo = true;
 
