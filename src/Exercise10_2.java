@@ -126,6 +126,29 @@ class MyRBTreeMap<K extends Comparable<K>, V> {
 		inorderTraversal(root, out);
 	}
 	public void clear() { root = null; }
+	/* Exercise10_3을 위해 추가한 메서드 */
+	private Node keepingNode = null;
+	public K getCeilingKey(K key) {				// ceilingKey에 필요한 root 접근이 필요해 만든 메소드
+		return ceilingKey(root,key);
+	}
+	private K ceilingKey(Node x, K key) {		// private으로 돌렸다.
+		// x의 key와 주어진 key를 비교함
+		if(x.key==key) {						// key가 x.key와 같으면 그 값을 반환
+			keepingNode = null;
+			return x.key;
+		}
+		else if(key.compareTo(x.key)<0) {
+			return ceilingKey(x.left,key);	// key가 x.key보다 작으면 x.key를 킵해 두고 왼쪽으로 진행
+		}else
+			return ceilingKey(x.right,key);	// key가 x.key보다 크면 x.key를 킵할 필요 없이 왼쪽으로 진행
+	}
+	
+	public K getFloorKey(K key) {
+		return floorKey(root,key);
+	}
+	private K floorKey(Node x, K key) {
+		return floorKey(x, key);
+	}
 
 	/* 레드 블랙 트리에 추가된 private 메소드들  */
 	private int colorOf(Node x) {
@@ -351,4 +374,6 @@ class MyRBTreeMap<K extends Comparable<K>, V> {
 			inorderTraversal(x.right, out);
 		}
 	}
+	/* Exercise10_3을 위해 추가한 메서드 */
+	
 }
