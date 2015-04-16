@@ -216,26 +216,26 @@ class RedBlackTree {
 		return (x==null?null:x.right);
 	}
 	private void rbInsertFixup(Node z) {
-		while(z.parent!=null && z.parent.color==RED) {	// z의 부모가 RED인 경우(RED-RED violation). 할아버지는 반드시 BLACK
-			if(z.parent == z.parent.parent.left) {		// z의 부모가 할아버지의 왼쪽 자식인 경우
-				Node y = z.parent.parent.right;			// y는 z의 삼촌
-				if(y!=null && y.color==RED) {			// Case1: 삼촌이 RED (삼촌이 null이면 안된다)
+		while(colorOf(parentOf(z))==RED) {	// z의 부모가 RED인 경우(RED-RED violation). 할아버지는 반드시 BLACK
+			if(parentOf(z) == leftOf(parentOf(parentOf(z)))) {		// z의 부모가 할아버지의 왼쪽 자식인 경우
+				Node y = rightOf(parentOf(parentOf(z)));			// y는 z의 삼촌
+				if(colorOf(y)==RED) {			// Case1: 삼촌이 RED (삼촌이 null이면 안된다)
 					//System.out.println("insert case1");
-					z.parent.color = BLACK;				// z의 부모를 BLACK으로
-					y.color = BLACK;					// z의 삼촌도 BLACK으로
-					z.parent.parent.color = RED;		// z의 할아버지를 RED로
-					z = z.parent.parent;				// 다시 z의 할아버지에 대하여 검사 반복
+					setColor(parentOf(z),BLACK);				// z의 부모를 BLACK으로
+					setColor(y,BLACK);							// z의 삼촌도 BLACK으로
+					setColor(parentOf(parentOf(z)),RED);		// z의 할아버지를 RED로
+					z = parentOf(parentOf(z));				// 다시 z의 할아버지에 대하여 검사 반복
 				}else {	// 경우2~3은 삼촌이 BLACK인 경우
-					if(z == z.parent.right) {			// Case2: z가 오른쪽 자식
+					if(z == rightOf(parentOf(z))) {			// Case2: z가 오른쪽 자식
 						//System.out.println("insert case2");
-						z = z.parent;
+						z = parentOf(z);
 						leftRotate(z);					// 부모에 대하여 leftRotate 진행 (삽입할 노드의 부모는 항상 존재하므로 null여부를 체크 해주지 않아도 됨)
 					}	// 경우2는 항상 경우3으로 진행			// Case3: z가 왼쪽 자식
 					//System.out.println("insert case3");
-					z.parent.color = BLACK;				// 부모를 BLACK으로
+					setColor(parentOf(z),BLACK);				// 부모를 BLACK으로
 					// 삽입할 노드의 할아버지 노드는 null이면 안됨(즉, 삽입할 노드가 root의 자식으로 추가된는 경우. 그러나 이 경우는 케이스3으로 진행될 수 없어 따로 체크 해주지 않아도 됨)
-					z.parent.parent.color = RED;	// 할아버지를 RED로
-					rightRotate(z.parent.parent);	// 할아버지에 대하여 rightRotate 진행
+					setColor(parentOf(parentOf(z)),RED);	// 할아버지를 RED로
+					rightRotate(parentOf(parentOf(z)));	// 할아버지에 대하여 rightRotate 진행
 				}
 			}else {										// z의 부모가 할아버지의 오른쪽 자식인 경우
 				Node y = z.parent.parent.left;			// y는 z의 삼촌
@@ -246,19 +246,19 @@ class RedBlackTree {
 					z.parent.parent.color = RED;
 					z = z.parent.parent;
 				}else {
-					if(z == z.parent.left) {			// Case 5
+					if(z == leftOf(parentOf(z))) {			// Case 5
 						//System.out.println("insert case5");
-						z = z.parent;
+						z = parentOf(z);
 						rightRotate(z);					// 부모에 대하여 rightRotate 진행
 					}
 					//System.out.println("insert case6");
-					z.parent.color = BLACK;				// Case 6
-					z.parent.parent.color = RED;
+					setColor(parentOf(z),BLACK);				// Case 6
+					setColor(parentOf(parentOf(z)),RED);
 					leftRotate(z.parent.parent);	// 할아버지에 대하여 leftRotate 진행
 				}
 			}
 		}
-		root.color = BLACK;
+		setColor(root,BLACK);
 	}	// O(logN)
 	private void rbDeleteFixup(Node x, Node p_of_x) {	// x는 삭제한 노드를 대신하여 삭제한 노드 자리에 들어가는 노드이다(double black이며 NIL일 수도 있다)
 		while(x!=root && colorOf(x)==BLACK) {
