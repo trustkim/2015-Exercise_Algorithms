@@ -2,6 +2,8 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintStream;
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Scanner;
 /*
  * 지난 연습문제9의 2번에서 구현한 TreeMap 프로그램을 이진탐색트리 대신 레드블랙트리를 사용하도록 수정하라.
@@ -11,6 +13,32 @@ public class Exercise10_2 {
 	public static void main(String[] args){
 		MyTreeMap<String, Integer> treeMap = new MyTreeMap<String, Integer>();
 		MyRBTreeMap<String, Integer> rbTreeMap = new MyRBTreeMap<String, Integer>();
+		
+		/* 실습10 문제3을 위한 테스트 코드 */
+		MyRBTreeMap<Integer, Integer> test = new MyRBTreeMap<Integer, Integer>();
+		test.put(21, 0);
+		test.put(24, 0);
+		test.put(20, 0);
+		test.put(0, 0);
+		test.put(19, 0);
+		test.put(4, 0);
+		test.test_Print();	// levelorderTraversal
+		System.out.println("ceilingKey(-1) = "+test.getCeilingKey(-1));
+		System.out.println("ceilingKey(3) = "+test.getCeilingKey(3));
+		System.out.println("ceilingKey(4) = "+test.getCeilingKey(4));
+		System.out.println("ceilingKey(5) = "+test.getCeilingKey(5));
+		System.out.println("ceilingKey(21) = "+test.getCeilingKey(21));
+		System.out.println("ceilingKey(25) = "+test.getCeilingKey(25));
+		
+		System.out.println("floorKey(25) = "+test.getFloorKey(25));
+		System.out.println("floorKey(23) = "+test.getFloorKey(23));
+		System.out.println("floorKey(21) = "+test.getFloorKey(21));
+		System.out.println("floorKey(18) = "+test.getFloorKey(18));
+		System.out.println("floorKey(1) = "+test.getFloorKey(1));
+		System.out.println("floorKey(-1) = "+test.getFloorKey(-1));
+		test.clear();
+		
+		/* 실습10 문제2 테스트 코드 */
 		String[] strbf = new String[100000];	// 버퍼
 		int linecnt = 0;						// 라인넘버 카운터
 		try {
@@ -122,32 +150,52 @@ class MyRBTreeMap<K extends Comparable<K>, V> {
 		}
 		return deletedValue;
 	}
-	public void Print(PrintStream out) {	// out으로 출력하는 함수
+	public void Print(PrintStream out) {	// out으로 출력하는 함수. 출력순서는 inorderTraversal로
 		inorderTraversal(root, out);
 	}
+	public void test_Print() {
+		levelorderTraversal();
+	}
 	public void clear() { root = null; }
+	
 	/* Exercise10_3을 위해 추가한 메서드 */
 	private Node keepingNode = null;
 	public K getCeilingKey(K key) {				// ceilingKey에 필요한 root 접근이 필요해 만든 메소드
+		keepingNode = null;
 		return ceilingKey(root,key);
 	}
 	private K ceilingKey(Node x, K key) {		// private으로 돌렸다.
+		if(x==null) {							// 만약 x가 null이면 더 이상 검사할 노드가 없음. keepingNode를 반환
+			return keepingNode==null?null:keepingNode.key;
+		}
 		// x의 key와 주어진 key를 비교함
 		if(x.key==key) {						// key가 x.key와 같으면 그 값을 반환
-			keepingNode = null;
 			return x.key;
 		}
 		else if(key.compareTo(x.key)<0) {
+			keepingNode = x;
 			return ceilingKey(x.left,key);	// key가 x.key보다 작으면 x.key를 킵해 두고 왼쪽으로 진행
 		}else
 			return ceilingKey(x.right,key);	// key가 x.key보다 크면 x.key를 킵할 필요 없이 왼쪽으로 진행
 	}
 	
 	public K getFloorKey(K key) {
+		keepingNode = null;
 		return floorKey(root,key);
 	}
 	private K floorKey(Node x, K key) {
-		return floorKey(x, key);
+		if(x==null) {							// 만약 x가 null이면 더 이상 검사할 노드가 없음. keepingNode를 반환
+			return keepingNode==null?null:keepingNode.key;
+		}
+		// x의 key와 주어진 key를 비교함
+		if(x.key==key) {						// key가 x.key와 같으면 그 값을 반환
+			return x.key;
+		}
+		else if(key.compareTo(x.key)<0) {
+			return floorKey(x.left,key);	// key가 x.key보다 작으면 x.key를 킵하지 않고 왼쪽으로 진행
+		}else
+			keepingNode = x;
+			return floorKey(x.right,key);	// key가 x.key보다 크면 x.key를 킵하고 왼쪽으로 진행
 	}
 
 	/* 레드 블랙 트리에 추가된 private 메소드들  */
@@ -374,6 +422,17 @@ class MyRBTreeMap<K extends Comparable<K>, V> {
 			inorderTraversal(x.right, out);
 		}
 	}
-	/* Exercise10_3을 위해 추가한 메서드 */
+	private void levelorderTraversal(){
+		Queue<Node> queue = new LinkedList<Node>();
+		queue.offer(root);
+		while(!queue.isEmpty()){
+			Node p = queue.poll();
+			if(p!=null) {
+				queue.offer(leftOf(p));
+				queue.offer(rightOf(p));
+				System.out.println(p.key+"("+(colorOf(p)==0?"BLACK":"RED")+"), 부모 :"+(parentOf(p)!=null?parentOf(p).key:"null")+"("+(colorOf(parentOf(p))==0?"BLACK":"RED")+"), 왼쪽 자식 : "+(leftOf(p)!=null?leftOf(p).key:"null")+"("+(colorOf(leftOf(p))==0?"BLACK":"RED")+"), 오른쪽 자식 : "+(rightOf(p)!=null?rightOf(p).key:"null")+"("+(colorOf(rightOf(p))==0?"BLACK":"RED")+")");
+			}			
+		}
+	}
 	
 }
