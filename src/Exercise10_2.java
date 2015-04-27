@@ -156,8 +156,11 @@ class MyRBTreeMap<K extends Comparable<K>, V> {
 	public void test_Print() {
 		levelorderTraversal();
 	}
+	public void sorted_Print() {
+		inorderTraversal(root,System.out);
+	}
 	public void clear() { root = null; }
-	
+
 	/* Exercise10_3을 위해 추가한 메서드 */
 	private Node keepingNode = null;
 	public K getCeilingKey(K key) {				// ceilingKey에 필요한 root 접근이 필요해 만든 메소드
