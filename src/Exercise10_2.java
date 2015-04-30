@@ -128,7 +128,7 @@ class MyRBTreeMap<K extends Comparable<K>, V> {
 	}
 	public V get(K key) {
 		/* 키값이 key인 순서쌍을 찾아서 그 value를 반환, 없으면 null을 반환  */
-		return search(root, key).value;
+		return search(root, key).value;	// V가 int이면 문제가 발생함.
 	}
 	public V put(K key, V value) {
 		Node node = search(root, key);
