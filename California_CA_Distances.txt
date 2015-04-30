@@ -1,0 +1,1001 @@
+StateAbb	PlaceName	longitude	latitude	DistancetoCapitalCity_km
+CA	"Ace Wasabi's - ""Rock N' Roll Sushi"""	-122.43813	37.80017	101
+CA	"Acqua Hotel, Mill Valley, a Joie de Vivre Boutique Hotel"	-122.51740	37.88920	100
+CA	"Americas Best Value Inn and Suites, Hemet"	-116.97900	33.74800	659
+CA	"Avalon, A Luxury B And B"	-122.90560	38.41800	118
+CA	"Bass Pro Shop, Manteca"	-121.22662	37.78190	72
+CA	"Best Western Country Inn- San Diego, Poway"	-117.03100	32.95600	728
+CA	"Brisas del Mar, Inn at the Beach"	-119.69630	34.40990	471
+CA	"Brookfield School, Inc"	-121.50829	38.54685	19
+CA	"Calexico, Calexico International Airport"	-115.51333	32.66944	837
+CA	"California State Polytechnic University, Pomona"	-117.82166	34.05639	585
+CA	"Childrens Home Connection, Inc"	-121.46495	38.49935	15
+CA	"Chili Bar, Placerville"	-120.82287	38.76737	77
+CA	"Country Inn & Suites By Carlson, Palm Springs, CA"	-116.41320	33.74230	692
+CA	"Crowne Plaza Cabana, Palo Alto"	-122.11950	37.40590	119
+CA	"Edwards, Edwards Air Force Auxiliary North Base"	-117.85000	34.98333	502
+CA	"El Centro, Naval Air Facility"	-115.67167	32.82922	814
+CA	"Embassy Suites Hotel La Quinta, CA"	-116.31470	33.69000	703
+CA	"Executive Hotel Vintage Court, Union Square"	-122.40790	37.79020	99
+CA	"Folsom Dikes 1,2 and 3 Dam"	-121.14606	38.75490	55
+CA	"Folsom Dikes 4,5 and 6 Dam"	-121.16939	38.72824	51
+CA	"Galleria Park Hotel, a Joie de Vivre Boutique Hotel"	-122.40350	37.78970	99
+CA	"Grace Ford Salvatori Hall of Letters, Arts and Sciences"	-118.28813	34.02140	566
+CA	"Hampton Inn & Suites Fresno, CA"	-119.78300	36.83900	232
+CA	"Hampton Inn & Suites Palm Desert, CA"	-116.37100	33.78700	691
+CA	"Hampton Inn & Suites Tahoe-Truckee, CA"	-120.22200	39.32500	156
+CA	"Hampton Inn Oakland-Hayward, CA"	-122.07830	37.66570	92
+CA	"Harold, Palmdale"	-118.10953	34.54500	526
+CA	"Harvest Inn, a Joie de Vivre Boutique Hotel"	-122.45580	38.49380	80
+CA	"Hoover Institution on War, Revolution and Peace"	-122.16719	37.42744	119
+CA	"Hotel Adagio, a Joie de Vivre Boutique Hotel"	-122.41230	37.78670	100
+CA	"Hotel Angeleno, a Joie de Vivre Boutique Hotel"	-118.46890	34.07470	552
+CA	"Hotel Avante, a Joie de Vivre Boutique Hotel"	-122.06190	37.37590	120
+CA	"Hotel Bijou, a Joie de Vivre Boutique Hotel"	-122.40920	37.78440	100
+CA	"Hotel California, L.L.C."	-119.04250	35.39980	399
+CA	"Hotel Carlton, a Joie de Vivre Boutique Hotel"	-122.41790	37.78800	100
+CA	"Hotel Del Sol, a Joie de Vivre Boutique Hotel"	-122.43410	37.79920	101
+CA	"Hotel Los Gatos & Spa, a Joie de Vivre Boutique Hotel"	-121.97710	37.22100	134
+CA	"Hotel Rex, a Joie de Vivre Boutique Hotel"	-122.40950	37.78900	100
+CA	"Howard Johnson Express Inn, Pacifica"	-122.49610	37.60750	119
+CA	"Independent Capital Management, Inc."	-117.75095	33.65785	626
+CA	"Institute for World Understanding of Peoples, Cultures and Languages Library"	-117.27782	32.84644	726
+CA	"Laurel Inn, a Joie de Vivre Boutique Hotel"	-122.44670	37.78770	102
+CA	"Lompoc, Vandenberg Air Force Base"	-120.58431	34.73733	414
+CA	"Martin Luther King, Jr Junior High School"	-121.45245	38.62379	28
+CA	"Martin Luther King, Jr Library"	-121.88519	37.33557	120
+CA	"Maxwell Hotel, A Personality Hotel"	-122.40940	37.78710	100
+CA	"Mill Valley Inn, a Joie de Vivre Boutique Hotel"	-122.54940	37.90540	102
+CA	"Monsters, Inc. Ride"	-117.91722	33.80835	604
+CA	"Moorpark Hotel, a Joie de Vivre Boutique Hotel"	-121.97670	37.31590	124
+CA	"Oceanside, Camp Pendleton, Marine Corps Air Station"	-117.35515	33.30125	679
+CA	"Parker Palm Springs, a Meridien Hotel"	-116.50040	33.79460	683
+CA	"Petite Auberge, a Joie de Vivre Boutique Hotel"	-122.41130	37.78970	100
+CA	"Phoenix Hotel, a Joie de Vivre Boutique Hotel"	-122.41740	37.78320	101
+CA	"Point Mugu, Naval Air Warfare Center"	-119.12094	34.12028	521
+CA	"Ramada Ltd. Culver City, CA"	-118.41500	34.01000	561
+CA	"Red, White and Blue Beach"	-122.14191	36.97634	164
+CA	"Richmond ""Bayview"" Fire Station"	-122.32364	37.91465	85
+CA	"Rio Vista Airport (Closed, 1995)"	-121.68938	38.17134	26
+CA	"SAC-2, office building.  Dr. Press' office is SAC 2144"	-118.25464	33.86283	583
+CA	"Safari Inn, a Coast Hotel"	-118.32470	34.16570	550
+CA	"San Clemente Island, San Clemente Island NALF"	-118.58694	33.02333	652
+CA	"Semi-Probes, Inc."	-121.95493	37.26535	129
+CA	"Sheraton San Diego Hotel, Mission Valley"	-117.14950	32.76600	740
+CA	"Spark Woodfire Grill, Beverly Hills"	-118.39761	34.05548	558
+CA	"The Andrews Hotel, a Joie de Vivre Boutique Hotel"	-122.41200	37.78770	100
+CA	"The Hotel Drisco, a Joie de Vivre Boutique Hotel"	-122.44290	37.79220	102
+CA	"The Lodge at Tiburon, a Larkspur Hotel"	-122.45690	37.87420	97
+CA	"The Ritz-Carlton, Half Moon Bay"	-122.43000	37.43000	131
+CA	"The Ritz-Carlton, San Francisco"	-122.40730	37.79130	99
+CA	"The Sainte Claire, a Larkspur Hotel"	-121.88790	37.33060	120
+CA	"Toll House Hotel, a Larkspur Hotel"	-121.98510	37.22060	134
+CA	"Twenty-Nine Palms, Marine Corps Air-Ground Combat Center"	-116.14500	34.29444	664
+CA	"Universal Studios, Hollywood"	-118.35417	34.13942	551
+CA	"University of California, Los Angeles"	-118.44455	34.07062	554
+CA	"Waters Edge Hotel, a Joie de Vivre Boutique Hotel"	-122.45610	37.87320	97
+CA	"West Beach Inn, a Coast Hotel"	-119.69250	34.40910	471
+CA	"Wheat, Oil and Wine Christian Church"	-117.34866	33.99363	616
+CA	"White Swan Inn, a Joie de Vivre Boutique Hotel"	-122.41100	37.78980	100
+CA	"Wild Palms Hotel, a Joie de Vivre Boutique Hotel"	-122.01400	37.35220	121
+CA	"Yo En Dios, Dios En Mi Church"	-120.48044	35.04498	382
+CA	"York Hotel, A Personality Hotel"	-122.41570	37.78830	100
+CA	"iFLY ""Spread Your Wings"""	-122.06570	37.59832	98
+CA	"iFly ""Spread Your Wings"" - Southern California"	-118.35350	34.13904	552
+CA	10 Mg Walteria 1049 Dam	-118.33757	33.78835	586
+CA	101 Ranch	-119.67292	37.14773	215
+CA	109 Limestone Quarry	-118.77111	34.84806	464
+CA	10th and Western 5-004 Dam	-118.28258	34.17834	551
+CA	1300 On Fillmore	-122.43198	37.78195	102
+CA	1500 Ocean at Hotel del Coronado	-117.17845	32.68092	746
+CA	1550 Hyde Cafe	-122.41815	37.79530	100
+CA	1849 CONDOS AT CANYON LODGE	-119.00070	37.64410	239
+CA	1859 Historic National Hotel  A Country Inn	-120.42328	37.95244	110
+CA	2 S Ranch 3220 Dam	-121.95277	40.66154	256
+CA	2 Schali Drain	-115.34193	32.77116	839
+CA	2-C Number 1 Drain	-115.27831	32.78505	842
+CA	3 PEAKS RESORT AND BEACH CLUB	-119.94690	38.95640	154
+CA	30 Mg Central Reservoir 1087 Dam	-117.90923	33.92668	593
+CA	33 Strip Airport	-121.33032	37.67016	81
+CA	333 Steak	-117.38374	33.19500	688
+CA	500 West Hotel	-117.16750	32.71580	744
+CA	59 Duck Club Airport	-120.48399	37.23368	158
+CA	6th & Gladys Park	-118.24255	34.04025	566
+CA	7-M Ranch Airport	-122.56859	38.71629	96
+CA	700 Huntington	-118.01440	34.14010	568
+CA	7R Ranch Airport	-119.44819	34.93379	426
+CA	8050 NORTHSTAR	-120.18520	39.34320	160
+CA	850 Canal	-118.84704	34.99747	447
+CA	A Andrews Ranch	-118.23619	34.76887	499
+CA	A B Miller High School	-117.44810	34.12945	599
+CA	A B Morris Junior High School (historical)	-122.08552	37.70493	88
+CA	A Better Way Evangelical Church	-121.38217	38.69740	38
+CA	A Bug's Land	-117.91774	33.80660	604
+CA	A C Bilbrew Branch County of Los Angeles Public Library	-118.23035	33.91585	579
+CA	A C Graves Ranch	-122.72585	40.41876	248
+CA	A Canal	-114.62440	33.67141	814
+CA	A Canyon	-117.17728	36.29272	452
+CA	A D Edmonston Pumping Plant	-118.82482	34.94414	453
+CA	A E Arnold Elementary School	-118.05506	33.82696	595
+CA	A E Kent Middle School	-122.54765	37.95336	99
+CA	A E Wright Middle School	-118.70370	34.13389	536
+CA	A F Traver Ranch	-119.62207	35.07080	406
+CA	A G Bacich Elementary School	-122.53902	37.95142	98
+CA	A G Currie Middle School	-117.82617	33.72557	616
+CA	A Greater Fellowship Church of God in Christ	-121.25689	37.93326	56
+CA	A H Smith Ditch	-119.41512	36.61912	272
+CA	A J Comstock Fire Museum	-119.29595	34.27972	498
+CA	A J Cook Elementary School	-117.95839	33.76335	606
+CA	A J Dorsa Elementary School	-121.83744	37.34013	118
+CA	A K Smiley Public Library	-117.18393	34.05418	620
+CA	A L Chaffin 346 Dam	-121.58442	39.59655	135
+CA	A M Cooper Ranch	-119.72179	35.28358	381
+CA	A M Winn Elementary School	-121.32412	38.56602	29
+CA	A P Giannini Middle School	-122.49678	37.75085	108
+CA	A Place In The Son Church	-118.10528	34.57472	523
+CA	A Small World for Little People Day Care Center	-117.37325	33.68854	643
+CA	A Street Intramural Field	-121.74774	38.54407	25
+CA	A Street Park	-119.47540	35.13747	405
+CA	A Stronetta Ranch	-123.71085	38.94908	198
+CA	A Victorian Garden Inn	-122.45160	38.29130	79
+CA	A and C 1110-002 Dam	-120.79941	41.78072	383
+CA	A and M Farms Dairy	-119.97639	36.60944	241
+CA	A-G Sod Farms	-119.68194	36.51194	265
+CA	ABC Camp Rustic Campsite	-121.42993	36.02330	262
+CA	ABC-TV Heliport	-118.28341	34.10334	558
+CA	ABELLA GARDEN INN BED AND BREA	-120.58775	35.12120	372
+CA	ABs Reef	-117.25670	32.72838	738
+CA	AC Graves Ranch	-122.76780	40.41876	249
+CA	AGGIE INN	-121.74530	38.54110	24
+CA	AHWAHNEE HOTEL	-119.58500	37.74740	187
+CA	ALISAL GUEST RANCH AND RESORT	-120.13340	34.60320	438
+CA	ALISO CREEK INN	-117.75280	33.51150	640
+CA	ALPINE INN	-117.91810	33.80340	604
+CA	AMBER HOUSE	-121.47870	38.57240	22
+CA	AMBROSE BIERCE HOUSE	-122.47220	38.50630	81
+CA	AMERICAN INN EXPRESS	-122.22840	40.16960	207
+CA	AMERICANA VILLAGE	-119.94793	38.94996	154
+CA	AMERICAS BEST INNS BAKERSFIELD	-119.32160	35.35310	391
+CA	AMERICAS BEST INNS LAGUNA BEAC	-117.80110	33.54880	634
+CA	AMERICAS BEST VALUE INN	-121.85820	36.59700	200
+CA	AMERICAS BEST VALUE INN	-117.19790	32.75760	738
+CA	ANGELS CAMP CONDOS	-120.55720	38.07150	94
+CA	APPLE FARM	-120.64960	35.29050	352
+CA	APPLE TREE INN	-119.63930	37.47260	196
+CA	APT Ambulance Company	-118.35308	33.94813	570
+CA	AQUAMARINE VILLAS	-117.37650	33.18750	689
+CA	ARCHBISHOPS MANSION ALAMO SQUAR	-122.43322	37.77742	102
+CA	ARCHSTONE SOUTH OF  MARKET	-122.39710	37.78360	99
+CA	ARroyo Trailer Park	-120.59295	35.11942	372
+CA	ASA Academy and Community Science Center	-122.25564	37.79760	89
+CA	ASCOT INN	-120.85130	35.36640	340
+CA	AT&T Park	-122.38941	37.77841	99
+CA	AT&T Park	-122.39100	37.77820	99
+CA	AUBERGE DU SOLEIL	-122.43660	38.51320	78
+CA	AVILA VILLAGE INN	-120.67820	35.26210	355
+CA	AZURE SKY RESORT	-116.54140	33.80170	679
+CA	Abacherli Canyon	-117.65533	33.92501	606
+CA	Abadi Creek	-119.38484	34.60943	461
+CA	Abalobadiah Creek	-123.76724	39.56544	232
+CA	Abalone Campground	-124.15924	41.13512	379
+CA	Abalone Cove	-121.10436	35.55692	316
+CA	Abalone Cove	-118.38091	33.73891	589
+CA	Abalone Cove Ecological Reserve	-118.37841	33.74168	589
+CA	Abalone Point	-122.76610	37.93798	117
+CA	Abalone Point	-123.79196	39.66766	241
+CA	Abalone Point	-124.16174	41.13401	379
+CA	Abalone Point	-118.31702	33.34336	631
+CA	Abalone Point	-117.81950	33.55391	633
+CA	Abbato (historical)	-120.82769	37.05383	161
+CA	Abbe Park	-121.53939	36.84440	170
+CA	Abbey Bridge Guard Station (historical)	-120.57494	39.99656	198
+CA	Abbott	-121.62552	39.02045	71
+CA	Abbott Canyon	-119.70180	35.07636	402
+CA	Abbott Creek	-119.01650	36.77217	287
+CA	Abbott Lake	-121.60928	39.02010	71
+CA	Abbott Lake	-123.18658	41.41649	365
+CA	Abbott Lakes	-121.48169	36.23117	239
+CA	Abbott Middle School	-122.30962	37.53045	115
+CA	Abbott Mine	-122.44526	39.02239	105
+CA	Abbott Ranch	-121.46577	36.23052	239
+CA	Abbott Ranch	-123.10087	41.40791	361
+CA	Abbott Reservoir	-120.86068	40.90613	287
+CA	Abbott Spring	-120.85301	40.90876	287
+CA	Abbotts Lagoon	-122.95333	38.11742	126
+CA	Abbotts Peak	-120.62243	37.97631	93
+CA	Abbotts Upper Cabin	-123.18755	41.42958	366
+CA	Abby's Anaheimer Inn	-117.92840	33.80330	604
+CA	Abel Canyon	-119.86430	34.82332	423
+CA	Abel Canyon Campground	-119.86264	34.82276	423
+CA	Abel Canyon Spring	-119.81680	34.87109	419
+CA	Abel Square Shopping Center	-121.90801	37.42772	110
+CA	Abelardo Cabin	-120.75851	36.31024	240
+CA	Abelian Group Math School	-122.28768	37.86852	86
+CA	Abels Apple Acres	-120.74854	38.74657	81
+CA	Aberdeen	-118.25343	36.97799	330
+CA	Aberdeen Bypass Ditch	-118.23621	36.96160	332
+CA	Aberdeen Canyon	-118.28896	34.11556	557
+CA	Aberdeen Ditch	-118.22593	36.96466	333
+CA	Aberdeen-Inverness Residence Hall	-117.32532	33.97835	619
+CA	Abernathy Meadow	-119.89935	37.87520	156
+CA	Abestos Number 1 Prospect	-118.06981	36.89410	349
+CA	Abilene	-119.05371	36.14551	333
+CA	Able Spring	-122.63209	39.14730	127
+CA	Ables Drain	-120.96910	37.42744	118
+CA	Abney Butte	-123.16033	41.97596	422
+CA	Abolitos Park	-117.06003	32.98338	724
+CA	Abraham Lincoln Continuation High School	-117.36616	33.97113	617
+CA	Abraham Lincoln Elementary School	-121.31328	38.57130	30
+CA	Abraham Lincoln Elementary School	-122.73639	38.44086	103
+CA	Abraham Lincoln Elementary School	-118.25258	34.22778	548
+CA	Abraham Lincoln Elementary School	-118.04118	33.98612	581
+CA	Abraham Lincoln Elementary School	-117.89867	33.83835	602
+CA	Abraham Lincoln Elementary School	-117.28865	34.12279	608
+CA	Abraham Lincoln Elementary School	-117.90172	33.74113	611
+CA	Abraham Lincoln Elementary School	-117.31699	34.07723	611
+CA	Abraham Lincoln Elementary School	-117.86061	33.61002	625
+CA	Abraham Lincoln Elementary School	-116.37279	33.73447	695
+CA	Abraham Lincoln High School	-122.48099	37.74731	107
+CA	Abraham Lincoln High School	-118.20368	34.07501	565
+CA	Abraham Lincoln High School	-117.09086	32.70311	749
+CA	Abraham Lincoln School	-118.33091	34.16417	550
+CA	Abraham Lincoln Shrine	-117.18365	34.05362	620
+CA	Abraham Plains	-122.05110	40.19766	206
+CA	Abraham Ranch Airport	-116.62480	34.41414	624
+CA	Abrams 3462-002 Dam	-120.98105	38.84990	72
+CA	Abrams Cabin (historical)	-122.93975	41.07264	322
+CA	Abrams Canyon	-118.45980	34.67721	496
+CA	Abrams Lake	-122.35540	41.33687	335
+CA	Abrams Lake Mobile Estates	-122.35529	41.33793	335
+CA	Abrams Ravine	-120.54048	39.07157	117
+CA	Abraxas Continuation High School	-117.06170	32.98143	724
+CA	Abraxis Charter School	-122.72705	38.44729	103
+CA	Abundant Grace Christian Center	-117.12672	32.74844	743
+CA	Abundant Life Assemblies Church	-121.48218	38.50157	15
+CA	Abundant Life Assemblies Pentecostal Church	-121.41051	38.69185	37
+CA	Abundant Life Center Assembly of God	-124.09118	40.93540	357
+CA	Abundant Life Chapel Assembly of God Church	-119.76264	36.79384	237
+CA	Abundant Life Christian Assembly Church	-119.78237	36.73050	241
+CA	Abundant Life Church	-121.43050	37.73715	72
+CA	Abundant Life Church	-119.02816	35.31718	408
+CA	Abundant Life Church	-117.37199	34.38333	581
+CA	Abundant Life Church of God in Christ	-121.43023	38.63296	30
+CA	Abundant Life Fellowship Church	-120.47239	34.64526	426
+CA	Abundant Life Fellowship Church	-117.03975	34.03390	630
+CA	Abundant Life Ministries	-117.00933	32.74889	748
+CA	Abundant Life Tabernacle of Praise	-121.45440	38.50685	17
+CA	Acacia Canal	-121.85663	38.71268	45
+CA	Acacia Canal	-115.47110	32.76367	832
+CA	Acacia Drain	-115.47360	32.77478	831
+CA	Acacia Elementary School	-118.87537	34.19778	523
+CA	Acacia Elementary School	-117.89760	33.88240	598
+CA	Acacia FIve B Drain	-115.49444	32.76644	830
+CA	Acacia Five A Drain	-115.49194	32.77756	829
+CA	Acacia Five Drain	-115.46638	32.75172	833
+CA	Acacia Lateral Eight	-115.48860	32.79672	828
+CA	Acacia Lateral Five	-115.48694	32.75950	831
+CA	Acacia Lateral Five A	-115.48194	32.78117	830
+CA	Acacia Lateral Four	-115.47805	32.75950	832
+CA	Acacia Lateral Nine	-115.46527	32.80922	828
+CA	Acacia Lateral Six	-115.47388	32.78950	829
+CA	Acacia Lateral Six A	-115.49055	32.78867	828
+CA	Acacia Lateral Ten	-115.49305	32.80394	827
+CA	Acacia Lateral Three	-115.46999	32.75228	833
+CA	Acacia Middle School	-116.96058	33.74474	660
+CA	Acacia Mine	-119.78240	38.62157	157
+CA	Acacia Park	-121.12744	37.73521	81
+CA	Acacia Park	-118.42369	33.93001	568
+CA	Acacia Park	-117.89534	33.88335	598
+CA	Acacia School	-115.49055	32.78200	829
+CA	Acacia Twelve Lateral	-115.49666	32.82089	825
+CA	Acacia Twelve Lateral	-115.49305	32.81478	826
+CA	Acacia Winery	-122.34386	38.23686	71
+CA	Academia Semillas del Pueblo Charter School	-118.18229	34.08529	565
+CA	Academic Vocational Charter Institute	-121.77308	36.92374	163
+CA	Academy	-119.53874	36.88745	243
+CA	Academy Cemetery	-119.54736	36.89384	242
+CA	Academy Granite Quarry	-119.52236	36.89356	244
+CA	Academy Our Mother of Perpetual Help	-122.00320	37.18626	138
+CA	Academy of Art University	-122.40058	37.78770	99
+CA	Academy of Arts and Sciences	-122.44924	37.74505	105
+CA	Academy of Chinese Culture and Health Sciences	-122.27289	37.80675	90
+CA	Academy of Our Lady of Mercy	-122.23222	40.17599	208
+CA	Academy of Saint Catherines by the Sea	-119.26983	34.28111	499
+CA	Academy of our Lady of Peace	-117.13559	32.76505	741
+CA	Acalanes	-122.14358	37.89881	74
+CA	Acalanes High School	-122.09885	37.90492	71
+CA	Acalanes Ridge Census Designated Place	-122.07857	37.90472	70
+CA	Acampo	-121.27856	38.17464	33
+CA	Acampo Post Office	-121.27856	38.17492	33
+CA	Acatia Drain Six A	-115.50166	32.79228	828
+CA	Acatia Lateral Eleven	-115.50083	32.81978	825
+CA	Accelerated Achievement Academy	-123.21020	39.16204	168
+CA	Accelerated Charter School	-118.39175	34.09612	554
+CA	Accent Homes Mobile Home Park	-122.43025	37.42994	131
+CA	Accolade Christian School	-122.04413	38.25130	45
+CA	Accommodation Spring	-120.04810	40.83516	302
+CA	Acebedo	-120.20181	35.83191	307
+CA	Acebedo Ranch	-120.18125	35.78496	313
+CA	Achelth Creek	-123.88007	41.35318	385
+CA	Achieve Academy	-122.22654	37.78218	89
+CA	Achieve Kids Special Education School	-122.11235	37.42167	117
+CA	Achieve Kids Special Education School	-121.82260	37.35116	117
+CA	Achiever Christian School	-121.87507	37.28788	124
+CA	Achois Comihavit	-118.46203	34.27361	534
+CA	Acid Flat	-120.03186	39.39907	174
+CA	Acin Farms	-120.32917	34.67306	426
+CA	Acin Quarry	-120.42722	34.63056	428
+CA	Acker Island	-121.44884	37.99742	44
+CA	Acker Peak	-119.50933	38.10936	182
+CA	Ackerman Campground	-122.77169	40.78570	287
+CA	Ackerman Creek	-123.19917	39.17850	168
+CA	Ackerman Student Union	-118.44425	34.07029	554
+CA	Ackerson Creek	-119.87573	37.82104	160
+CA	Ackerson Meadow	-119.83490	37.84326	162
+CA	Ackerson Mountain	-119.86740	37.83798	160
+CA	Ackley Ranch	-123.72115	40.52208	302
+CA	Acme (historical)	-116.20086	35.78691	556
+CA	Acme Mine	-116.12863	35.76802	563
+CA	Acolita	-115.18470	33.07115	824
+CA	Acorn	-120.49322	34.65276	424
+CA	Acorn Acres Park	-118.87204	34.21389	521
+CA	Acorn Canyon	-119.84157	38.76824	155
+CA	Acorn Canyon	-117.63617	34.35611	568
+CA	Acorn Creek	-121.03300	38.77435	63
+CA	Acorn Hollow	-122.04582	39.98766	183
+CA	Acorn Lodge	-119.92156	37.52355	172
+CA	Acorn Recreation Area	-120.79716	38.17714	70
+CA	Acorn Shopping Center	-120.41933	34.86581	403
+CA	Acorn Spring	-123.35015	41.25602	354
+CA	Acorn Woodland Elementary School	-122.18626	37.75296	89
+CA	Acre Foot Reservoir	-120.86046	40.89042	285
+CA	Acres Cemetery	-119.47402	36.74773	258
+CA	Acrodectes Peak	-118.37510	36.86077	328
+CA	Actis	-118.14869	34.95858	487
+CA	Activated Ministries	-117.11407	33.07719	712
+CA	Acton	-118.19757	34.47016	528
+CA	Acton Camp	-118.19813	34.44999	530
+CA	Acton Canyon	-118.19952	34.47388	528
+CA	Acton Community Cemetery	-118.20174	34.47916	527
+CA	Acton Community Presbyterian Church	-118.19694	34.47111	528
+CA	Acton Elementary School	-118.19646	34.47277	528
+CA	Acton Foursquare Christian Church	-118.20222	34.46833	528
+CA	Acton Post Office	-118.19535	34.46833	528
+CA	Acton School (historical)	-118.20174	34.46722	528
+CA	Acts Christian Academy	-122.19642	37.75851	89
+CA	Acts Ministries	-119.76320	36.81051	235
+CA	Acuna Park	-118.11618	34.02196	574
+CA	Acupuncture and Integrative Medicine College - Berkeley	-122.26759	37.86275	85
+CA	Ada Givens Elementary School	-120.45436	37.30577	154
+CA	Ada Givens Park	-120.45324	37.30716	154
+CA	Ada Harris Park	-117.27420	33.03143	709
+CA	Ada S Nelson Elementary School	-118.07535	33.97001	581
+CA	Ada W Harris Elementary School	-117.27309	33.03254	709
+CA	Adagio	-122.41249	37.78689	100
+CA	Adair Community Day School	-122.04074	37.37483	120
+CA	Adair Elementary School (historical)	-122.03996	37.37550	119
+CA	Adair Lake	-119.40732	37.68299	204
+CA	Adam Adler House	-122.45331	38.29353	79
+CA	Adam Elementary School	-120.44267	34.93621	395
+CA	Adam Park	-120.44239	34.93553	395
+CA	Adam Rogers Park	-122.38386	37.73049	102
+CA	Adam and Eve Redwoods	-122.83221	38.60408	114
+CA	Adams	-122.71971	38.85629	114
+CA	Adams Airport (historical)	-119.73959	36.70412	246
+CA	Adams Avenue Park	-117.11809	32.76255	742
+CA	Adams Barranca	-119.08733	34.32472	502
+CA	Adams Camp	-119.76490	38.45047	157
+CA	Adams Canyon	-118.55981	34.75970	483
+CA	Adams Canyon	-119.10344	34.34667	499
+CA	Adams Cove	-120.44043	34.02972	493
+CA	Adams Creek	-122.28803	38.69713	73
+CA	Adams Creek	-121.31163	39.67128	145
+CA	Adams Creek	-123.27751	38.88824	160
+CA	Adams Creek	-122.92336	41.12264	326
+CA	Adams Creek	-123.58700	41.25902	364
+CA	Adams Ditch	-120.82715	37.33438	133
+CA	Adams Elementary School	-121.31523	38.00909	46
+CA	Adams Elementary School	-119.73426	34.43270	468
+CA	Adams Elementary School	-117.43504	33.94445	616
+CA	Adams Elementary School	-117.93187	33.67456	616
+CA	Adams Field	-117.88694	34.13167	575
+CA	Adams Flat	-122.23664	38.47574	60
+CA	Adams Flat	-119.04761	36.55356	301
+CA	Adams Fox Farm	-124.10257	41.05707	369
+CA	Adams Gap	-119.06177	36.54106	301
+CA	Adams Hall	-117.88694	34.13111	575
+CA	Adams Hill	-118.23563	34.12862	558
+CA	Adams Lake	-122.96283	41.11256	326
+CA	Adams Lateral	-120.81549	37.76271	94
+CA	Adams Memorial Pilgrim Church	-118.14590	34.02251	572
+CA	Adams Middle School	-122.31719	37.94437	82
+CA	Adams Middle School	-118.36405	33.86607	577
+CA	Adams Neck	-120.15132	39.83879	202
+CA	Adams Park	-117.89728	33.71613	613
+CA	Adams Park	-115.55777	32.79617	824
+CA	Adams Peak	-120.10020	39.91074	211
+CA	Adams Pit	-120.83938	39.03573	96
+CA	Adams Pit	-120.71660	39.02323	102
+CA	Adams Plaza Shopping Center	-117.42060	33.92640	618
+CA	Adams Point	-122.25528	37.81389	88
+CA	Adams Point	-122.25858	37.80493	89
+CA	Adams Post Office (historical)	-122.71971	38.85629	114
+CA	Adams Ranch	-122.88725	40.85987	298
+CA	Adams Ranch	-120.33377	35.05414	385
+CA	Adams Ranch	-120.20154	34.99664	395
+CA	Adams Ridge	-122.33442	38.75157	79
+CA	Adams Ridge	-123.59112	38.97824	189
+CA	Adams School	-121.65661	37.03050	150
+CA	Adams School	-120.08016	36.95717	205
+CA	Adams Springs Golf Course	-122.72471	38.84935	114
+CA	Adams Square	-118.24119	34.13362	557
+CA	Adams Station	-123.99258	41.84261	437
+CA	Adams Trail	-116.91697	33.33948	699
+CA	Adams Waste	-119.89348	36.63273	243
+CA	Adams-Truman Elementary School	-116.28806	33.68613	704
+CA	Adamson Landing Field (historical)	-117.99953	36.28133	392
+CA	Adamson Mine	-118.72318	37.39799	272
+CA	Adamsville State Historic Landmark	-121.07382	37.58438	98
+CA	Adante Hotel	-122.41320	37.78660	100
+CA	Adas Yeshuran Cemetery	-121.27356	37.87798	61
+CA	Adat Elohim Chai'im Church	-117.34699	34.49250	573
+CA	Adda Clevenger Junior Preparatory School	-122.42450	37.75367	103
+CA	Addams Elementary School	-119.78820	36.76578	238
+CA	Addams Elementary School	-118.19160	33.85302	586
+CA	Addicott School	-119.73709	36.78273	239
+CA	Addie L Klotz Student Health Center	-118.52647	34.23806	534
+CA	Addington Ranch (historical)	-122.03472	40.46460	235
+CA	Addington Springs	-122.71110	39.24850	139
+CA	Addison Elementary School	-122.15091	37.44596	116
+CA	Addle Canyon	-117.96148	36.91965	356
+CA	Adela	-120.86327	37.78854	89
+CA	Adelaida	-120.87351	35.64553	310
+CA	Adelaida Cemetery	-120.87379	35.65636	308
+CA	Adelaide Mine	-120.18574	37.66465	144
+CA	Adelaide Price Elementary School	-117.93728	33.84029	600
+CA	Adelante Dual Language Academy	-121.78186	37.31659	120
+CA	Adelante High School	-121.27995	38.75268	48
+CA	Adelante School	-122.24443	37.45434	119
+CA	Adelanto	-117.40922	34.58277	562
+CA	Adelanto Airport	-117.46460	34.53619	562
+CA	Adelanto Branch San Bernardino County Library	-117.41394	34.57944	562
+CA	Adelanto Christian School	-117.41755	34.59027	561
+CA	Adelanto Correctional Facility	-117.43616	34.55833	562
+CA	Adelanto Elementary School	-117.40894	34.57610	562
+CA	Adelanto Park	-117.40783	34.57583	562
+CA	Adelanto Post Office	-117.40616	34.57888	562
+CA	Adele Harrison Middle School	-122.45860	38.28000	80
+CA	Adelia Mine	-120.56326	38.06131	94
+CA	Adeline C Walker Elementary School	-117.85700	33.74002	613
+CA	Adeline Street Station (historical)	-122.27219	37.84715	86
+CA	Adeline Street Station (historical)	-122.28830	37.80382	91
+CA	Adin	-120.94524	41.19378	317
+CA	Adin Airport	-120.94755	41.18714	316
+CA	Adin Cemetery	-120.95775	41.19072	316
+CA	Adin Fire Protection District	-120.94316	41.19776	317
+CA	Adin Pass	-120.92136	41.34656	334
+CA	Adin Post Office	-120.94386	41.19739	317
+CA	Adin Summit Pond	-120.93552	41.33739	333
+CA	Adin station	-120.94663	41.19378	317
+CA	Adit Number One	-122.84138	38.80491	122
+CA	Adit Number One-One Hundred Twenty	-122.84277	38.80629	122
+CA	Adit Number Three	-122.82194	38.78102	119
+CA	Adit Number Two	-122.83194	38.80296	121
+CA	Adkins Mountain	-119.81071	37.13800	207
+CA	Adlena Park	-117.95562	33.87251	596
+CA	Adler Creek	-122.39946	40.78765	277
+CA	Adler Creek	-117.19417	33.31528	686
+CA	Admiral David Glascow Farragut Elementary School	-122.26136	38.11186	69
+CA	Admiral Kidd Park	-118.21646	33.79557	591
+CA	Admiral William Standley State Recreation Area	-123.61474	39.64655	227
+CA	Admiralty Park	-118.44639	33.98417	562
+CA	Admiration Point	-118.79760	36.55078	317
+CA	Adobe Art Center	-122.08302	37.69743	89
+CA	Adobe Bluffs Elementary School	-117.13448	32.98227	720
+CA	Adobe Bluffs Park	-117.13142	32.98199	720
+CA	Adobe Canyon	-122.50109	38.43713	83
+CA	Adobe Canyon	-121.40883	37.40910	109
+CA	Adobe Canyon	-120.61072	35.47692	333
+CA	Adobe Canyon	-120.50183	35.09498	377
+CA	Adobe Canyon	-118.92176	35.51662	395
+CA	Adobe Canyon	-120.15543	34.59193	439
+CA	Adobe Corner	-122.26636	37.42605	123
+CA	Adobe Corners	-117.39949	34.50694	569
+CA	Adobe Creek	-122.60526	38.22381	93
+CA	Adobe Creek	-121.40855	37.40882	109
+CA	Adobe Creek	-122.09135	37.45272	113
+CA	Adobe Creek	-122.87805	39.02851	136
+CA	Adobe Creek	-123.11750	39.34489	173
+CA	Adobe Creek	-118.68207	37.93854	257
+CA	Adobe Creek	-121.22242	35.65219	304
+CA	Adobe Creek	-119.36540	34.60610	462
+CA	Adobe Creek 1011 Dam	-122.89277	38.93323	132
+CA	Adobe Creek Golf and Country Club	-122.58721	38.24714	91
+CA	Adobe Flat	-121.36772	37.39410	111
+CA	Adobe Flat	-120.58905	36.25635	251
+CA	Adobe Flat	-121.02524	40.86156	279
+CA	Adobe Flat	-121.49721	41.22988	316
+CA	Adobe Flat Reservoir	-121.49443	41.23544	317
+CA	Adobe Flats	-116.85280	33.23948	711
+CA	Adobe Fort (historical)	-122.58361	38.25583	91
+CA	Adobe Gulch	-120.50937	38.21047	93
+CA	Adobe Gulch	-122.34747	37.49799	120
+CA	Adobe Hill	-119.86182	37.03384	211
+CA	Adobe Hills	-118.65707	37.99660	257
+CA	Adobe Hills	-118.60902	38.01576	261
+CA	Adobe Lake	-118.64124	37.97104	259
+CA	Adobe Lodge	-121.94167	37.34833	119
+CA	Adobe Loop Trail	-117.26754	33.51225	664
+CA	Adobe Meadow	-122.11000	37.42472	117
+CA	Adobe Mine	-121.37272	37.40327	110
+CA	Adobe Mountain	-117.67228	34.70471	536
+CA	Adobe Park	-121.91246	37.66076	86
+CA	Adobe Plaza Shopping Center	-122.49442	37.58883	121
+CA	Adobe Plaza Shopping Center	-120.68434	35.49914	329
+CA	Adobe Point	-122.33969	37.49549	120
+CA	Adobe Pumpkin Farm	-122.60694	38.26611	93
+CA	Adobe Ranch	-119.93377	37.04911	206
+CA	Adobe Ranch	-118.68596	37.93826	256
+CA	Adobe Ranch (historical)	-118.68569	37.94354	256
+CA	Adobe Reservoir	-122.89028	38.94147	132
+CA	Adobe Reservoir	-120.43822	40.48045	252
+CA	Adobe Reservoir	-118.73188	37.87594	254
+CA	Adobe Spring	-122.03598	38.52868	45
+CA	Adobe Spring	-122.41109	39.19517	117
+CA	Adobe Spring	-117.13043	33.59216	664
+CA	Adobe Spring	-116.99905	33.54896	675
+CA	Adobe Springs	-120.36692	35.73343	312
+CA	Adobe Springs	-116.69667	33.39522	706
+CA	Adobe Station (historical)	-118.96760	35.19607	422
+CA	Adobe Valley	-118.63513	37.92799	261
+CA	Adobe Wells Mobile Home Park	-121.99135	37.40161	115
+CA	Adolfo Park	-119.01955	34.23334	513
+CA	Adolfor Camarillo High School	-119.00788	34.21778	515
+CA	Adolphus Canyon	-119.77351	38.61213	158
+CA	Adorni Center	-124.16090	40.80596	350
+CA	Adorni Fishing Pier	-124.16145	40.80624	350
+CA	Adrian Wilcox High School	-121.98605	37.36655	119
+CA	Adult and Alternative Education School	-117.39810	33.95168	617
+CA	Advance	-118.90260	36.51578	313
+CA	Advance Mine	-123.02226	41.33708	351
+CA	Advanced Christian Training School	-120.75531	35.65404	311
+CA	Advanced Education Services of Live Oak	-117.06261	34.00696	631
+CA	Advent Christian Church	-122.29025	38.29658	65
+CA	Advent Christian Church	-121.97635	36.96328	162
+CA	Advent Christian Church	-119.22372	35.76856	356
+CA	Advent Christian Church	-118.21396	34.07723	564
+CA	Advent Christian Conference Center	-121.97746	36.96217	162
+CA	Advent Christian Faith Community Church	-117.09142	32.67033	752
+CA	Advent Church	-121.98774	38.35380	38
+CA	Advent Lutheran Church	-121.29356	38.67268	40
+CA	Advent Lutheran Church	-121.62717	37.13189	139
+CA	Advent Lutheran Church	-118.28341	34.04668	564
+CA	Advent School (historical)	-121.03410	37.71076	87
+CA	Advent of Christ the King Church	-122.42164	37.77576	101
+CA	Adventist Medical Center Hanford	-119.66705	36.32360	283
+CA	Adventist School	-118.14146	34.70082	510
+CA	Aegean Hills Park	-117.68811	33.60391	634
+CA	Aegis Ambulance Service	-118.00181	34.14290	568
+CA	Aeneas Beach	-121.89745	36.61190	199
+CA	Aeolian Buttes	-119.06070	37.85326	226
+CA	Aeolian Elementary School	-118.06839	33.96587	582
+CA	Aeolian Yacht Club	-122.23497	37.75048	92
+CA	Aeree 2463 Dam	-121.02439	38.84323	69
+CA	Aerial Acres	-117.79201	35.08775	496
+CA	Aerial Tramway Palm Springs	-116.55876	33.85748	674
+CA	Aerie Crag Campground	-119.11209	37.80354	224
+CA	Aero Haven Elementary School	-121.37995	38.66574	35
+CA	Aero Pines Mobile Home Park	-121.28917	39.45722	122
+CA	Aerojet Fire Services	-121.20719	38.62979	41
+CA	Aeromedevac Air Ambulance	-116.97022	32.82919	743
+CA	Aeroplane Mine	-118.52650	37.34382	290
+CA	Aerospace Museum	-118.28396	34.01724	566
+CA	Aetna Extension Mine	-122.51054	38.66602	89
+CA	Aetna Mine	-122.49498	38.65602	87
+CA	Aetna School	-120.75382	38.33075	70
+CA	Aetna Shaft Mine	-120.54409	38.08464	94
+CA	Aetna Springs	-122.48276	38.65352	86
+CA	Aetna Springs Golf Course	-122.48109	38.65852	86
+CA	Aetna Springs Post Office (historical)	-122.48276	38.65352	86
+CA	Africa USA Park	-122.23247	38.13297	65
+CA	African Bar	-120.85494	38.96545	89
+CA	Afrox Mine	-120.51461	34.86915	401
+CA	After All Mine	-122.81586	40.86181	296
+CA	Afterbay 1030-004 Dam	-120.74604	39.00323	99
+CA	Afterbay Dam	-120.09000	38.19614	130
+CA	Afton	-121.96636	39.41989	121
+CA	Afton	-116.37974	35.03637	593
+CA	Afton Canyon	-116.28585	35.04359	599
+CA	Afton Canyon Campground	-116.38252	35.03915	592
+CA	Agape Bible Church	-121.59080	39.14545	85
+CA	Agape Chinese Alliance Church	-117.17148	32.82026	734
+CA	Agape Christian Academy	-117.41664	34.09207	604
+CA	Agape Christian Center	-117.16670	33.91752	633
+CA	Agape Christian Fellowship Church	-119.28900	36.32245	304
+CA	Agape Christian Fellowship Church	-118.83982	34.17001	527
+CA	Agape Christian Ministry Church	-117.31528	34.14006	605
+CA	Agape Christian School	-119.23761	35.78356	354
+CA	Agape Christian School	-117.40762	34.10664	603
+CA	Agape Community Baptist Church	-117.05768	32.95366	727
+CA	Agape International Center Outreach	-118.23750	33.89806	580
+CA	Agassiz Col	-118.52983	37.10688	302
+CA	Agate Bay	-120.04019	39.23352	162
+CA	Agate Beach	-122.71082	37.89743	115
+CA	Agate Beach	-123.80085	39.31601	221
+CA	Agate Beach	-124.14368	41.14429	379
+CA	Agate Beach County Park	-122.71054	37.89743	115
+CA	Agate Beach Trail	-124.14729	41.13957	378
+CA	Agate Campground	-124.15035	41.15540	380
+CA	Agatha Canal	-120.72491	37.01634	168
+CA	Agatha Gun Club	-120.70741	36.97245	173
+CA	Agbu Manoogian - Demirdjian School	-118.56583	34.19528	536
+CA	Ager	-122.46058	41.86625	395
+CA	Aggeler High School	-118.59203	34.24223	531
+CA	Agnes J Johnson Elementary School	-123.92393	40.32014	297
+CA	Agnes L Smith Elementary School	-118.00395	33.67057	613
+CA	Agnes Memorial Elementary School	-122.23471	37.78237	89
+CA	Agnes Mine	-115.59417	35.46470	622
+CA	Agnes Ware Stanley Elementary School	-117.93811	33.78529	605
+CA	Agnew	-121.95913	37.39466	115
+CA	Agnew Grove	-118.77955	36.78800	302
+CA	Agnew Lake	-119.13502	37.75481	223
+CA	Agnew Lake 104-038 Dam	-119.13265	37.75826	224
+CA	Agnew Meadows	-119.09597	37.68438	229
+CA	Agnew Meadows Campground	-119.09042	37.68216	230
+CA	Agnew Meadows Group Campground	-119.09458	37.68604	229
+CA	Agnew Meadows Horse Camp	-119.08276	37.68219	230
+CA	Agnew Park	-121.96357	37.39188	115
+CA	Agnew Pass	-119.14348	37.73382	224
+CA	Agnew School	-121.96468	37.39188	115
+CA	Agnew Station Santa Clara Post Office	-121.96135	37.39938	115
+CA	Agnews Development Center	-121.93184	37.40233	114
+CA	Agnews Developmental Center Fire Department	-121.93490	37.40765	113
+CA	Agnews State Hospital (historical)	-121.95107	37.39411	115
+CA	Agoura	-118.73787	34.14306	534
+CA	Agoura High School	-118.74994	34.15030	533
+CA	Agoura Hills	-118.77453	34.13639	533
+CA	Agoura Hills City Hall	-118.77602	34.14451	532
+CA	Agoura Hills-Malibu Division	-118.75703	34.05445	542
+CA	Agoura Meadows Shopping Center	-118.75870	34.15278	532
+CA	Agoura Park	-118.73953	34.14639	534
+CA	Agra	-117.50004	33.33336	669
+CA	Agricultural Park	-117.47144	33.95974	613
+CA	Agro-West Airport	-120.24701	36.33902	254
+CA	Agroecology Program Farm	-122.05885	36.98828	161
+CA	Agua Alta Canyon	-116.23084	33.51420	722
+CA	Agua Alta Spring	-116.33603	33.53153	715
+CA	Agua Amarga Canyon	-118.42174	33.76946	584
+CA	Agua Blanca Camp (historical)	-118.76704	34.54138	494
+CA	Agua Blanca Creek	-118.76148	34.54082	494
+CA	Agua Blanca Trail	-118.84676	34.56666	488
+CA	Agua Bonita Spring	-116.51707	33.66719	692
+CA	Agua Buena Spring	-120.59768	36.34539	241
+CA	Agua Caliente	-122.48804	38.32408	82
+CA	Agua Caliente	-122.50498	38.35130	83
+CA	Agua Caliente	-121.90885	37.48938	104
+CA	Agua Caliente Airport	-116.29773	32.95680	767
+CA	Agua Caliente Canyon	-122.46998	38.31408	80
+CA	Agua Caliente Canyon	-119.57957	34.50860	465
+CA	Agua Caliente County Park	-116.30585	32.95172	767
+CA	Agua Caliente Creek	-122.48359	38.30297	82
+CA	Agua Caliente Creek	-121.93607	37.49355	104
+CA	Agua Caliente Creek	-116.71974	33.27893	715
+CA	Agua Caliente Elementary School	-116.49001	33.82502	681
+CA	Agua Caliente Indian Reservation	-116.53262	33.78378	682
+CA	Agua Caliente Park	-116.48890	33.82419	681
+CA	Agua Caliente Spring	-119.56293	34.53992	462
+CA	Agua Caliente Spring	-116.54521	33.82329	677
+CA	Agua Caliente Springs	-116.30251	32.94977	767
+CA	Agua Caliente Trail	-119.51846	34.57999	460
+CA	Agua Canyon	-118.18174	34.22389	552
+CA	Agua Chinon Wash	-117.75866	33.65419	626
+CA	Agua Dulce	-118.32563	34.49638	519
+CA	Agua Dulce Airpark	-118.31369	34.50388	519
+CA	Agua Dulce Campground	-116.43389	32.85500	769
+CA	Agua Dulce Canyon	-118.33313	34.43750	524
+CA	Agua Dulce Creek	-116.44391	32.87311	766
+CA	Agua Dulce Elementary School	-118.33232	34.48775	520
+CA	Agua Dulce School (historical)	-118.31786	34.51860	517
+CA	Agua Dulce Well	-116.44335	32.87255	766
+CA	Agua Escondida Spring	-120.22927	35.17972	374
+CA	Agua Escondido Campground	-120.22849	35.17886	375
+CA	Agua Fria	-120.02018	37.48494	168
+CA	Agua Fria	-117.21838	34.23890	602
+CA	Agua Fria Creek	-121.93579	37.48383	105
+CA	Agua Fria Creek	-119.98434	37.41300	175
+CA	Agua Fria Creek	-121.24048	35.89775	277
+CA	Agua Fria Spring	-118.59131	35.41692	422
+CA	Agua Fuerte Spring	-116.59247	33.71176	684
+CA	Agua Grande Canyon	-121.15825	36.30108	233
+CA	Agua Hedionda	-117.32756	33.14225	695
+CA	Agua Hedionda	-117.29948	33.15309	696
+CA	Agua Hedionda Creek	-117.31365	33.14171	696
+CA	Agua Jito Mine	-116.53196	33.06143	745
+CA	Agua Magna Canyon	-118.34618	33.78085	586
+CA	Agua Mala Creek	-121.62744	36.43830	216
+CA	Agua Mansa Cemetery	-117.36393	34.04196	611
+CA	Agua Mansa Rest Area	-117.36949	34.05112	610
+CA	Agua Negra Canyon	-118.35285	33.78391	586
+CA	Agua Puera Creek	-122.21525	37.02328	161
+CA	Agua Puerca y las Trances	-122.23691	37.06245	158
+CA	Agua Tibia 849 Dam	-117.01419	33.36003	692
+CA	Agua Tibia Creek	-117.02781	33.34503	692
+CA	Agua Tibia Mountain	-116.98197	33.40975	689
+CA	Agua Tibia Ranch	-117.02225	33.36114	691
+CA	Agua Tibia Wilderness	-116.98586	33.42086	688
+CA	Agua Vista Park	-122.38580	37.76604	100
+CA	Aguadulce Spring	-119.66474	34.81999	430
+CA	Aguaje de la Centinella	-118.37147	33.97057	567
+CA	Aguajita	-121.99385	36.98467	160
+CA	Aguajito	-121.87134	36.56829	203
+CA	Aguajito Canyon	-120.06959	34.47638	453
+CA	Aguanga	-116.86502	33.44281	692
+CA	Aguanga Mountain	-116.78530	33.33837	706
+CA	Aguanga Trail	-116.86919	33.40948	695
+CA	Aguanga Valley	-116.88558	33.44114	691
+CA	Aguas Frias	-121.88720	39.55961	134
+CA	Aguas Frias School (historical)	-121.96748	39.50766	130
+CA	Aguereberry Point	-117.04811	36.35773	458
+CA	Ah Pah Creek	-123.94035	41.42096	394
+CA	Ah Pah Ranch	-123.94174	41.41929	394
+CA	Ah Pah Ridge	-123.94424	41.39262	392
+CA	Ah-Di-Na	-122.09778	41.11099	307
+CA	Ah-Di-Na Campground	-122.09834	41.10988	307
+CA	Ah-Ha-Kwe-Ah-Mac/Stonewall Mine Cultural Preserve	-116.57061	32.97926	750
+CA	Aha-quin Airport	-114.52746	33.86946	806
+CA	Ahart Camp	-120.46715	39.50129	156
+CA	Ahart Campground	-120.40742	39.14574	131
+CA	Ahart Meadow	-119.04150	37.02106	268
+CA	Ahart Sheep Camp	-120.58688	39.53351	153
+CA	Ahayas Achim Cemetery	-121.27522	37.87743	61
+CA	Ahjumawi Lava Springs State Park	-121.41776	41.13600	306
+CA	Ahlem Farms	-120.92694	37.41028	121
+CA	Ahlem Farms Airport	-120.92882	37.38912	123
+CA	Ahlgren Cabin	-123.24699	41.35458	361
+CA	Ahlgren Ranch	-123.17727	41.32180	355
+CA	Ahlstron Park	-121.28856	38.60324	34
+CA	Ahmadiyya Muslim Center	-118.34417	33.91250	574
+CA	Ahmanson Center for Biological Research	-118.28702	34.01946	566
+CA	Ahmanson Commons	-118.27778	34.03083	565
+CA	Ahmanson Theatre	-118.24730	34.05807	564
+CA	Ahrens Child Care Center	-117.16714	34.05886	621
+CA	Ahwahnee	-119.72627	37.36550	196
+CA	Ahwahnee Bridge	-119.57322	37.74409	188
+CA	Ahwahnee Country Club	-119.70404	37.36522	198
+CA	Ahwahnee Estates	-119.70377	37.37078	198
+CA	Ahwahnee Hills Continuation High School	-119.72738	37.37439	196
+CA	Ahwahnee Meadow	-119.58016	37.74659	187
+CA	Ahwahnee Middle School	-119.76931	36.82578	234
+CA	Ahwahnee Post Office	-119.72543	37.36772	196
+CA	Ahwahnee Post Office (historical)	-119.72627	37.36550	196
+CA	Ahwahnee Sanatorium	-119.73182	37.38161	195
+CA	Ahwin (historical)	-120.02431	34.46027	456
+CA	Ahwiyah Point	-119.53655	37.75076	190
+CA	Aido Spring	-120.11209	35.71547	322
+CA	Aiken Gulch	-122.59668	40.36210	238
+CA	Aikens Arch	-115.74861	35.23943	624
+CA	Aikens Creek	-123.65284	41.22874	364
+CA	Aikens Creek Campground	-123.65923	41.23513	365
+CA	Aileen Colburn Elementary School	-120.61992	37.35272	141
+CA	Ailsa (historical)	-117.43560	34.06668	605
+CA	Ainshea Butte	-121.33693	41.67711	367
+CA	Ainslee Meadow	-118.63596	37.48799	275
+CA	Ainsworth Corner	-121.55972	41.99849	402
+CA	Air Methods Medical Transport	-120.51439	37.28888	152
+CA	Air Point School	-121.85662	37.44605	107
+CA	Air Point School	-121.84857	37.44827	107
+CA	Air Rescue International	-118.48628	34.20542	539
+CA	Air Travel Hotel	-122.41690	37.78420	100
+CA	Airbase	-120.44516	34.90887	398
+CA	Airola Camp	-120.25714	38.35492	113
+CA	Airola Creek	-120.26908	38.35936	112
+CA	Airola Mine	-120.51603	38.06520	98
+CA	Airola Peak	-119.81490	38.45769	152
+CA	Airplane Flat	-118.19424	35.22802	461
+CA	Airplane Flat	-117.74784	34.28611	568
+CA	Airplane Meadow	-123.03418	39.94849	216
+CA	Airplane Ridge	-116.59002	32.92088	754
+CA	Airport Channel	-122.21636	37.74298	91
+CA	Airport Church of Christ	-118.38639	33.96556	567
+CA	Airport Ditch	-120.13350	36.99634	198
+CA	Airport Dunes	-118.43758	33.94696	566
+CA	Airport Imperial Building Helistop	-118.39785	33.93029	570
+CA	Airport Industrial Park	-120.51464	37.29383	151
+CA	Airport Inn International	-121.90597	37.36240	117
+CA	Airport Junior High School	-118.38508	33.95557	568
+CA	Airport Lake	-117.73340	35.90217	437
+CA	Airport Marina	-122.21302	37.73687	92
+CA	Airport Park	-121.47829	38.51657	17
+CA	Airport Park	-120.86630	37.05745	159
+CA	Airport Plaza Shopping Center	-118.33313	33.79363	586
+CA	Airport Road Lateral	-120.12822	37.00522	198
+CA	Airport School	-124.10840	40.97318	362
+CA	Airport Station Oakland Post Office	-122.20330	37.73049	92
+CA	Airport Towers Number 1 Heliport	-118.39591	33.91696	571
+CA	Airport Wastewater Treatment Plant	-122.80860	38.51686	110
+CA	Airporter Inn	-115.57160	32.83370	820
+CA	Airstrip Pond	-120.79776	36.31028	239
+CA	Airtel Plaza Hotel & Conference Center	-118.48580	34.20250	539
+CA	Airway Beacon 8	-117.31171	34.73554	555
+CA	Airway Beacon Number 7 (historical)	-117.53061	34.68360	546
+CA	Airway Farms	-120.13820	36.43078	250
+CA	Airway Farms	-120.03069	36.16690	280
+CA	Ajalon Temple of Truth Baptist Church	-118.24639	33.92028	577
+CA	Ajax Field	-122.19193	39.51433	137
+CA	Ajax Prospect	-116.64530	32.80505	762
+CA	Ake Reservoir	-120.49367	41.83721	394
+CA	Akens Canyon	-118.31036	34.27639	541
+CA	Akers	-121.28356	37.99826	49
+CA	Akers Camp (historical)	-116.93169	34.08890	632
+CA	Akers Prospect	-122.47279	40.73876	273
+CA	Akin Airport	-120.89917	38.75440	71
+CA	Aknabir Canogriybd	-121.17774	40.21850	207
+CA	Akoz Mine	-120.31713	37.60132	139
+CA	Aku Inn	-118.60240	34.16840	537
+CA	Al Bahr Shrine Camp	-116.44974	32.89505	764
+CA	Al Brass Creek	-120.74215	38.89018	91
+CA	Al Caffodio Park	-121.78606	37.69243	79
+CA	Al Divine Airport	-119.76449	36.51765	260
+CA	Al Hazen Ridge	-123.61087	40.60375	304
+CA	Al Rose Canyon	-118.08398	36.91826	347
+CA	Al Rribat Al Aslami	-117.04366	32.77081	744
+CA	Al Shinn Canyon	-120.06716	40.67518	285
+CA	Al Slides	-122.52970	38.98767	108
+CA	Al Smith Gulch	-122.61363	40.76043	279
+CA	Al Tahoe	-119.98351	38.94185	150
+CA	Al-arqam Islamic School	-121.43940	38.49963	17
+CA	Ala Mar by the Sea	-119.81030	34.43450	465
+CA	Alabama Bar	-120.74326	39.00379	99
+CA	Alabama Bar	-121.12440	39.52100	132
+CA	Alabama Gates	-118.09870	36.67382	359
+CA	Alabama Hill	-120.59187	38.35491	84
+CA	Alabama Hills	-118.09592	36.61466	363
+CA	Alabama Hills	-118.08981	36.56771	367
+CA	Alabama Hills Recreation Area	-118.15537	36.60743	359
+CA	Alabama House (historical)	-121.00578	38.39658	48
+CA	Alabama Mine	-121.15745	38.84462	62
+CA	Alabama Mine	-120.44436	37.95437	108
+CA	Alabama School (historical)	-121.22661	38.29936	30
+CA	Alabama Street Pit	-117.19472	34.09861	616
+CA	Aladdin Ranch	-120.04848	36.38690	258
+CA	Alain Leroy Locke High School	-118.26757	33.93557	575
+CA	Alamar Canyon	-119.57263	34.61860	454
+CA	Alamar Church of the Four Square Gospel	-119.72430	34.44000	467
+CA	Alamar Guard Station	-119.62707	34.70387	443
+CA	Alamar Hill	-119.59124	34.62943	452
+CA	Alamar Hill Trail	-119.61291	34.63638	450
+CA	Alamar Trail	-119.61624	34.69415	444
+CA	Alambique Creek	-122.24774	37.40327	124
+CA	Alambique Trail	-122.27719	37.39800	126
+CA	Alameda	-122.24164	37.76521	91
+CA	Alameda	-119.00316	35.23774	416
+CA	Alameda Administration Center	-122.28302	37.79159	91
+CA	Alameda Adult School	-122.28386	37.77104	93
+CA	Alameda Baptist Chapel	-122.23247	37.75854	91
+CA	Alameda Boys Club	-122.24969	37.76993	91
+CA	Alameda Chapel	-122.26775	37.77521	92
+CA	Alameda Christian School	-122.24397	37.76872	91
+CA	Alameda City Fire Department Station 2	-122.27782	37.77656	92
+CA	Alameda City Fire Department Station 3	-122.25485	37.77402	91
+CA	Alameda City Fire Department Station 4	-122.25248	37.73766	94
+CA	Alameda City Fire Department Station 5	-122.30297	37.78452	93
+CA	Alameda City Hall	-122.24358	37.76632	91
+CA	Alameda Community Learning Center	-122.29035	37.77307	93
+CA	Alameda County	-121.91789	37.65055	87
+CA	Alameda County Administration Building	-122.26414	37.80021	90
+CA	Alameda County Building	-122.09469	37.65799	93
+CA	Alameda County Courthouse	-122.26302	37.79965	89
+CA	Alameda County Fairgrounds	-121.88718	37.66188	85
+CA	Alameda County Fire Department Station 1	-122.12603	37.67989	93
+CA	Alameda County Fire Department Station 10	-122.18157	37.70887	93
+CA	Alameda County Fire Department Station 11	-122.16991	37.69187	94
+CA	Alameda County Fire Department Station 12	-122.14091	37.70936	91
+CA	Alameda County Fire Department Station 13	-122.13990	37.68832	92
+CA	Alameda County Fire Department Station 15	-121.88628	37.71974	79
+CA	Alameda County Fire Department Station 16	-121.93345	37.70866	82
+CA	Alameda County Fire Department Station 17	-121.88377	37.71514	79
+CA	Alameda County Fire Department Station 18	-121.85435	37.71498	78
+CA	Alameda County Fire Department Station 19	-122.25362	37.87704	83
+CA	Alameda County Fire Department Station 2	-122.10780	37.67492	92
+CA	Alameda County Fire Department Station 20	-121.69766	37.68003	79
+CA	Alameda County Fire Department Station 21	-121.50383	37.63318	83
+CA	Alameda County Fire Department Station 3	-122.11239	37.69530	90
+CA	Alameda County Fire Department Station 4	-122.08057	37.69708	89
+CA	Alameda County Fire Department Station 5	-122.09130	37.70947	88
+CA	Alameda County Fire Department Station 6	-122.05384	37.70285	87
+CA	Alameda County Fire Department Station 7	-122.02765	37.71508	85
+CA	Alameda County Fire Department Station 8	-121.77367	37.67422	81
+CA	Alameda County Fire Department Station 9	-122.15082	37.72681	89
+CA	Alameda County Fire Department Training Facility	-122.16713	37.72602	90
+CA	Alameda County Juvenile Hall	-122.11913	37.71354	89
+CA	Alameda County Medical Center Fairmont Campus	-122.12086	37.70908	90
+CA	Alameda County Medical Center Highland Campus	-122.23135	37.79860	88
+CA	Alameda County Parking Garage Heliport	-122.26580	37.80048	90
+CA	Alameda Creek	-122.14691	37.59438	102
+CA	Alameda Creek Quarries Regional Park	-122.00274	37.57216	98
+CA	Alameda Diversion Tunnel	-121.78829	37.48827	101
+CA	Alameda Elementary School	-118.13589	33.92556	582
+CA	Alameda Harbor	-122.25136	37.77937	90
+CA	Alameda High School	-122.24730	37.76429	91
+CA	Alameda Hospital	-122.25407	37.76295	92
+CA	Alameda Marina	-122.25052	37.77715	91
+CA	Alameda Mine	-120.45964	37.97187	106
+CA	Alameda Mole	-122.33164	37.79715	94
+CA	Alameda Municipal Golf Course	-122.23191	37.74215	92
+CA	Alameda Naval Air Station	-122.31667	37.78333	94
+CA	Alameda Naval Air Station (historical)	-122.32528	37.79028	94
+CA	Alameda Naval Supply Center (historical)	-122.28611	37.78556	92
+CA	Alameda Park	-122.24497	37.75993	92
+CA	Alameda Park	-122.29136	37.77882	93
+CA	Alameda Pier (historical)	-122.27664	37.79104	91
+CA	Alameda Plaza	-119.70514	34.42805	469
+CA	Alameda Point	-122.31903	37.78672	94
+CA	Alameda Post Office	-122.24191	37.76410	91
+CA	Alameda Public Library	-122.24358	37.76576	91
+CA	Alameda Reserve Shipyard	-122.27191	37.78743	91
+CA	Alameda School (historical)	-119.48013	36.66940	264
+CA	Alameda Science and Technology Institute	-122.28042	37.78137	92
+CA	Alameda Seventh Day Adventist Church	-122.26747	37.77410	92
+CA	Alameda Station (historical)	-122.24080	37.76660	91
+CA	Alameda Tunnel	-120.68493	39.15490	115
+CA	Alameda Well	-118.82930	38.10576	241
+CA	Alamere Creek	-122.78416	37.95437	118
+CA	Alamere Falls	-122.78341	37.95425	118
+CA	Alamias Creek	-121.53188	37.02134	151
+CA	Alamine Peak	-121.88110	40.58321	246
+CA	Alamitos	-121.86718	37.25050	128
+CA	Alamitos Bay	-118.11812	33.74974	600
+CA	Alamitos Bay Beach	-118.13145	33.75613	599
+CA	Alamitos Bay State Park	-118.12062	33.74641	600
+CA	Alamitos Bay Yacht Club	-118.11701	33.74585	600
+CA	Alamitos Branch Long Beach Public Library	-118.16812	33.76863	596
+CA	Alamitos Canal	-115.45749	32.73033	835
+CA	Alamitos Canal Lateral Eight	-115.44055	32.72283	837
+CA	Alamitos Creek	-121.87116	37.24608	129
+CA	Alamitos Generating Station	-118.10111	33.76889	599
+CA	Alamitos Intermediate School	-117.98461	33.78243	603
+CA	Alamitos Peninsula	-118.12645	33.75057	599
+CA	Alamitos School (historical)	-115.41332	32.76616	835
+CA	Alamitos Three Drain	-115.43999	32.69006	840
+CA	Alamo	-122.03218	37.85020	72
+CA	Alamo Camp	-118.95982	34.65110	475
+CA	Alamo Canal	-114.72051	32.72616	881
+CA	Alamo Canyon	-119.57374	34.77443	438
+CA	Alamo Creek	-121.81802	38.33658	23
+CA	Alamo Creek	-121.91412	37.71326	80
+CA	Alamo Creek	-120.44238	35.32720	353
+CA	Alamo Creek	-120.31544	35.00887	390
+CA	Alamo Creek	-120.30682	34.51860	443
+CA	Alamo Creek	-119.29261	34.69026	457
+CA	Alamo Creek	-119.01677	34.67248	470
+CA	Alamo Creek Park	-122.00913	38.35630	40
+CA	Alamo Elementary School	-122.00191	38.35213	39
+CA	Alamo Elementary School	-122.03024	37.86715	71
+CA	Alamo Elementary School	-122.48250	37.78307	105
+CA	Alamo Inn & Suites	-117.92600	33.80320	604
+CA	Alamo Mountain	-118.95927	34.66665	473
+CA	Alamo Oaks	-121.99302	37.83937	71
+CA	Alamo Pintado Creek	-120.13515	34.58526	440
+CA	Alamo Plaza Shopping Center	-122.00052	38.34741	39
+CA	Alamo Plaza Shopping Center	-122.03496	37.85187	72
+CA	Alamo Ranch (historical)	-118.83537	34.72054	474
+CA	Alamo Ridge	-122.01218	37.84381	72
+CA	Alamo River	-115.62166	33.21226	785
+CA	Alamo School	-120.43379	37.09050	174
+CA	Alamo School	-115.30332	32.76616	842
+CA	Alamo Solo Spring	-119.99930	35.78163	320
+CA	Alamo Square	-122.43497	37.77632	102
+CA	Alamo Square	-122.43386	37.77933	102
+CA	Alamo Square Historic District	-122.43497	37.77715	102
+CA	Alamorio	-115.46138	32.97921	814
+CA	Alamos Anchorage	-119.77096	33.96112	516
+CA	Alamos Canyon	-118.81676	34.28417	517
+CA	Alamos School	-117.10114	33.59030	666
+CA	Alamosa Park	-117.27781	33.24170	689
+CA	Alamosa Park Elementary School	-117.28226	33.24226	688
+CA	Alan Peak	-120.81740	35.25220	353
+CA	Alan Peak Trail	-120.83212	35.25136	353
+CA	Alan Sieroty Beach	-122.84833	38.10687	117
+CA	Alandale Forest Service Facility	-116.75335	33.78391	669
+CA	Alaska Canyon	-120.16105	41.04267	319
+CA	Alaska Flat	-118.35730	35.49773	428
