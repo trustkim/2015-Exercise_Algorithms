@@ -1,6 +1,5 @@
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
@@ -24,13 +23,11 @@ public class Exercise12_2 {
 		int id;
 		String name;
 		double lat,lon;
-		int dist;
 		City(int id, String name, double lat, double lon) {
 			this.id = id;
 			this.name = String.copyValueOf(name.toCharArray());
 			this.lat= lat;	// 위도
 			this.lon=lon;	// 경도
-			dist = 0;
 		}
 	}
 	private static MyRBTreeMap<String, Integer> rbm;		// <도시이름, 일련번호> 쌍 맵. 이걸 쓰면 인접리스트에서 도시이름을 키로 해당 도시의 일련번호를 더 빨리 찾을 수 있다.
@@ -49,7 +46,7 @@ public class Exercise12_2 {
 				temp = sc.nextLine().split("\\t");				// 파일에서 한 라인을 읽어 "\\t"으로 자름. 백슬래시가 두 개!
 				addCityName(temp[1],temp[1],cityID,0);			// 트리맵에 <도시이름, 일련번호> 쌍을 추가함.
 				city = new City(cityID, temp[1], Double.parseDouble(temp[3]), Double.parseDouble(temp[2]));
-				tableBuffer[cityID] = city;					// 일단 인접리스트의 크기를 모르므로 한 파일을 다 읽을 동안 모든 도시 정보를 테이블에 저장해둠.
+				tableBuffer[cityID] = city;						// 일단 인접리스트의 크기를 모르므로 한 파일을 다 읽을 동안 모든 도시 정보를 테이블에 저장해둠.
 				cityID++;
 			}	// file read complete
 			sc.close();
@@ -57,11 +54,11 @@ public class Exercise12_2 {
 		System.out.println("the Map is constructed! there is "+cityID+" cities");
 
 		adjList = new LinkedList[cityID];
-		constructAdjList();
+		constructAdjList();											// 인접리스트를 생성
 		System.out.println("adjList is constructed!");
 
-		int k=5;
-		PrintByHop("\"University of California, Los Angeles\"",k);
+		int k=5;													// 최대 갈 수 있는 홉
+		PrintByHop("\"University of California, Los Angeles\"",k);	// 홉 단위로 BFS하며 도시 이름 출력.
 	}
 	public static double calDistance(double lat1, double lon1, double lat2, double lon2) {
 		double theta, dist;
@@ -120,26 +117,25 @@ public class Exercise12_2 {
 		System.out.println("PrintByHop from "+start+"...");
 		if(rbm.containsKey(start)) {  
 			int[] checkTable = new int[adjList.length];			// BFS에서 한 번 갔던 노드를 다시 방문하지 않게 하는 체크 테이블.
+			for(int i=0;i<checkTable.length;i++) {
+				checkTable[i] = -1;								// -1로 초기화
+			}
 			Queue<Integer> queue = new LinkedList<Integer>();	// BFS를 위한 큐. 큐에는 각 도시 일련번호를 저장하여 BFS시 접근할 도시의 인덱스를 반환하게 한다.
 			int startIndex = rbm.get(start);
 			queue.offer(startIndex);							// 시작 id의 도시에 대한 인접리스트를 인큐.
-			checkTable[startIndex] = 1;							// 시작 노드 체크.
+			checkTable[startIndex] = 0;							// 시작 노드 체크.
 			int curIndex;										// BFS 한 스텝에 디큐받을 변수.
 			while(!queue.isEmpty()) {
 				curIndex = queue.poll();						// 이번에 방문한 id의 도시 인접리스트를 디큐.
-				int dist=tableBuffer[curIndex].dist;			// 각 인접리스트의 대표 노드에 접근 할 수 없어 동일한 인덱스로 임시 버퍼를 재활용 하였다.
 				for(City i:adjList[curIndex]) {					// 한 인접리스트 인덱스를 전부 순회함. 즉 현재 방문한 노드의 모든 방문하지 않았던 인접 노드를 방문.
-					int nextIndex = rbm.get(i.name);
-					if(checkTable[nextIndex]==0&&dist+1<=k) {
-						tableBuffer[nextIndex].dist = dist+1;
-						System.out.println(tableBuffer[nextIndex].dist+": "+i.name);
-						checkTable[nextIndex] = 1;				// 방문한 인덱스 체크
+					int nextIndex = rbm.get(i.name);			// 이터래이터 i의 name으로 id를 찾음.
+					if(checkTable[nextIndex]<0 && checkTable[curIndex]<k) {
+						checkTable[nextIndex] = checkTable[curIndex]+1;		// 방문한 인덱스 체크
+						System.out.println(checkTable[nextIndex]+": "+i.name);
 						queue.offer(nextIndex);					// 인접한 모든 노드를 인큐.
 					}
 				}
 			}
 		}
 	}
-
-
 }
