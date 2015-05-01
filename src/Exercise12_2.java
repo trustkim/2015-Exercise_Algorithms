@@ -36,8 +36,8 @@ public class Exercise12_2 {
 		}
 	}
 	private static MyRBTreeMap<String, Integer> rbm;		// <도시이름, 일련번호> 쌍 맵. 이걸 쓰면 인접리스트에서 도시이름을 키로 해당 도시의 일련번호를 더 빨리 찾을 수 있다.
-	private static LinkedList<City>[] adjList;				// 각 도시를 노드로하는 인접 리스트
-	private static City[] tableBuffer = new City[MAXCITY];
+	private static LinkedList<Integer>[] adjList;			// 각 도시를 노드로하는 인접 리스트로 했다가 많이 햇갈려서 교수님 조언대로 id가 저장되는 LinkedList의 배열로 바꿈.
+	private static City[] tableBuffer = new City[MAXCITY];	// 파일에서 각 도시 정보를 한 클래스로 생성하여 별도의 테이블로 만들어 ㅤㄷㅜㄻ.
 	@SuppressWarnings("unchecked")
 	public static void main(String [] args){	
 		rbm = new MyRBTreeMap<String, Integer>();
@@ -103,14 +103,14 @@ public class Exercise12_2 {
 	// 모든 도시간 거리를 구하여 10km 미만인 도시들을 인접리스트에 추가하는 함수
 	private static void constructAdjList() {
 		for(int i=0;i<adjList.length;i++) {
-			adjList[i] = new LinkedList<City>();	// 각 인접리스트 인덱스를 초기화
+			adjList[i] = new LinkedList<Integer>();	// 각 인접리스트 인덱스를 초기화
 		}
 		for(int i=0;i<adjList.length;i++) {
 			for(int j=0;j<adjList.length;j++) {
 				if(i!=j) {
 					if(calDistance(tableBuffer[i].lat,tableBuffer[i].lon,tableBuffer[j].lat,tableBuffer[j].lon)<=10*1000) {	// 10km 이하는 10*1000m이하인 거... 확인 잘하자...
 						//System.out.println("add AdjList!");
-						adjList[rbm.get(tableBuffer[i].name)].add(tableBuffer[j]);
+						adjList[rbm.get(tableBuffer[i].name)].add(tableBuffer[j].id);
 					}
 				}
 			}
@@ -132,11 +132,11 @@ public class Exercise12_2 {
 			int curIndex;										// BFS 한 스텝에 디큐받을 변수.
 			while(!queue.isEmpty()) {
 				curIndex = queue.poll();						// 이번에 방문한 id의 도시 인접리스트를 디큐.
-				for(City i:adjList[curIndex]) {					// 한 인접리스트 인덱스를 전부 순회함. 즉 현재 방문한 노드의 모든 방문하지 않았던 인접 노드를 방문.
-					int nextIndex = rbm.get(i.name);			// 이터래이터 i의 name으로 id를 찾음.
+				for(int i:adjList[curIndex]) {					// 한 인접리스트 인덱스를 전부 순회함. 즉 현재 방문한 노드의 모든 방문하지 않았던 인접 노드를 방문.
+					int nextIndex = rbm.get(tableBuffer[i].name);			// 이터래이터 i의 name으로 id를 찾음.
 					if(checkTable[nextIndex]==UNVISITED && checkTable[curIndex]<k) {
 						checkTable[nextIndex] = checkTable[curIndex]+1;		// 방문한 인덱스 체크
-						System.out.println(checkTable[nextIndex]+": "+i.name);
+						System.out.println(checkTable[nextIndex]+": "+tableBuffer[i].name);
 						queue.offer(nextIndex);					// 인접한 모든 노드를 인큐.
 					}
 				}
