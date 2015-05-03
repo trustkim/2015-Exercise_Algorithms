@@ -68,6 +68,18 @@ public class Exercise13_3 {
 			sc.close();
 		}catch(FileNotFoundException e) {System.out.println("file not found...");}
 	}
+	
+	/* 인접리스트 만들기 */
+	private static void add(Node r, String var) {
+		Node cur = new Node(var);		// 추가할 노드.
+		Node p = r;						// 추가할 위치.
+		while(p.next!=null) {
+			p = p.next;
+		}
+		p.next = cur;
+		// 인접리스트의 헤드 노드들에 outdegree를 저장 해 둠. 나머지는 모두 0이다.
+		r.outdeg++;
+	}
 	private static void constructAdjList(String[] buf, Node[] g) {
 		String[] nots;
 		for(int i=0;i<buf.length;i++) {
@@ -84,17 +96,8 @@ public class Exercise13_3 {
 			}
 		}
 	}
-	private static void add(Node r, String var) {
-		Node cur = new Node(var);		// 추가할 노드.
-		Node p = r;						// 추가할 위치.
-		while(p.next!=null) {
-			p = p.next;
-		}
-		p.next = cur;
-		// 인접리스트의 헤드 노드들에 outdegree를 저장 해 둠. 나머지는 모두 0이다.
-		r.outdeg++;
-	}
 	
+	/* 위상정렬 알고리즘 2 */
 	private static boolean DFS_TS(String v) {
 		boolean isDAG = true;
 		visited[hsm.get(v)] = 1;
@@ -127,6 +130,7 @@ public class Exercise13_3 {
 		return true;
 	}
 	
+	/* 위상 정렬된 배열을 이용하여 수식 계산 */
 	private static boolean isVar(String v) {	// 입력 스트링이 변수인지 상수인지 판단하는 함수.
 		return (v.compareTo("A")>=0&&v.compareTo("Z")<=0);
 	} // 변수이면 true, 상수이면 false를 반환.
@@ -145,6 +149,8 @@ public class Exercise13_3 {
 		}
 		return varTable[hsm.get(A[A.length-1])];
 	}
+	
+	/* 테스트 및 출력을 위한 함수 */
 	private static void testPrintAdj(Node[] list) {
 		System.out.println("====== TEST PRINT : AdjList ======");
 		for(int i=1;i<list.length;i++) {
