@@ -10,6 +10,8 @@ import java.util.Scanner;
 public class Exercise13_2 {
 	private static final int OUT = 1;
 	private static final int IN = 2;
+	private static int[] visited;	// 위상정렬 알고리즘2를 위한 배열.
+	private static Node R;			// 위상정렬 알고리즘2를 위한 연결리스트.
 	private static class Node {
 		int data,indegree,outdegree;
 		Node next;
@@ -92,8 +94,6 @@ public class Exercise13_2 {
 		}
 		return true;
 	}
-	private static int[] visited;
-	private static Node R;
 	private static boolean DFS_TS(Node[] g, int v) {
 		boolean isDAG = true;
 		visited[g[v].data] = 1;
