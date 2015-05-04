@@ -15,13 +15,11 @@ public class Exercise13_2 {
 	private static int[] outdegree;	// outdegree를 담을 배열.
 
 	private static int[] visited;	// 위상정렬 알고리즘2를 위한 배열.
-	private static Node R;			// 위상정렬 알고리즘2를 위한 연결리스트.
+	private static Node R;			// 위상정렬 알고리즘2를 위한 연결리스트. 전역으로 안해주니 DFS시 제대로 접근이 안된다.
 	private static class Node {
 		int data;
-		int outdegree;				// 노드 내부에서 하는건 부자연 스러우므로 바꾸기로 한다.
 		Node next;
 		Node(int data) {
-			outdegree=0;			// 별도의 배열로 만들 것.
 			this.data = data; next = null;
 		}
 	}
@@ -70,7 +68,8 @@ public class Exercise13_2 {
 			p = p.next;
 		}
 		p.next = cur;
-	}
+	} // 이건 Exercise12_1에서 인접리스트 클래스를 만들어 멤버 함수로 정의 해 두자. 재사용을 위해.
+
 	private static boolean topologicalSort1(Node[] g, int[] A) {
 		Queue<Integer> queue = new LinkedList<Integer>();	// indegree가 0인 노드를 저장할 큐.
 		for(int i=1;i<indegree.length;i++) {
@@ -94,31 +93,35 @@ public class Exercise13_2 {
 		if(cnt<g.length-1) return false;		// g.length는 전체 노드+1 [0]을 안쓰므로.
 		return true;
 	}
-	private static boolean DFS_TS(Node[] g, int v) {
+	private static boolean DFS_TS(int v) {
 		boolean isDAG = true;
-		visited[g[v].data] = 1;
-		Node x = g[v].next;
+		visited[v]++;
+		Node x = adjList[v].next;
 		while(x!=null) {
 			if(visited[x.data]==0)
-				isDAG = DFS_TS(g,x.data);
-			else if(R==null && g[x.data].outdegree>0) {
+				isDAG = DFS_TS(x.data);
+			else if(visited[x.data]==1) {
 				return false;	// 위상 정렬시 마지막에 와야 하는 노드의 outdegree가 0이 아닌경우 DAG가 아님.
 			}
 			x = x.next;
 		}
-		x = new Node(g[v].data);
+		
+		x = new Node(adjList[v].data);
 		x.next = R;
 		R = x;
+		visited[x.data]++;	// DFS를 거슬러 올라가면서 두번째 체크.
 		return isDAG;
 	}
 	private static boolean topologicalSort2(Node[] g, int[] A) {
-		visited = new int[g.length];	// [0]은 사용하지 않음.
+		visited = new int[g.length];	// [0]은 사용하지 않음. DFS 수행 시 최대 두 번까지 체크됨.
 		R = null;
 		for(int i=1;i<g.length;i++) {
 			if(visited[i]==0) {
-				if(!DFS_TS(g, i)) return false;
+				if(!DFS_TS(g[i].data)) return false;
 			}
 		}
+
+		// R을 A로 바꿔서 반환함. 굳이 안해줘도 상관 없다.
 		for(int i=1;i<A.length;i++) {
 			A[i] = R.data;
 			R = R.next;
