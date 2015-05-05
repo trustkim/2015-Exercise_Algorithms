@@ -97,7 +97,7 @@ public class Exercise13_2 {
 		boolean isDAG = true;
 		visited[v]++;
 		Node x = adjList[v].next;
-		while(x!=null) {
+		while(x!=null && isDAG) {
 			if(visited[x.data]==0)
 				isDAG = DFS_TS(x.data);
 			else if(visited[x.data]==1) {
@@ -106,10 +106,11 @@ public class Exercise13_2 {
 			x = x.next;
 		}
 		
+		// R의 앞에 추가.
 		x = new Node(adjList[v].data);
 		x.next = R;
 		R = x;
-		visited[x.data]++;	// DFS를 거슬러 올라가면서 두번째 체크.
+		visited[v]++;	// DFS를 거슬러 올라가면서 두번째 체크.
 		return isDAG;
 	}
 	private static boolean topologicalSort2(Node[] g, int[] A) {
