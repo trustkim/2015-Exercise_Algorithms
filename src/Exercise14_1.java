@@ -85,11 +85,11 @@ public class Exercise14_1 {
 		test.kruskal();
 	}
 	
-	private void edgePrint() {
-		System.out.println("s\te\tw");
-		for(int i=0;i<edges.length;i++) {
-			System.out.println(edges[i].start+"\t"+edges[i].end+"\t"+edges[i].weight);
-		}
-		System.out.println();
-	}
+//	private void edgePrint() {
+//		System.out.println("s\te\tw");
+//		for(int i=0;i<edges.length;i++) {
+//			System.out.println(edges[i].start+"\t"+edges[i].end+"\t"+edges[i].weight);
+//		}
+//		System.out.println();
+//	}
 }
