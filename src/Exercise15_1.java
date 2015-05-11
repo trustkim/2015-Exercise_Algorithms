@@ -16,11 +16,11 @@ public class Exercise15_1 {
 		int x,y;
 		Point(int x, int y) {this.x=x;this.y=y;}
 	}
-	private Point[] g;		// 그래프는 간단히 각 점들의 배열로 표현
-	private int N;		// 전체 그래프를 이루는 정점의 개수
-	private int[] key;		// 해당 에지의 최소 가중치
-	private int[] pi;		// 해당
-	private boolean[] include;
+	private Point[] g;			// 그래프는 간단히 각 점들의 배열로 표현
+	private int N;				// 전체 그래프를 이루는 정점의 개수
+	private int[] key;			// 이미 Va에 속한 노드와 자신을 연결하는 에지들 중 가중치가 최소인 에지 (u,v)의 가중치
+	private int[] pi;			// 해당 에지 (u,v)의 끝 점 u
+	private boolean[] include;	// Va에 속할 때 true를 표시하는 배열
 	private int findDist(int a, int b)
 	{
 		int ax=g[a].x, ay=g[a].y, bx=g[b].x, by=g[b].y;
@@ -28,20 +28,19 @@ public class Exercise15_1 {
 	}
 	private void init()
 	{
-		key = new int[N];	// 이게 정확한건가?
-		pi = new int[N];
+		key = new int[N];		// 전체 정점들의 key값을 매번 갱신시켜 나감. 따라서 N개
+		pi = new int[N];		// 얘도 N개
 		include = new boolean[N];
-		for(int u=0;u<N;u++)
+		for(int i=0;i<N;i++)
 		{
-			key[u] = -1;	// key를 무한으로
-			//pi[u] = 0;		// pi[u]를 nil로
+			key[i] = -1;	// key를 무한으로
 		}
 	}
 	private int findMinKey()
 	{
 		// 트리에 넣지 않은 인접 노드 중 거리가 가장 가까운 노드의 인덱스를 반환
-		int minKey=-1;	// 가장 가까운 정점
-		int minIndex=-1; 	// 이게 문제네 지금.
+		int minKey=-1;		// 현재 가장 가까운 정점과의 거리가 저장
+		int minIndex=-1;	// 현재 가중치가 가장 낮은 정점 인덱스를 반환
 		for(int i=0;i<N;i++)
 		{
 			if(!include[i]){
@@ -58,21 +57,20 @@ public class Exercise15_1 {
 	private void mstPrim()
 	{
 		init();
-		key[0] = 0;	// r에 대한 key를 0으로 초기화
+		key[0] = 0;			// 시작 노드를 정함. 항상 g[0] 노드의 인접한 에지부터 MST에 추가함.
 		int mstSize = 0;
 		while(mstSize<N)
 		{
-			int u = findMinKey();
-			include[u] = true;
-			for(int v=0;v<N;v++)
+			int u = findMinKey();			// Va에 속하지 않고 key가 가장 낮은 정점을 찾음
+			include[u] = true; mstSize++;	// 그 u를 Va에 포함 시킴
+			for(int v=0;v<N;v++)			// u의 모든 인접한 정점 중 Va에 포함 되지 않은 v의 key[v], pi[v]를 갱신
 			{
 				if(include[v])
-					continue;
+					continue;				// Va에 포함된 key[v]는 갱신하지 않음
 				if(key[v] == -1 || key[v] > findDist(u,v))
 				{
 					key[v] = findDist(u,v);
 					pi[v] = u;
-					//System.out.println(v+"->"+u);
 				}
 			}
 		}
