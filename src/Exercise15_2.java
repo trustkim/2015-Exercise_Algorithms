@@ -52,7 +52,7 @@ public class Exercise15_2 extends JPanel
 		{
 			if(!include[i]){
 				int temp = key[i];
-				if(minKey == -1 || minKey > temp)
+				if(minKey == -1 || (temp!=-1&&minKey > temp))
 				{
 					minKey = temp;
 					minIndex=i;
