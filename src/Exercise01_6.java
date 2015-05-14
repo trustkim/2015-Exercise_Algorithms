@@ -14,6 +14,7 @@ public class Exercise01_6 {
 			long start = System.currentTimeMillis();
 			System.out.println(tetrahedron(N));
 			System.out.println("Elapsed: "+(((long)System.currentTimeMillis())-start)/1000.0);
+			kb.close();
 			}catch(Exception e){e.printStackTrace();}
 	}
 	public static int tetrahedron(int n) {

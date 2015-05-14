@@ -18,6 +18,7 @@ public class Exercise01_4 {
 			start = System.currentTimeMillis();
 			System.out.println(solve(0,0,N,M));
 			System.out.println("Elapsed: "+(((long)System.currentTimeMillis())-start)/1000.0);
+			kb.close();
 			}catch(Exception e){e.printStackTrace();}
 	}
 	public static double memorize_combination(int n, int k){

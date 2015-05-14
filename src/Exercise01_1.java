@@ -4,21 +4,22 @@ public class Exercise01_1 {
 	public static double[] fibonacci;
 	public static void main(String[] args) {
 		try {
+			Scanner sc = new Scanner(System.in);
+			int	n=sc.nextInt();
 
-		int	n=(new Scanner(System.in)).nextInt();
-		
-		long start = System.currentTimeMillis();
-		System.out.println(iterative_fibonacci(n));
-		System.out.println("Elapsed: "+(((long)System.currentTimeMillis())-start)/1000.0);
-		
-		fibonacci = new double[n+1];
-		start = System.currentTimeMillis();
-		System.out.println(memorize_recursive_fibonacci(n));
-		System.out.println("Elapsed: "+(((long)System.currentTimeMillis())-start)/1000.0);
-		
-		start = System.currentTimeMillis();
-		System.out.println(recursive_fibonacci(n));
-		System.out.println("Elapsed: "+(((long)System.currentTimeMillis())-start)/1000.0);
+			long start = System.currentTimeMillis();
+			System.out.println(iterative_fibonacci(n));
+			System.out.println("Elapsed: "+(((long)System.currentTimeMillis())-start)/1000.0);
+
+			fibonacci = new double[n+1];
+			start = System.currentTimeMillis();
+			System.out.println(memorize_recursive_fibonacci(n));
+			System.out.println("Elapsed: "+(((long)System.currentTimeMillis())-start)/1000.0);
+
+			start = System.currentTimeMillis();
+			System.out.println(recursive_fibonacci(n));
+			System.out.println("Elapsed: "+(((long)System.currentTimeMillis())-start)/1000.0);
+			sc.close();
 		}catch (Exception e){e.printStackTrace();}
 	}
 	public static double iterative_fibonacci(int n){

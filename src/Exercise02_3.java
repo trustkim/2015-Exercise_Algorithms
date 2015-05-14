@@ -4,8 +4,10 @@ import java.util.Scanner;
 public class Exercise02_3 {
 	public static void main(String [] args) {
 		try {
-			String str = (new Scanner(System.in)).next();
+			Scanner sc = new Scanner(System.in);
+			String str = sc.next();
 			System.out.println(isPalindrome(str, 0, str.length()-1));
+			sc.close();
 		} catch(Exception e) {e.printStackTrace();}
 	}
 	public static boolean isPalindrome(String str, int begin, int end) {

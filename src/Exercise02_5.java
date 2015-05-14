@@ -33,7 +33,7 @@ public class Exercise02_5 {
 				System.out.println(findHorsePath(x0, y0, x1, y1));
 			}
 			
-			
+			input.close();
 		} catch (FileNotFoundException e) {e.printStackTrace();}
 		System.out.println("Elapsed: "+(((long)System.currentTimeMillis())-start)/1000.0);
 	}

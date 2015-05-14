@@ -12,6 +12,7 @@ public class Exercise01_3 {
 			long start = System.currentTimeMillis();
 			System.out.println(memorize_combination(n,k));
 			System.out.println("Elapsed: "+(((long)System.currentTimeMillis())-start)/1000.0);
+			kb.close();
 			}catch(Exception e){e.printStackTrace();}
 	}
 	public static double combination(int n, int k){

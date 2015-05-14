@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 /*
  * Counting cells in blob 문제에서 모든 blob들과 그들의 크기를 찾아 출력하도록 프로그램을 수정하라.
  * 아래 그림의 예에서는 다음과 같이 출력되어야 한다.
