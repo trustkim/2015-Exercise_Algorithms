@@ -55,10 +55,10 @@ public class Exercise16 {
 		}
 		return minIndex;
 	}
-	private double findWeight(Edge p, char type)
-	{
-		return (type=='D'?p.dist:p.speed);
-	}
+//	private double findWeight(Edge p, char type)
+//	{
+//		return (type=='D'?p.dist:p.speed);
+//	}
 	private void dijkstra(int start, int dest, char type)
 	{	// Prim의 알고리즘과 거의 동일하다!
 		init();
@@ -74,10 +74,10 @@ public class Exercise16 {
 				int v = p.id;
 				if(include[v])
 					;// S에 포함된 key[v]는 갱신하지 않음
-				double weight = findWeight(p,type);
-				if(key[v]==-1 || key[v] > key[u]+weight)
+				// double weight = findWeight(p,type);
+				if(key[v]==-1 || key[v] > key[u]+p.dist)
 				{
-					key[v] = key[u]+weight;
+					key[v] = key[u]+p.dist;
 					pi[v] = u;
 				}
 				p = p.next;
@@ -206,6 +206,15 @@ public class Exercise16 {
 			Print(start,dest,type);		// 해당 경로의 최단 경로를 출력
 		}
 	}
+	private double findSpeed(int start, int dest)
+	{
+		Edge p = vertices[start];
+		while(p.id!=dest)
+		{
+			p=p.next;
+		}
+		return p.speed;
+	}
 	private void Print(int start, int dest, char type)
 	
 	{
@@ -230,11 +239,14 @@ public class Exercise16 {
 		R = p;
 		
 		double sum=0;
+		Edge preR = null;
 		System.out.print("Result: ");
 		while(R!=null)
 		{
-			System.out.print("\n"+"["+R.id+"] "+locations[R.id]+"("+key[R.id]+unit+")"+" -> ");
-			sum += key[R.id];
+			double value = type=='D'?key[R.id]:(preR==null?0:key[R.id]/findSpeed(preR.id,R.id));
+			System.out.print("\n"+"["+R.id+"] "+locations[R.id]+"("+value+unit+")"+" -> ");
+			sum += value;
+			preR = R;
 			R = R.next;
 		}
 		System.out.println("finish!! ("+sum+unit+")");
