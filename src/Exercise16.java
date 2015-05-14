@@ -209,7 +209,7 @@ public class Exercise16 {
 	private void Print(int start, int dest, char type)
 	
 	{
-		String unit = type=='D'?" km":" min";
+		String unit = type=='D'?" miles":" hours";
 //		System.out.println("pi test");
 //		for(int i=0;i<N;i++)
 //			System.out.println(i+" <- "+pi[i]);
