@@ -216,7 +216,7 @@ public class Exercise16 {
 		
 		// 완성된 pi배열을 dest부터 start까지 거꾸로 한 번 읽어 출력한다.
 		int d = dest, s = pi[d];
-		Edge R = new Edge(d,key[d],type);
+		Edge R = new Edge(d);
 		Edge p=null;
 		while(s!=start)
 		{
