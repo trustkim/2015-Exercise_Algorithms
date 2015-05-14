@@ -14,8 +14,8 @@ public class Exercise16 {
 		double dist;	// 이동 거리
 		double speed;	// 이동 시간?
 		Edge next;
-		Edge(int id, double dist, double speed){this.id=id;this.dist=dist;this.speed=speed;}
-		Edge(int id){this.id=id;next=null;}
+		Edge(int id, double dist, double speed){this.id=id;this.dist=dist;this.speed=speed;} // 인접리스트에 추가할 노드 생성
+		Edge(int id){this.id=id;next=null;}	// 결과 리스트 R에 추가할 노드 생성
 	}
 	private int N;				// 전체 그래프의 정점의 개수
 	private int M;				// 전체 그래프의 에지 개수
@@ -60,11 +60,11 @@ public class Exercise16 {
 		return (type=='D'?p.dist:p.speed);
 	}
 	private void dijkstra(int start, int dest, char type)
-	{
+	{	// Prim의 알고리즘과 거의 동일하다!
 		init();
 		key[start] = 0;		// 시작 정점을 정함.
 		int cnt = 0;
-		while(cnt<N)		// n-1번 반복
+		while(cnt<N)		// n-1번 반복. 따로 dest까지 결정되면 멈추도록 하지 않음.
 		{
 			int u = findMinKey();			// S에 속하지 않고 key가 가장 낮은 정점을 찾음
 			include[u] = true; cnt++;		// 그 u를 S에 포함 시킴
@@ -86,11 +86,11 @@ public class Exercise16 {
 		//System.out.println("dijkstra compelete");
 	}
 	private boolean isPassLine(String line)
-	{
+	{	// 파일을 읽을 때 공백이나 '#'으로 시작하는 문자열은 무시하기 위한 함수. 무시해야하는 문자열이면 true를 반환 
 		return (line.equals("")||line.charAt(0)=='#');
 	}
 	private void add(int v, int u, double dist, double speed)
-	{
+	{	// 인접리스트에 노드를 추가하는 함수
 		if(vertices[v]==null)
 		{
 			vertices[v] = new Edge(u,dist,speed);
@@ -200,10 +200,10 @@ public class Exercise16 {
 	{
 		for(int i=0;i<T;i++)
 		{
-			int[] l = trips[i];
+			int[] l = trips[i];	// 현재 물어볼 경로
 			int start=l[0], dest=l[1]; char type = (char)l[2];
-			dijkstra(start,dest,type);	
-			Print(start,dest,type);
+			dijkstra(start,dest,type);	// 해당 경로로 dijkstra algoritm 수행	
+			Print(start,dest,type);		// 해당 경로의 최단 경로를 출력
 		}
 	}
 	private void Print(int start, int dest, char type)
