@@ -73,12 +73,14 @@ public class Exercise16 {
 			{
 				int v = p.id;
 				if(include[v])
-					;// S에 포함된 key[v]는 갱신하지 않음
-				// double weight = findWeight(p,type);
-				if(key[v]==-1 || key[v] > key[u]+p.dist)
+					;// S에 포함된 key[v]는 갱신하지 않음. 더 낮은 가중치 에지가 있는데 S에 포함됐다고 갱신 안하면 어떻게 되지? 그래도 최단 경로가 나오나?? 신기하네...
+				else
 				{
-					key[v] = key[u]+p.dist;
-					pi[v] = u;
+					if(key[v]==-1 || key[v] > key[u]+p.dist)
+					{
+						key[v] = key[u]+p.dist;
+						pi[v] = u;
+					}
 				}
 				p = p.next;
 			}
