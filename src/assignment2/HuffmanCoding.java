@@ -95,7 +95,7 @@ public class HuffmanCoding
 	}
 }
 
-class Run extends Object
+class Run
 {
 	public byte symbol;	// byte symbol
 	public int runLen;	// how many continue the sybol
