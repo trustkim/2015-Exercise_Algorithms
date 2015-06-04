@@ -22,7 +22,7 @@ public class HuffmanCoding
 		{
 			for(int i=8;i>0 && fOut.getFilePointer() < charCnt;i--)
 			{
-				int codeword = (buffer - ((buffer >> i) << i)) >> (i-1);
+				int codeword = (buffer - ((buffer >> i) << i)) >> (i-1);	// parse a bit
 				if(codeword == 0)
 					temp = temp.left;
 				else if(codeword == 1)
@@ -82,7 +82,7 @@ public class HuffmanCoding
 			
 			/* pack the codeword into the buffer */
 			for(int i=temp.codewordLen;i>0;i--){
-				int codeword = (temp.codeword - ((temp.codeword >> i) << i)) >> (i-1);
+				int codeword = (temp.codeword - ((temp.codeword >> i) << i)) >> (i-1);	// parse a bit
 				buffer = (buffer << 1) | codeword;
 				bufferSize++;
 				if(bufferSize == 32)	/* if the buffer becomes full */
@@ -128,7 +128,6 @@ public class HuffmanCoding
 		assignCodewords(theRoot,0,0);
 		//PrintRuns();
 		storeRunsIntoHashMap(theRoot);
-		System.out.println(map.keySet());
 		fIn.seek(0);
 		encode(fIn,fOut);
 		System.out.println("compressFile complete. output file size is " + fOut.getFilePointer() + " bytes. Elapsed: "+(((long)System.currentTimeMillis()-start)/1000));
