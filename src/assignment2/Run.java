@@ -11,15 +11,15 @@ public class Run implements Comparable<Run>
 	public int codewordLen;	// actually length of assigned codeword
 
 	/* creator */
-	public Run(byte initSymbol)
-	{
-		symbol = initSymbol;
-		runLen = 1;
-		freq = 1;
-		left=right=null;
-	}
+//	public Run(byte initSymbol)
+//	{	/* creator for old version collectRuns */
+//		symbol = initSymbol;
+//		runLen = 1;
+//		freq = 1;
+//		left=right=null;
+//	}
 	public Run(byte symbol, int count)
-	{
+	{	/* creator for professor version collectRuns */
 		this.symbol = symbol;
 		runLen = count;
 		freq = 1;
@@ -33,6 +33,12 @@ public class Run implements Comparable<Run>
 		this.left = this.right = null;
 	}
 
+	public Run() {
+		symbol = 0;
+		runLen = 0;
+		freq = 0;
+		left = right = null;
+	}
 	@Override
 	public boolean equals(Object other)
 	{
@@ -46,10 +52,15 @@ public class Run implements Comparable<Run>
 		return Integer.compare(freq, other.freq);
 	}
 	
+	public int hashCode()	/* depend on symbol, runLen */ 
+	{
+		return (int) symbol + runLen;
+	}
+	
 	/* methods for test or debugging */
 	public String toString()
 	{
-		return (runLen+""+(char)symbol+"("+freq+")");
+		return (runLen+""+(char)symbol+"("+freq+"): ["+codeword+"("+codewordLen+")]");
 	}
 }
 

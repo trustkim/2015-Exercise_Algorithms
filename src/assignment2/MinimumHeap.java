@@ -71,7 +71,7 @@ public class MinimumHeap<T extends Comparable> {
 		for(T i:runs)
 			insert(i);
 		buildMinHeap();
-		PrintMinHeap();// test Print
+		//PrintMinHeap();// test Print
 	}
 	
 	/* test Print code */
