@@ -12,6 +12,7 @@ public class HuffmanCoding
 	private ArrayList<Run> runs;		/* create ArrayList for storing runs detected */
 	private HashMap<Run,Run> map;
 	private long charCnt;
+	
 	/* step6: Decoding */
 	private void decode(RandomAccessFile fIn, RandomAccessFile fOut) throws IOException{
 		int buffer = 0;
@@ -22,7 +23,6 @@ public class HuffmanCoding
 			for(int i=8;i>0 && fOut.getFilePointer() < charCnt;i--)
 			{
 				int codeword = (buffer - ((buffer >> i) << i)) >> (i-1);
-				//if(codeword < 0 ) codeword = 1;
 				if(codeword == 0)
 					temp = temp.left;
 				else if(codeword == 1)
@@ -83,7 +83,7 @@ public class HuffmanCoding
 			/* pack the codeword into the buffer */
 			for(int i=temp.codewordLen;i>0;i--){
 				int codeword = (temp.codeword - ((temp.codeword >> i) << i)) >> (i-1);
-				buffer = (buffer << 1) + codeword;
+				buffer = (buffer << 1) | codeword;
 				bufferSize++;
 				if(bufferSize == 32)	/* if the buffer becomes full */
 				{
@@ -114,6 +114,26 @@ public class HuffmanCoding
 			fOut.writeInt(r.freq);
 		}
 	}
+	public void compressFile(String inFileName, RandomAccessFile fIn) throws IOException
+	{
+		String outFileName = new String(inFileName + ".z");
+		RandomAccessFile fOut = new RandomAccessFile(outFileName, "rw");
+		
+		long start = System.currentTimeMillis();
+		bufferedCollectRuns(fIn);
+		//PrintRuns();
+		outputFrequencies(fIn,fOut);
+		createHuffmanTree();
+		//PrintHuffmanTree();
+		assignCodewords(theRoot,0,0);
+		//PrintRuns();
+		storeRunsIntoHashMap(theRoot);
+		System.out.println(map.keySet());
+		fIn.seek(0);
+		encode(fIn,fOut);
+		System.out.println("compressFile complete. output file size is " + fOut.getFilePointer() + " bytes. Elapsed: "+(((long)System.currentTimeMillis()-start)/1000));
+	}
+	
 	/* step4: searching codeword */
 	private void storeRunsIntoHashMap(Run p)
 	{
@@ -268,25 +288,6 @@ public class HuffmanCoding
 			System.err.println("Cannot open " + fileName);
 			e.printStackTrace();
 		}
-	}
-	public void compressFile(String inFileName, RandomAccessFile fIn) throws IOException
-	{
-		String outFileName = new String(inFileName + ".z");
-		RandomAccessFile fOut = new RandomAccessFile(outFileName, "rw");
-		
-		long start = System.currentTimeMillis();
-		bufferedCollectRuns(fIn);
-		//PrintRuns();
-		outputFrequencies(fIn,fOut);
-		createHuffmanTree();
-		//PrintHuffmanTree();
-		assignCodewords(theRoot,0,0);
-		//PrintRuns();
-		storeRunsIntoHashMap(theRoot);
-		System.out.println(map.keySet());
-		fIn.seek(0);
-		encode(fIn,fOut);
-		System.out.println("compressFile complete. output file size is " + fOut.getFilePointer() + " bytes. Elapsed: "+(((long)System.currentTimeMillis()-start)/1000));
 	}
 	
 	/* creator */
