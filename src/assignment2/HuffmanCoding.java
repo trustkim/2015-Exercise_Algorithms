@@ -78,7 +78,7 @@ public class HuffmanCoding
 			}
 			
 			/* find the codeword for the run(symbol, runLen) */
-			Run temp = map.get(new Run((byte)ch,count));
+			Run temp = map.get(new Run((byte)ch, count));
 			
 			/* pack the codeword into the buffer */
 			for(int i=temp.codewordLen;i>0;i--){
@@ -120,7 +120,7 @@ public class HuffmanCoding
 		/* recursive put all leaf-nodes in the huffmanTree to map */
 		if(p.left == null && p.right == null)	// if p is leaf-node,
 		{
-			map.put(p, p);
+			map.put((new Run(p.symbol,p.runLen)), p);
 		}else {
 			storeRunsIntoHashMap(p.left);
 			storeRunsIntoHashMap(p.right);
@@ -165,6 +165,38 @@ public class HuffmanCoding
 	}
 	
 	/* step1: collectRuns */
+	private void bufferedCollectRuns(RandomAccessFile fIn) throws IOException
+	{
+		byte[] buffer = new byte[100*1024*1024];	// use 100MB buffer
+		int size = fIn.read(buffer);
+		int ch = buffer[0];
+		while(size!=-1)
+		{
+			ch = collectRuns(ch, buffer,size);
+			size = fIn.read(buffer);
+		}
+	}
+	private int collectRuns(int init, byte[] buffer, int size) throws IOException
+	{
+		int ch = init;	// read first byte
+		int count = 1;
+		int ch2=0;
+		int i=0;
+		while(i+count<size)
+		{
+			while(i+count<size && (ch2=buffer[i+count])==ch)
+			{
+				count++;
+			}
+			addRun((byte)ch,count);
+			ch = ch2; 
+			i = i+count;
+			count = 1;
+		}
+
+		return buffer[size-1];
+	}
+	@SuppressWarnings("unused")
 	private void collectRuns(RandomAccessFile fIn) throws IOException
 	{	// collectRuns professor version
 		int ch = fIn.read();	// read first byte
@@ -176,6 +208,8 @@ public class HuffmanCoding
 			{
 				count++;
 			}
+//			if(ch==37 && count == 1)
+//				System.out.println(true);
 			addRun((byte)ch,count);
 			ch = ch2; count = 1;
 		}
@@ -240,7 +274,8 @@ public class HuffmanCoding
 		String outFileName = new String(inFileName + ".z");
 		RandomAccessFile fOut = new RandomAccessFile(outFileName, "rw");
 		
-		collectRuns(fIn);
+		long start = System.currentTimeMillis();
+		bufferedCollectRuns(fIn);
 		//PrintRuns();
 		outputFrequencies(fIn,fOut);
 		createHuffmanTree();
@@ -248,9 +283,10 @@ public class HuffmanCoding
 		assignCodewords(theRoot,0,0);
 		//PrintRuns();
 		storeRunsIntoHashMap(theRoot);
+		System.out.println(map.keySet());
 		fIn.seek(0);
 		encode(fIn,fOut);
-		System.out.println("compressFile complete. output file size is " + fOut.getFilePointer() + " bytes.");
+		System.out.println("compressFile complete. output file size is " + fOut.getFilePointer() + " bytes. Elapsed: "+(((long)System.currentTimeMillis()-start)/1000));
 	}
 	
 	/* creator */
