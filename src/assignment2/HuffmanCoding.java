@@ -187,18 +187,37 @@ public class HuffmanCoding
 	private void bufferedCollectRuns(RandomAccessFile fIn) throws IOException
 	{
 		byte[] buffer = new byte[100*1024*1024];	// use 100MB buffer
-		int size = fIn.read(buffer);
+		//byte[] buffer = new byte[5];
+		int size = fIn.read(buffer);	// init buffer
 		int ch = buffer[0];
+		int ch2=-1;
+		int count = 1;
+		int bufferIndex = 1;
 		while(size!=-1)
 		{
-			ch = collectRuns(ch, buffer,size);
-			size = fIn.read(buffer);
+			//ch = collectRuns(ch[0], ch[1], buffer,size);
+			while(size!=-1 && (ch2=buffer[bufferIndex++]) == ch)
+			{
+				count++;
+				if(bufferIndex==size)
+				{
+					size = fIn.read(buffer);	// read from file to buffer
+					bufferIndex = 0;
+				}
+			}
+			addRun((byte)ch,count);
+			ch = ch2;	count = 1;
+			if(bufferIndex==size)
+			{
+				size = fIn.read(buffer);
+				bufferIndex=0;
+			}
 		}
 	}
-	private int collectRuns(int init, byte[] buffer, int size) throws IOException
+	private int[] collectRuns(int initSymbol, int initCount, byte[] buffer, int size) throws IOException
 	{
-		int ch = init;	// read first byte
-		int count = 1;
+		int ch = initSymbol;	// read first byte
+		int count = initCount;
 		int ch2=0;
 		int i=0;
 		while(i+count<size)
@@ -210,10 +229,12 @@ public class HuffmanCoding
 			addRun((byte)ch,count);
 			ch = ch2; 
 			i = i+count;
-			count = 1;
+			if(i<size) count = 1;
 		}
-
-		return buffer[size-1];
+		int[] result = new int[2];
+		result[0] = buffer[size-1];
+		result[1] = count;
+		return result;	// 버퍼의 마지막 심볼만 다음 버퍼에 넘겨줌. count값은 넘겨 주지 않으므로 버퍼사이에 끼이는 run은 두 run으로 쪼개짐.
 	}
 	@SuppressWarnings("unused")
 	private void collectRuns(RandomAccessFile fIn) throws IOException
@@ -227,8 +248,6 @@ public class HuffmanCoding
 			{
 				count++;
 			}
-//			if(ch==37 && count == 1)
-//				System.out.println(true);
 			addRun((byte)ch,count);
 			ch = ch2; count = 1;
 		}
