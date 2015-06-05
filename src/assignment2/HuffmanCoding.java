@@ -214,28 +214,7 @@ public class HuffmanCoding
 			}
 		}
 	}
-	private int[] collectRuns(int initSymbol, int initCount, byte[] buffer, int size) throws IOException
-	{
-		int ch = initSymbol;	// read first byte
-		int count = initCount;
-		int ch2=0;
-		int i=0;
-		while(i+count<size)
-		{
-			while(i+count<size && (ch2=buffer[i+count])==ch)
-			{
-				count++;
-			}
-			addRun((byte)ch,count);
-			ch = ch2; 
-			i = i+count;
-			if(i<size) count = 1;
-		}
-		int[] result = new int[2];
-		result[0] = buffer[size-1];
-		result[1] = count;
-		return result;	// 버퍼의 마지막 심볼만 다음 버퍼에 넘겨줌. count값은 넘겨 주지 않으므로 버퍼사이에 끼이는 run은 두 run으로 쪼개짐.
-	}
+
 	@SuppressWarnings("unused")
 	private void collectRuns(RandomAccessFile fIn) throws IOException
 	{	// collectRuns professor version
