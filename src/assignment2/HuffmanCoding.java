@@ -36,6 +36,38 @@ public class HuffmanCoding
 			}
 		}
 	}
+//	private void decode(RandomAccessFile fIn, RandomAccessFile fOut) throws IOException
+//	{	// professor version
+//		int nbrByteWrite=0, j, ch, bitCnt = 1, mask = 1, bits = 8;
+//		mask <<= bits = 1; // change 00000001 to 10000000
+//		for(ch=fIn.read(); ch!=-1 && nbrByteWrite<charCnt;)
+//		{
+//			Run p = theRoot;
+//			while(true)
+//			{
+//				if(p.left == null && p.right == null)
+//				{
+//					for(j=0;j<p.runLen;j++)
+//					{
+//						fOut.write(p.symbol);
+//					}
+//					nbrByteWrite += p.runLen;
+//					break;
+//				}
+//				else if((ch & mask) == 0)	/* if the most significant bit is 0 */
+//					p = p.left;
+//				else						/* if the most significant bit is 1 */
+//					p = p.right;
+//				if(bitCnt++ == bits) {
+//					ch = fIn.read();
+//					bitCnt = 1;
+//				}
+//				else
+//					ch <<= 1;				/* left-shift the current byte */
+//				}
+//			}
+//		}
+//	}
 	private void inputFrequencies(RandomAccessFile fIn) throws IOException {
 		int dataIndex = fIn.readInt();
 		charCnt = fIn.readLong();
